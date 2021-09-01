@@ -11,5 +11,8 @@
   "devDependencies": {
     "astro": "^0.19.4",
     "tailwindcss": "^2.1.2"
+  },
+  "dependencies": {
+    "tailwindcss-fluid": "^0.2.0"
   }
 }
