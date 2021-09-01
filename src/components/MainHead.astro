@@ -1,0 +1,31 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const {title, description} = Astro.props as Props;
+---
+<meta charset="utf-8">
+<title>{`John Eatmon | ${title}` ?? 'John Eatmon'}</title>
+<meta name="title" content={`John Eatmon | ${title}` ?? 'John Eatmon'}>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content={description ?? 'John Eatmon (@jmaeatmontho) \& Content Strategist for ProSource, developer of websites, lover of typography.'}>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://johneatmon.dev/">
+<meta property="og:title" content={title ?? 'John Eatmon'}>
+<meta property="og:description" content={description ?? 'John Eatmon (@jmaeatmontho) \& Content Strategist for ProSource, developer of websites, lover of typography.'}>
+<meta property="og:image" content="">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://johneatmon.dev/">
+<meta property="twitter:title" content={title ?? 'John Eatmon'}>
+<meta property="twitter:description" content={description ?? 'John Eatmon (@jmaeatmontho) \& Content Strategist for ProSource, developer of websites, lover of typography.'}>
+<meta property="twitter:image" content="">
+
+<link rel="icon" href="/favicon.png">
+
+<link rel="stylesheet" type="text/css" href="/style/tailwind.css">
