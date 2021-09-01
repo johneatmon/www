@@ -1,0 +1,8 @@
+@mixin vertically-align-label() {
+  &::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 1ex;
+  }
+}
