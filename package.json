@@ -13,6 +13,7 @@
     "tailwindcss": "^2.2.11"
   },
   "dependencies": {
+    "astro-seo": "^0.3.10",
     "tailwindcss-fluid": "^0.2.0"
   }
 }
