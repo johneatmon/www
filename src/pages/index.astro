@@ -1,5 +1,6 @@
 ---
 import MainHead from '../components/MainHead.astro';
+import Navigation from '../components/Navigation.astro';
 
 let title = 'Multimedia Swiss Army knife';
 ---
@@ -10,39 +11,7 @@ let title = 'Multimedia Swiss Army knife';
 <body class="grid min-h-screen text-white bg-gray-900 place-items-center">
   <main>
     <section class="mb-20 sm:mx-4">
-      <nav class="flex flex-wrap items-center justify-between px-4 py-8 bg-gray-800 sm:p-8 gap-x-10 gap-y-5 sm:rounded-xl">
-        <a class="block" href="/">
-          <span class="sr-only">John Eatmon</span>
-          <img class="border-2 border-transparent rounded-full ring-2 ring-pink-300" src="/favicon.ico" alt="Memoji of John Eatmon.">
-        </a>
-        <ul class="flex flex-wrap items-center gap-x-10 gap-y-2">
-          <li>
-            <a class="transition-colors ease-in-out border-b-2 border-b-transparent duraiton-300 hover:border-white focus:border-white" href="https://github.com/johnnytest4real" rel="noopener noreferer nofollow">
-              GitHub
-            </a>
-          </li>
-          <li>
-            <a class="transition-colors ease-in-out border-b-2 border-b-transparent duraiton-300 hover:border-white focus:border-white" href="https://dribbble.com/jmaeatmontho" rel="noopener noreferer nofollow">
-              Dribbble
-            </a>
-          </li>
-          <li>
-            <a class="transition-colors ease-in-out border-b-2 border-b-transparent duraiton-300 hover:border-white focus:border-white" href="https://soundcloud.com/meatcrayon" rel="noopener noreferer nofollow">
-              SoundCloud
-            </a>
-          </li>
-          <li>
-            <a class="transition-colors ease-in-out border-b-2 border-b-transparent duraiton-300 hover:border-white focus:border-white" href="https://twitter.com/jmaeatmontho" rel="noopener noreferer nofollow">
-              Twitter
-            </a>
-          </li>
-          <li>
-            <a class="transition-colors ease-in-out border-b-2 border-b-transparent duraiton-300 hover:border-white focus:border-white" href="https://www.linkedin.com/in/jmaeatmon/" rel="noopener noreferer nofollow">
-              LinkedIn
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <Navigation />
     </section>
     <section class="container">
       <h1 class="mb-5 font-bold leading-none text-5xl-fluid">
