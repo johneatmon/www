@@ -50,9 +50,3 @@
     --jm-blueGray-900: hsl(209, 61%, 16%);
   }
 }
-
-@layer components {
-  .button {
-    @apply inline-block px-5 py-4 font-medium text-white bg-black text-md-fluid rounded-xl;
-  }
-}
