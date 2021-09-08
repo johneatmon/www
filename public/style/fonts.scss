@@ -1,0 +1,12 @@
+$lota-path: '/fonts/lotagrotesque';
+$weights: 400, 700;
+
+@each $weight in $weights {
+  @font-face {
+    font-family: 'Lota\\ Grotesque';
+    src: url('#{$lota-path}-#{$weight}-webfont.woff2') format('woff2'), url('#{$lota-path}-#{$weight}-webfont.woff') format('woff');
+    font-weight: $weight;
+    font-style: normal;
+    font-display: swap;
+  }
+}
