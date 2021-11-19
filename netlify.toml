@@ -1,8 +1,11 @@
 ## Netlify deploys
+
 [build]
-command = "npm run build"
-publish = "dist"
+  command = "npm run build"
+  publish = "dist"
+
 ## Headers
+
 [[headers]] # Main rules
   for = "/*"
   [headers.values]
