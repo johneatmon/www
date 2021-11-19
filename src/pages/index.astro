@@ -1,26 +1,87 @@
 ---
-import MainHead from '../components/MainHead.astro';
+// import MainHead from '../components/MainHead.astro';
 import Navigation from '../components/Navigation.astro';
 
 let title = 'Multimedia Swiss Army knife';
 ---
-<html class="h-full" lang="en">
-<head>
-  <MainHead title={title} />
-</head>
-<body class="grid min-h-screen text-white bg-gray-900 place-items-center">
-  <main>
-    <section class="mb-20 sm:mx-4">
-      <Navigation />
-    </section>
-    <section class="container">
-      <h1 class="mb-5 font-bold leading-none text-5xl-fluid">
-        Hi, I’m John Eatmon.
-      </h1>
-      <p class="text-md-fluid">
-        Web design/development, UI/UX, and technical writing. Content Strategist at <a class="font-bold transition-colors duration-300 ease-in-out border-b-2 border-cyan-400 text-cyan-400 hover:text-white hover:bg-cyan-500 hover:border-cyan-500 focus:border-cyan-500 focus:bg-cyan-500 focus:text-white" href="https://getprosource.com/" rel="noopener noreferer nofollow">ProSource</a>.
-      </p>
-    </section>
-  </main>
-</body>
+
+<html class="h-full antialiased" lang="en">
+  <head>
+    <!-- <MainHead {title} description="dogshit!" /> -->
+    <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/tailwind.css')} />
+  </head>
+  <body class="text-white bg-gray-900">
+    <header class="inline-flex items-center justify-between w-full py-6 text-lg font-light container-nav gap-x-8">
+      <a class="" href="/">John Eatmon</a>
+      <nav>
+        <ul class="inline-flex items-center gap-x-8" role="list">
+          <li>
+            <a href="/work">Work</a>
+          </li>
+          <li>
+            <a href="/about">About</a>
+          </li>
+          <li>
+            <a href="/music">Playlists</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="container py-32">
+        <h1 class="mb-12 font-serif font-medium leading-none text-[80px] tracking-tight">
+          Hi, I'm John. I design and make things for the web <span class="italic text-cyan-300">sometimes</span>, write words <span class="italic text-cyan-300">occasionally</span
+          >, but <span class="italic text-cyan-300">mostly</span> have no idea what I am doing.
+        </h1>
+        <p class="text-lg-fluid">
+          Web enthusiast &amp; developer living in Tacoma, WA. Content Strategist for
+          <a
+            class="transition-colors duration-300 ease-in-out border-b-2 border-cyan-400 text-cyan-400 hover:text-white hover:bg-cyan-500 hover:border-cyan-500 focus:border-cyan-500 focus:bg-cyan-500 focus:text-white"
+            href="https://getprosource.com/"
+            rel="noopener noreferer nofollow"
+          >
+            ProSource
+          </a>.
+        </p>
+      </section>
+    </main>
+    <footer class="py-6 bg-gray-800">
+      <section class="container">
+        <p>&copy; 2021 John Eatmon</p>
+      </section>
+    </footer>
+  </body>
 </html>
+
+<style>
+  html,
+  body {
+    height: 100%;
+  }
+
+  body > footer {
+    position: sticky;
+    top: 100vh;
+  }
+
+  .container-xl {
+    padding: 8vw 4vw 4vw 4vw;
+  }
+
+  @media (min-width: 768px) {
+    .container-xl {
+      padding: calc(20px + 8vw) 8vw 8vw 8vw;
+    }
+  }
+
+  .container-nav {
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+
+  .text-xl {
+    /* font-size: min(1.5rem, 4.5vw); */
+    font-size: clamp(3rem, 4.5vw, 4.625rem);
+    line-height: 1.4em;
+  }
+</style>
