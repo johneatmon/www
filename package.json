@@ -1,19 +1,24 @@
 {
-  "name": "@example/with-tailwindcss",
+  "name": "@johnnytest4real/johneatmon.dev",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
+    "dev": "cross-env NODE_ENV=development astro dev",
+    "start": "cross-env NODE_ENV=development astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "format": "prettier -w ."
   },
   "devDependencies": {
-    "astro": "^0.19.4",
-    "tailwindcss": "^2.2.11"
+    "cross-env": "^7.0.3",
+    "prettier": "^2.4.1",
+    "prettier-plugin-astro": "0.0.10"
   },
   "dependencies": {
-    "astro-seo": "^0.3.10",
+    "astro": "^0.21.0-next.7",
+    "astro-seo": "^0.4.2",
+    "autoprefixer": "^10.4.0",
+    "tailwindcss": "^2.2.19",
     "tailwindcss-fluid": "^0.2.0"
   }
 }
