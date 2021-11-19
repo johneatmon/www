@@ -3,7 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   mode: 'jit',
-  purge: ['./public/**/*.html', './src/**/*.{astro,js,jsx,ts,tsx,vue,svelte}'],
+  purge: ['./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,vue}'],
   darkMode: 'media',
   theme: {
     container: {
@@ -12,7 +12,7 @@ module.exports = {
         DEFAULT: '1rem',
       },
       screens: {
-        xl: '1080px',
+        xl: '1170px',
       },
     },
     colors: {
@@ -73,6 +73,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["'Lota\\ Grotesque'", ...defaultTheme.fontFamily.sans],
+        serif: ["'Swear\\ Display\\ Demo'", ...defaultTheme.fontFamily.serif],
+        mono: ["'MD\\ IO\\ 0.3\\ Trial'", ...defaultTheme.fontFamily.mono],
       },
     },
   },
