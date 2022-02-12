@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    "**/dist": true,
+    "**/node_modules": true
+  },
+  "search.exclude": {
+    "**/dist": true
+  },
+  "emmet.includeLanguages": {
+    "astro": "html"
+  }
+}
