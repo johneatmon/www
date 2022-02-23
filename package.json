@@ -1,5 +1,5 @@
 {
-  "name": "@johnnytest4real/johneatmon.dev",
+  "name": "@johnnytest4real/www",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -14,7 +14,10 @@
   },
   "dependencies": {
     "astro": "^0.22.20",
-    "astro-imagetools": "^0.0.14",
-    "sass": "^1.49.7"
+    "astro-icon": "^0.5.3",
+    "autoprefixer": "10.4.2",
+    "postcss": "^8.4.6",
+    "postcss-nested": "^5.0.6",
+    "postcss-preset-env": "7.3.2"
   }
 }
