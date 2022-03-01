@@ -4,6 +4,7 @@ const inlineMediaQueries = lib === 'lib:media' || lib === 'lib:supports';
 // todo: inline MQs for 'lib:all' when it's supported better
 
 module.exports = {
+  parser: 'postcss-scss',
   plugins: [
     require('autoprefixer'),
     require('postcss-nested'),
