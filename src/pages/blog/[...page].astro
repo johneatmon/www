@@ -1,0 +1,42 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BlogPostPreview from '@/components/BlogPostPreview.astro';
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = Astro.fetchContent('./*.md');
+  const sortedPostsByDate = allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+
+  return paginate(sortedPostsByDate, {
+    pageSize: 12,
+  });
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout>
+  <div class="wrapper--primary">
+    <div class="container hero">
+      <h1>My Ramblings</h1>
+      <p>My blog of crap.</p>
+    </div>
+  </div>
+  <div class="container blog-grid">
+    {page.data.map((post) =>
+      <BlogPostPreview {post} />
+    )}
+  </div>
+</BaseLayout>
+
+<style lang="scss">
+  .blog-grid {
+    --min: 15ch;
+    --gap: 1.875rem;
+
+    display: grid;
+    grid-gap: var(--gap);
+    /* min() with 100% prevents overflow
+    in extra narrow spaces */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+  }
+</style>
