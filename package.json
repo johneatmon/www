@@ -13,7 +13,7 @@
     "prettier-plugin-astro": "^0.0.12"
   },
   "dependencies": {
-    "astro": "^0.23.0",
+    "astro": "^0.23.3",
     "astro-icon": "^0.5.3",
     "autoprefixer": "10.4.2",
     "postcss": "^8.4.6",
