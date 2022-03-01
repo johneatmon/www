@@ -1,0 +1,23 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+const { content } = Astro.props;
+---
+<BaseLayout title={content.title} description={content.description}>
+  <article>
+    <header class="container--blog">
+      <h1>
+        {content.title}
+      </h1>
+      <small>
+        Published <time datetime={content.date}>{content.date}</time>
+      </small>
+    </header>
+    <main class="container--blog">
+      <slot />
+    </main>
+    <footer>
+      <slot name="blog-footer" />
+    </footer>
+  </article>
+</BaseLayout>
