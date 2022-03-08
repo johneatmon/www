@@ -1,17 +1,28 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import { machineDate, readableDate } from '@/lib/datetime';
+import { getReadingTime } from '@/lib/readingtime';
+import Image from 'astro-imagetools';
 
 const { content } = Astro.props;
 ---
 <BaseLayout title={content.title} description={content.description}>
   <article>
-    <header class="container--blog">
-      <h1>
-        {content.title}
-      </h1>
-      <small>
-        Published <time datetime={content.date}>{content.date}</time>
-      </small>
+    <header>
+      <Image 
+        src="/src/img/test.jpg" 
+        alt="Some lovely, misty mountains."
+        placeholder="blurred"
+      />
+      <div class="container--blog">
+        <h1>
+          {content.title}
+        </h1>
+        <p class="meta">
+          <time datetime={machineDate(content.date)}>{readableDate(content.date)}</time>
+          &middot; {getReadingTime(content.astro.html)} min read
+        </p>
+      </div>
     </header>
     <main class="container--blog">
       <slot />
@@ -21,3 +32,7 @@ const { content } = Astro.props;
     </footer>
   </article>
 </BaseLayout>
+
+<style lang="scss">
+  
+</style>
