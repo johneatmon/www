@@ -1,0 +1,47 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BlogPostPreview from '@/components/BlogPostPreview.astro';
+
+export async function getStaticPaths() {
+  let posts = Astro.fetchContent('../blog/*.md');
+  let collection = {};
+  
+  posts.forEach((post) => {
+    post.tags.forEach((tag) => {
+      if (!collection[tag]) {
+        collection[tag] = 0;
+      }
+      collection[tag] += 1;
+    });
+  });
+
+  let tags = [];
+  
+  for (let tag in collection) {
+    tags.push({
+      params: { tag: tag },
+      props: { tagName: tag, count: collection[tag] }
+    });
+  }
+
+  return tags;
+}
+
+let tagName = Astro.props.tagName;
+let tagCount = Astro.props.count;
+
+let filteredPosts = Astro.fetchContent('../blog/*.md').filter((post) => post.tags.includes(tagName)).sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+---
+
+<BaseLayout>
+  <section class="container">
+    <h1>
+      {tagCount} post(s) tagged {tagName}
+    </h1>
+  </section>
+  <div class="container blog-grid">
+    {filteredPosts.map((post) => (
+      <BlogPostPreview {post} />
+    ))}
+  </div>
+</BaseLayout>
