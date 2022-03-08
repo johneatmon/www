@@ -1,7 +1,8 @@
 ---
 import { parseHTML } from 'linkedom';
-import { getReadingTime } from '@/lib/readingtime';
 import { machineDate, readableDate } from '@/lib/datetime';
+import { getReadingTime } from '@/lib/readingtime';
+import Image from 'astro-imagetools';
 
 export interface Props {
   post: any;
@@ -13,7 +14,11 @@ const { document } = parseHTML(post.content.html);
 const lede = document.querySelector('p').innerHTML;
 ---
 <article class="card">
-  <img class="preview" src="https://cdn.statically.io/img/staticsite.fun/w=340,h=145/cat.jpg" alt="cat" loading="lazy" width="340" height="145">
+  <Image 
+    src="/src/img/test.jpg" 
+    alt="Some lovely, misty mountains."
+    placeholder="blurred"
+  />
   <header>
     <h3>{post.title}</h3>
     <p class="meta">
@@ -23,7 +28,9 @@ const lede = document.querySelector('p').innerHTML;
     <ul class="tags-list" role="list">
       {post.tags.map((tag) =>
         <li>
-          {tag}
+          <a href={`/tag/${tag}`}>
+            {tag}
+          </a>
         </li>
       )}
     </ul>
@@ -45,13 +52,6 @@ const lede = document.querySelector('p').innerHTML;
     line-height: 1.4;
     color: #220C10;
 
-    img {
-      aspect-ratio: 21 / 9;
-      object-fit: cover;
-      width: 100%;
-      height: auto;
-    }
-
     .meta {
       font-style: italic;
     }
@@ -70,6 +70,17 @@ const lede = document.querySelector('p').innerHTML;
 
         &::before {
           content: '#';
+        }
+
+        & a {
+          text-decoration: none;
+          color: inherit;
+
+          &:hover {
+            text-decoration-line: underline;
+            text-decoration-thickness: 0.125rem;
+            text-underline-offset: 2px;
+          }
         }
       }
     }
