@@ -1,4 +1,4 @@
-// import { astroImagePlugin } from 'astro-imagetools';
+import astroImagePlugin from 'astro-imagetools/plugin';
 
 export default {
   renderers: [],
@@ -7,7 +7,7 @@ export default {
     sitemap: true,
   },
   vite: {
-    // plugins: [astroImagePlugin],
+    plugins: [astroImagePlugin],
     ssr: {
       external: ['svgo'],
     },
