@@ -1,15 +1,5 @@
-import astroImagePlugin from 'astro-imagetools/plugin';
+import { defineConfig } from 'astro/config';
 
-export default {
-  renderers: [],
-  buildOptions: {
-    site: 'https://johneatmon.dev',
-    sitemap: true,
-  },
-  vite: {
-    plugins: [astroImagePlugin],
-    ssr: {
-      external: ['svgo'],
-    },
-  },
-};
+export default defineConfig({
+  site: 'https://jmae.so',
+});
