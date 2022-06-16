@@ -1,24 +1,24 @@
 {
-  "name": "@johnnytest4real/johneatmon.dev",
+  "name": "@johnnytest4real/www",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development astro dev",
-    "start": "cross-env NODE_ENV=development astro dev",
+    "dev": "astro dev",
+    "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "format": "prettier -w ."
+    "lint": "prettier -w ."
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
-    "prettier": "^2.5.1",
-    "prettier-plugin-astro": "0.0.11"
+    "prettier": "^2.6.2",
+    "prettier-plugin-astro": "^0.0.12"
   },
   "dependencies": {
-    "astro": "^0.21.10",
-    "astro-seo": "^0.4.2",
-    "autoprefixer": "^10.4.0",
-    "tailwindcss": "^2.2.19",
-    "tailwindcss-fluid": "^0.2.0"
-  },
-  "packageManager": "yarn@3.1.1"
+    "astro": "1.0.0-beta.46",
+    "astro-compress": "^0.0.11",
+    "astro-icon": "^0.7.1",
+    "astro-imagetools": "^0.6.10",
+    "astro-robots-txt": "^0.3.3",
+    "postcss": "^8.4.12",
+    "postcss-preset-env": "^7.7.1"
+  }
 }

@@ -1,0 +1,20 @@
+---
+import { SOCIAL_LINKS } from '@/config';
+import { Icon } from 'astro-icon';
+---
+
+<nav>
+	<small>
+		Things to click on:
+	</small>
+	<ul role="list">
+		{Object.keys(SOCIAL_LINKS).map((link) =>
+			<li>
+				<Icon name={`bi:${SOCIAL_LINKS[link].icon}`} />
+				<a href={SOCIAL_LINKS[link].url} rel="nofollow noopener noreferer">
+					{SOCIAL_LINKS[link].name}
+				</a>
+			</li>
+		)}
+	</ul>
+</nav>
