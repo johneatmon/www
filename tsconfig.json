@@ -1,9 +1,16 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
+    "module": "ESNext",
+    "allowJs": true,
+    "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@img/*": ["src/img/*"],
+      "@styles/*": ["src/styles/*"]
     }
   }
 }
