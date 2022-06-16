@@ -5,9 +5,20 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "lint": "prettier -w ."
   },
   "devDependencies": {
-    "astro": "^1.0.0-beta.5"
+    "prettier": "^2.6.2",
+    "prettier-plugin-astro": "^0.0.12"
+  },
+  "dependencies": {
+    "astro": "1.0.0-beta.46",
+    "astro-compress": "^0.0.11",
+    "astro-icon": "^0.7.1",
+    "astro-imagetools": "^0.6.10",
+    "astro-robots-txt": "^0.3.3",
+    "postcss": "^8.4.12",
+    "postcss-preset-env": "^7.7.1"
   }
 }
