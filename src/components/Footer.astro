@@ -1,0 +1,10 @@
+<footer>
+	<small>
+		&copy; <span id="year"></span> J.M.A. Eatmon &middot; Rights Not Worth Reserving
+	</small>
+</footer>
+
+<script is:inline>
+	const year = document.querySelector('#year');
+	year.innerHTML = new Date().getFullYear();
+</script>
