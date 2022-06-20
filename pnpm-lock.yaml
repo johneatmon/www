@@ -6,6 +6,7 @@ specifiers:
   astro-icon: ^0.7.1
   astro-imagetools: ^0.6.10
   astro-robots-txt: ^0.3.3
+  linkedom: 0.14.2
   postcss: ^8.4.12
   postcss-preset-env: ^7.7.1
   prettier: ^2.6.2
@@ -17,6 +18,7 @@ dependencies:
   astro-icon: 0.7.1
   astro-imagetools: 0.6.10_astro@1.0.0-beta.46
   astro-robots-txt: 0.3.3
+  linkedom: 0.14.2
   postcss: 8.4.14
   postcss-preset-env: 7.7.1_postcss@8.4.14
 
@@ -1622,6 +1624,10 @@ packages:
       css-tree: 2.0.4
     dev: false
 
+  /cssom/0.5.0:
+    resolution: {integrity: sha512-iKuQcq+NdHqlAcwUY0o/HL69XQrUaQdMjmStJ8JFmUaiiQErlhrmuigkg/CU4E2J0IyUKUrMAgl36TvN67MqTw==}
+    dev: false
+
   /data-uri-to-buffer/4.0.0:
     resolution: {integrity: sha512-Vr3mLBA8qWmcuschSLAOogKgQ/Jwxulv3RNE4FXnYWRGujzrRWQI4m12fQqRkwX06C0KanhLr4hK+GydchZsaA==}
     engines: {node: '>= 12'}
@@ -2825,6 +2831,16 @@ packages:
   /lilconfig/2.0.5:
     resolution: {integrity: sha512-xaYmXZtTHPAw5m+xLN8ab9C+3a8YmV3asNSPOATITbtwrfbwaLJj8h66H1WMIpALCkqsIzK3h7oQ+PdX+LQ9Eg==}
     engines: {node: '>=10'}
+    dev: false
+
+  /linkedom/0.14.2:
+    resolution: {integrity: sha512-5nLClD51PsdZiOlfJoFgwNqYSsGPxniggBsbgxqZLjGRM5ikzo0yWkwRhj0hQexfmSga+Ts8DW0brhsUsR9lyw==}
+    dependencies:
+      css-select: 4.3.0
+      cssom: 0.5.0
+      html-escaper: 3.0.3
+      htmlparser2: 7.2.0
+      uhyphen: 0.1.0
     dev: false
 
   /load-bmfont/1.4.1:
@@ -4892,6 +4908,10 @@ packages:
     resolution: {integrity: sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
+    dev: false
+
+  /uhyphen/0.1.0:
+    resolution: {integrity: sha512-o0QVGuFg24FK765Qdd5kk0zU/U4dEsCtN/GSiwNI9i8xsSVtjIAOdTaVhLwZ1nrbWxFVMxNDDl+9fednsOMsBw==}
     dev: false
 
   /unbox-primitive/1.0.2:
