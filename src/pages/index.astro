@@ -14,7 +14,7 @@ const filteredPosts = await posts.filter((x) => x.frontmatter.draft != true);
 	<section class="hero" aria-labelledby="#title">
 		<h1 id="title">Writing</h1>
 		<small class="count">
-			{filteredPosts.length} posts
+			{filteredPosts.length} post{filteredPosts.length > 1 && <span>s</span>}
 		</small>
 	</section>
 	<section class="posts">
