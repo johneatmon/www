@@ -32,9 +32,14 @@ const title = document.querySelector('h1').innerHTML;
 		align-items: center;
 		gap: 1rem;
 		flex-wrap: wrap;
+		padding-block: 1rem;
 
 		& h2 {
 			font-weight: 700;
 		}
+	}
+
+	.post:not(:last-child) {
+		border-bottom: 1px dashed hsl(var(--color-copy), 0.1);
 	}
 </style>
