@@ -8,6 +8,9 @@ export default defineConfig({
 	experimental: {
 		integrations: true,
 	},
+	markdown: {
+		syntaxHighlight: 'prism',
+	},
 	integrations: [astroImageTools, compress({ html: false, img: false, svg: false }), robotsTxt()],
 	vite: {
 		ssr: {
