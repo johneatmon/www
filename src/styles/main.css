@@ -20,6 +20,7 @@
 	--color-bg: 67, 15%, 88%;
 	--color-copy: 330, 2%, 18%;
 	--color-accent: 120, 21%, 36%;
+	--color-label: white;
 
 	--font-stack-sans: 'General Sans', -apple-system, BlinkMacSystemFont, 'avenir next', 'avenir',
 		'segoe ui', 'helvetica neue', 'helvetica', 'Cantarell', 'Ubuntu', 'roboto', 'noto', 'arial',
@@ -32,8 +33,10 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-bg: 247, 15%, 12%;
-		--color-copy: 150, 2%, 82%;
+		--color-bg: 330, 2%, 18%;
+		--color-copy: 67, 15%, 88%;
+		--color-accent: 120, 22%, 70%;
+		--color-label: black;
 	}
 }
 
@@ -114,7 +117,7 @@ a {
 
 .count {
 	background-color: hsl(var(--color-accent));
-	color: white;
+	color: var(--color-label);
 	line-height: 1;
 	padding: 0.5em 1em;
 	border-radius: 999em;
