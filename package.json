@@ -13,7 +13,7 @@
     "prettier-plugin-astro": "^0.0.12"
   },
   "dependencies": {
-    "astro": "1.0.0-beta.46",
+    "astro": "1.0.0-beta.50",
     "astro-compress": "^0.0.11",
     "astro-icon": "^0.7.1",
     "astro-imagetools": "^0.6.10",
