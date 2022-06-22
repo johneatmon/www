@@ -3,3 +3,9 @@
 [build]
   command = 'npx pnpm i --store=node_modules/.pnpm-store && npm run build'
   publish = 'dist'
+
+[[redirects]]
+  from = "https://jmae.netlify.app/*"
+  to = "https://jmae.xyz/:splat"
+  status = 301
+  force = true
