@@ -7,6 +7,7 @@ specifiers:
   astro-imagetools: ^0.6.10
   astro-robots-txt: ^0.3.3
   linkedom: 0.14.2
+  luxon: ^2.4.0
   postcss: ^8.4.12
   postcss-preset-env: ^7.7.1
   prettier: ^2.6.2
@@ -19,6 +20,7 @@ dependencies:
   astro-imagetools: 0.6.10_astro@1.0.0-beta.46
   astro-robots-txt: 0.3.3
   linkedom: 0.14.2
+  luxon: 2.4.0
   postcss: 8.4.14
   postcss-preset-env: 7.7.1_postcss@8.4.14
 
@@ -2918,6 +2920,11 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
+    dev: false
+
+  /luxon/2.4.0:
+    resolution: {integrity: sha512-w+NAwWOUL5hO0SgwOHsMBAmZ15SoknmQXhSO0hIbJCAmPKSsGeK8MlmhYh2w6Iib38IxN2M+/ooXWLbeis7GuA==}
+    engines: {node: '>=12'}
     dev: false
 
   /magic-string/0.25.9:
