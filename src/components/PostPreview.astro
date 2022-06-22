@@ -1,0 +1,40 @@
+---
+import { parseHTML } from 'linkedom';
+import { machineDate, readableDate } from '@scripts/dates';
+
+export interface Props {
+	post: any;
+}
+
+const { post } = Astro.props as Props;
+
+const { document } = parseHTML(await post.compiledContent());
+const title = document.querySelector('h1').innerHTML;
+---
+
+<div class="post">
+	<a href={post.url}>
+		<h2>
+			{title}
+		</h2>
+	</a>
+	<small>
+		<time datetime={machineDate(post.frontmatter.published)}>
+			{readableDate(post.frontmatter.published)}
+		</time>
+	</small>
+</div>
+
+<style>
+	.post {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+
+		& h2 {
+			font-weight: 700;
+		}
+	}
+</style>

@@ -1,20 +1,61 @@
 ---
-import { SOCIAL_LINKS } from '@/config';
-import { Icon } from 'astro-icon';
+const links = [
+	{
+		label: 'Writing',
+		href: '/',
+	},
+	{
+		label: 'Hikes',
+		href: '/hikes',
+	},
+	{
+		label: 'Projects',
+		href: '/projects',
+	},
+	{
+		label: 'About',
+		href: '/about',
+	},
+];
 ---
 
-<nav>
-	<small>
-		Things to click on:
-	</small>
-	<ul role="list">
-		{Object.keys(SOCIAL_LINKS).map((link) =>
-			<li>
-				<Icon name={`bi:${SOCIAL_LINKS[link].icon}`} />
-				<a href={SOCIAL_LINKS[link].url} rel="nofollow noopener noreferer">
-					{SOCIAL_LINKS[link].name}
-				</a>
-			</li>
-		)}
-	</ul>
-</nav>
+<header>
+	<nav>
+		<p>
+			<strong>J.M.A. Eatmon</strong>
+			<br />
+			Content Strategy & Miscellany
+		</p>
+		<ul role="list">
+			{links.map((link) => 
+				<li>
+					<a href={link.href}>
+						{link.label}
+					</a>
+				</li>
+			)}
+		</ul>
+	</nav>
+</header>
+
+<style>
+	header {
+		padding-block: 2rem;
+		/* border-bottom: 1px solid hsl(var(--color-copy), 0.1); */
+	}
+
+	nav {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: flex-end;
+		gap: 2rem;
+	}
+
+	ul {
+		padding: 0;
+		list-style: none;
+		display: flex;
+		gap: clamp(1rem, 2vw + 0.5rem, 2rem);
+	}
+</style>

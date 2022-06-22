@@ -1,0 +1,88 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import json from '@data/hikes.json';
+
+const title = 'Recent Hikes';
+const description = "John Eatmon's recent hikes throughout the state of Washington.";
+---
+
+<BaseLayout {title} {description}>
+	<section class="hero" aria-labelledby="#title">
+		<h1 id="title">Hikes</h1>
+		<small class="count">{json.length} hikes </small>
+	</section>
+	<section>
+		<table>
+			<thead>
+				<tr>
+					<th> Trail Name </th>
+					<th> Distance (mi) </th>
+					<th> Elevation (ft) </th>
+					<th> Date Hiked </th>
+				</tr>
+			</thead>
+			<tbody>
+				{json.map((hike) => 
+					<tr>
+						<td>
+							{hike.href ? (
+								<a href={hike.href}>
+									{hike.name}
+								</a>
+							) : (
+								{hike.name}
+							)}
+						</td>
+						<td>
+							{hike.miles}
+						</td>
+						<td>
+							{hike.elevation}
+						</td>
+						<td>
+							{hike.dateHiked}
+						</td>
+					</tr>
+				)}
+			</tbody>
+		</table>
+	</section>
+</BaseLayout>
+
+<style>
+	table {
+		border-collapse: collapse;
+		margin-block: 2rem;
+		display: block;
+		width: 100%;
+		white-space: nowrap;
+		overflow-x: auto;
+		font-size: 90%;
+		line-height: 1;
+
+		& th,
+		& td {
+			padding: 0.75rem;
+			border: 1px dashed hsl(var(--color-copy), 0.1);
+		}
+
+		& th {
+			background-color: hsl(var(--color-copy));
+			color: hsl(var(--color-bg));
+			text-align: right;
+
+			&:first-of-type {
+				text-align: left;
+			}
+		}
+
+		& td {
+			font-family: 'MD IO 0.4', var(--font-stack-mono);
+			text-align: right;
+
+			&:first-of-type {
+				text-align: left;
+			}
+		}
+	}
+</style>

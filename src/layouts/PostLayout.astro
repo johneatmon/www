@@ -1,0 +1,37 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import '@styles/prism-duotone-forest.css';
+import { parseHTML } from 'linkedom';
+import { machineDate, readableDate } from '@scripts/dates';
+
+const { content } = Astro.props;
+
+const { document } = parseHTML(content.astro.html);
+const title = document.querySelector('h1').innerHTML;
+const description = document.querySelector('p:first-of-type').innerHTML.slice(0, 152) + '...';
+---
+
+<BaseLayout {title} {description} type="article" section="Article" datePublished={content.published} dateModified={content.modified}>
+	<div class="content">
+		<slot />
+	</div>
+	<div class="content-footer">
+		<small>
+			<div>
+				Posted on <time datetime={machineDate(content.published)}>{readableDate(content.published)}</time>
+				{(content.modified) && (
+					<span>
+						&middot; Updated on <time datetime={machineDate(content.modified)}>{readableDate(content.modified)}</time>
+					</span>
+				)}
+			</div>
+			{(content.tags) && (
+				<div class="tags">
+					{content.tags.map((tag) =>
+						<span>#{tag}</span>
+					)}
+				</div>
+			)}
+		</small>
+	</div>
+</BaseLayout>

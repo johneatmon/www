@@ -1,29 +1,34 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import { Img } from 'astro-imagetools/components';
+import PostPreview from '@components/PostPreview.astro';
 
 const title = 'Content Strategy & Miscellany';
 const description =
 	'I’m a front-end web developer, designer, and content strategist living in Tacoma, WA.';
+
+const posts = await Astro.glob('./posts/*.md');
+const filteredPosts = await posts.filter((x) => x.frontmatter.draft != true);
 ---
 
 <BaseLayout {title} {description}>
-	<section aria-labelledby="#title">
-		<Img
-			src="/src/img/memoji.jpg"
-			alt="Memoji of me, John."
-			width={250}
-			height={250}
-			placeholder="none"
-			loading="eager"
-		/>
-
-		<h1 id="title">Hello, I’m John Eatmon.</h1>
-		<p>
-			I’m a content strategist from Orlando living in Tacoma. I dabble in front-end web development
-			and am passionate about typography, design, and music. When I’m not at my desk, I’m most
-			likely hiking around the beautiful state of WA.
-		</p>
-		<p>There’s not much on this page yet &mdash; but more will be added soon, I promise.</p>
+	<section class="hero" aria-labelledby="#title">
+		<h1 id="title">Writing</h1>
+		<small class="count">
+			{filteredPosts.length} posts
+		</small>
+	</section>
+	<section class="posts">
+		{filteredPosts.map((post) => 
+			<PostPreview post={post} />
+		)}
 	</section>
 </BaseLayout>
+
+<style>
+	.posts {
+		padding-block: 2rem;
+		display: flex;
+		flex-direction: column;
+		row-gap: 1rem;
+	}
+</style>
