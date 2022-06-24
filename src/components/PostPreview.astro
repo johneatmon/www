@@ -1,5 +1,4 @@
 ---
-import { parseHTML } from 'linkedom';
 import { machineDate, readableDate } from '@scripts/dates';
 
 export interface Props {
@@ -7,15 +6,12 @@ export interface Props {
 }
 
 const { post } = Astro.props as Props;
-
-const { document } = parseHTML(await post.compiledContent());
-const title = document.querySelector('h1').innerHTML;
 ---
 
 <div class="post">
 	<a href={post.url}>
 		<h2>
-			{title}
+			{post.frontmatter.title}
 		</h2>
 	</a>
 	<small>
