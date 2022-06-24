@@ -21,6 +21,8 @@ engagement:
 
 ProSource is an Orlando-based IT services company. Since 2006, they've helped healthcare, engineering, finance, and manufacturing companies unlock their full potential by providing IT solutions tailored for their specific industry.
 
+## Front-End Web Development
+
 The largest biggest pain point when I joined was the ProSource website; it had been written in Dreamweaver by a previous intern. It: a) was not accessible, b) had no SEO strategy whatsoever, and c) needed a facelift.
 
 <figure>
@@ -28,7 +30,7 @@ The largest biggest pain point when I joined was the ProSource website; it had b
     src='/src/img/projects/pstsonline.png'
     alt="A screenshot of the www.pstsonline.com website from December 2014, via the Internet Archive's wayback machine."
   />
-  <figcaption>A relic of the past: The original www.pstsonline.com was designed in Adobe Dreamweaver.</figcaption>
+  <figcaption>A relic of the past: the original www.pstsonline.com was designed in Adobe Dreamweaver.</figcaption>
 </figure>
 
 I won't dive into the *full* backstory of this web development project here. I have a separate post for that, which you can read [here](#). Instead, I want to focus on the process, stack, and outcomes.
