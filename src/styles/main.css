@@ -59,9 +59,9 @@ body {
 	font-family: var(--font-stack-sans);
 }
 
-main,
-header,
-footer {
+body > main,
+body > header,
+body > footer {
 	display: grid;
 	grid-template-columns: 1fr min(100% - 1rem, 75ch) 1fr;
 }
@@ -78,7 +78,7 @@ footer {
 
 .full-bleed {
 	width: 100%;
-	grid-column: 1 / -1;
+	grid-column: 1 / 4;
 }
 
 h1,
@@ -88,6 +88,7 @@ h4,
 h5,
 h6 {
 	font-weight: 700;
+	line-height: 1.2;
 }
 
 h1 {
@@ -123,34 +124,50 @@ a {
 	border-radius: 999em;
 }
 
-.content {
+article {
 	line-height: 170%;
 	padding-block: max(2vh, 2rem);
 
-	& > * + * {
-		margin-top: 2ex;
-	}
+	& main {
+		margin-top: 2rem;
 
-	& blockquote {
-		font-weight: 500;
-		font-style: italic;
-		color: hsl(var(--color-accent));
-		padding-block: 1rem;
-		max-width: 90%;
-		margin-inline: auto;
-		line-height: 200%;
-	}
+		& > * + * {
+			margin-top: 2ex;
+		}
 
-	& pre,
-	& code {
-		font-family: 'MD IO 0.4', var(--font-stack-mono);
-		padding: 1rem 0.75rem;
-		border-radius: 0.25rem;
-		margin-block: 1.5rem;
+		& figure {
+			padding-block: 1rem;
+
+			& figcaption {
+				font-size: 0.875rem;
+				opacity: 0.75;
+				margin-top: 2ex;
+				font-style: italic;
+				text-align: center;
+			}
+		}
+
+		& blockquote {
+			font-weight: 500;
+			font-style: italic;
+			color: hsl(var(--color-accent));
+			padding-block: 1rem;
+			max-width: 90%;
+			margin-inline: auto;
+			line-height: 200%;
+		}
+
+		& pre,
+		& code {
+			font-family: 'MD IO 0.4', var(--font-stack-mono);
+			padding: 1rem 0.75rem;
+			border-radius: 0.25rem;
+			margin-block: 1.5rem;
+		}
 	}
 }
 
-.content-footer {
+article footer {
 	margin-block: 1rem;
 	padding-block: 0.5rem;
 	border-top: 1px solid hsla(var(--color-copy), 0.1);
