@@ -9,9 +9,11 @@ export interface Props {
 	tags?: string[];
 	datePublished?: string;
 	dateModified?: string;
+	prev?: string;
+	next?: string;
 }
 
-const { title, description, type = "website", section, tags, datePublished, dateModified } = Astro.props as Props;
+const { title, description, type = "website", section, tags, datePublished, dateModified, prev, next } = Astro.props as Props;
 
 const image = {
 	href: `https://cdn.statically.io/og/${title}.jpg`,
@@ -29,6 +31,8 @@ const image = {
 ) : (
 	<meta name="robots" content="follow, noindex" />
 )}
+<meta name="copyright" content="J.M.A. Eatmon" />
+{type === "article" && <meta name="author" content="John Eatmon" />}
 
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content={type} />
@@ -45,7 +49,7 @@ const image = {
 	<meta property="og:image:height" content="630" />
 )}
 
-{(type === "article") && <meta property="article:publisher" content={Astro.canonicalURL} />}
+{(type === "article") && <meta property="article:publisher" content={Astro.site} />}
 {section && <meta property="article:section" content={section} />}
 {tags && (tags.map((tag) => 
 	<meta property="article:tag" content={tag} />
@@ -54,12 +58,16 @@ const image = {
 {dateModified && <meta property="article:modified_time" content={dateModified} />}
 
 <meta name="twitter:dnt" content="on" />
-<meta name="twitter:creator" content="@jmaeat" />
 <meta name="twitter:site" content="@jmaeat" />
+<meta name="twitter:creator" content="@jmaeat" />
+<meta name="twitter:domain" content="J.M.A. Eatmon" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:card" content={image ? "summary_large_image" : "summary"} />
-{image && (<meta name="twitter:image" content={image.href} />)}
+{image && (
+	<meta name="twitter:image" content={image.href} />
+	<meta name="twitter:image:alt" content={image.alt} />
+)}
 
 <meta name="theme-color" content="#1a1922" media="(prefers-color-scheme: dark)" />
 <meta name="theme-color" content="#e5e6dd" media="(prefers-color-scheme: light)" />
@@ -67,3 +75,6 @@ const image = {
 
 <link rel="canonical" href={Astro.canonicalURL} />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦙</text></svg>" />
+<link rel="sitemap" href={new URL('sitemap.xml', Astro.site).href} />
+{next && <link rel="next" aria-label="Previous Page" href={new URL(next, Astro.canonicalURL).href} />}
+{prev && <link rel="prev" aria-label="Next Page" href={new URL(prev, Astro.canonicalURL).href} />}
