@@ -1,4 +1,5 @@
 ---
+// @prettier-ignore
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { Img } from 'astro-imagetools/components';
 import { Markdown } from 'astro/components';
@@ -15,10 +16,11 @@ const description = 'Everything you never needed to know about me, John Eatmon.'
 		preload="avif"
 		loading="eager"
 	/>
-	<section class="content">
-		<!-- @prettier-ignore -->
-		<Markdown set:html={about.rawContent()}>
+	<article>
+		<main>
+			<Markdown set:html={about.rawContent()}>
 
-		</Markdown>
-	</section>
+			</Markdown>
+		</main>
+	</article>
 </BaseLayout>
