@@ -3,7 +3,7 @@ layout: ../../layouts/ProjectLayout.astro
 setup: |
   import { Img } from 'astro-imagetools/components';
 title: ProSource (Website)
-description: ProSource delivers tailored IT solutions to healthcare, finance, engineering, and manufacturing firms.
+description: A new marketing website for a huge rebrand.
 published: 2022-06-23
 image:
   href: /src/img/projects/getprosource_hero.png
