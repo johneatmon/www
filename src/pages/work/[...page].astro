@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import { Img } from 'astro-imagetools/components';
+import ProjectPreview from '@components/ProjectPreview.astro';
 
 export async function getStaticPaths({ paginate }) {
 	let allProjects = await Astro.glob('./*.md')
@@ -28,16 +28,7 @@ const description = 'Things I\'ve worked on.';
 	</section>
 	<section class="projects">
 		{page.data.map((project) =>
-			<a href={project.url} class="project">
-				<Img
-					src={project.frontmatter.image.href}
-					alt={project.frontmatter.image.alt}
-					preload="avif"
-					loading="lazy"
-				/>
-				<h3>{project.frontmatter.title}</h3>
-				<span>&nbsp;— {project.frontmatter.description}</span>
-			</a>
+			<ProjectPreview {project} />
 		)}
 		<div></div>
 		<div></div>
@@ -54,23 +45,5 @@ const description = 'Things I\'ve worked on.';
 		/* min() with 100% prevents overflow
 		in extra narrow spaces */
 		grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
-	}
-
-	.project {
-		text-decoration: none;
-
-		& * {
-			opacity: 0.9;
-		}
-
-		&:hover * {
-			opacity: 1;
-		}
-		
-		& h3 {
-			display: inline-block;
-			margin-top: 1rem;
-			font-size: 1rem;
-		}
 	}
 </style>
