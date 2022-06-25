@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   astro: 1.0.0-beta.50
   astro-compress: ^0.0.11
+  astro-critters: ^0.0.8
   astro-icon: ^0.7.1
   astro-imagetools: ^0.6.10
   astro-robots-txt: ^0.3.3
@@ -17,6 +18,7 @@ specifiers:
 dependencies:
   astro: 1.0.0-beta.50
   astro-compress: 0.0.11
+  astro-critters: 0.0.8
   astro-icon: 0.7.1
   astro-imagetools: 0.6.10_astro@1.0.0-beta.50
   astro-robots-txt: 0.3.3
@@ -1164,6 +1166,13 @@ packages:
       terser: 5.14.1
     dev: false
 
+  /astro-critters/0.0.8:
+    resolution: {integrity: sha512-EjOhQIKedMeE32u1O8/mci158jLzsD+yW1UXmxb1LYUjGoL645Cp4PBZz49J49PDjHc2wPRWPFvlH8KcvnUBog==}
+    dependencies:
+      critters: 0.0.16
+      fast-glob: 3.2.11
+    dev: false
+
   /astro-icon/0.7.1:
     resolution: {integrity: sha512-EdWXi3j0fkFgzdhyxqGbaDPdpLb5y593E6e5zvxW8PL/6DjW/x2OhtaTuTMV5xRUCUsfzwOhXiW6EYa+EBTwJw==}
     dependencies:
@@ -1561,6 +1570,17 @@ packages:
     resolution: {integrity: sha512-+OQdjP49zViI/6i7nIJpA8rAl4sV/JdPfU9nZs3VqOwGIgizICvuN2ru6fMd+4llL0tar18UYJXfZ/TWtmhUjA==}
     dependencies:
       safe-buffer: 5.1.2
+    dev: false
+
+  /critters/0.0.16:
+    resolution: {integrity: sha512-JwjgmO6i3y6RWtLYmXwO5jMd+maZt8Tnfu7VVISmEWyQqfLpB8soBswf8/2bu6SBXxtKA68Al3c+qIG1ApT68A==}
+    dependencies:
+      chalk: 4.1.2
+      css-select: 4.3.0
+      parse5: 6.0.1
+      parse5-htmlparser2-tree-adapter: 6.0.1
+      postcss: 8.4.14
+      pretty-bytes: 5.6.0
     dev: false
 
   /cross-spawn/7.0.3:
@@ -3817,6 +3837,12 @@ packages:
       protocols: 1.4.8
     dev: false
 
+  /parse5-htmlparser2-tree-adapter/6.0.1:
+    resolution: {integrity: sha512-qPuWvbLgvDGilKc5BoicRovlT4MtYT6JfJyBOMDsKoiT+GiuP5qyrPCnR9HcPECIJJmZh5jRndyNThnhhb/vlA==}
+    dependencies:
+      parse5: 6.0.1
+    dev: false
+
   /parse5/6.0.1:
     resolution: {integrity: sha512-Ofn/CTFzRGTTxwpNEs9PP93gXShHcTq255nzRYSKe8AkVpZY7e1fpmTfOyoIvjP5HG7Z2ZM7VS9PPhQGW2pOpw==}
     dev: false
@@ -4311,6 +4337,11 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
+
+  /pretty-bytes/5.6.0:
+    resolution: {integrity: sha512-FFw039TmrBqFK8ma/7OL3sDz/VytdtJr044/QUJtH0wK9lb9jLq9tJyIxUwtQJHwar2BqtiA4iCWSwo9JLkzFg==}
+    engines: {node: '>=6'}
+    dev: false
 
   /prismjs/1.28.0:
     resolution: {integrity: sha512-8aaXdYvl1F7iC7Xm1spqSaY/OJBpYW3v+KJ+F17iYxvdc8sfjW194COK5wVhMZX45tGteiBQgdvD/nhxcRwylw==}
