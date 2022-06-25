@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import { astroImageTools } from 'astro-imagetools';
 import compress from 'astro-compress';
+import critters from 'astro-critters';
 import robotsTxt from 'astro-robots-txt';
 import sitemap from 'astro-sitemap';
 
@@ -15,6 +16,7 @@ export default defineConfig({
 	integrations: [
 		astroImageTools,
 		compress({ html: false, img: false, svg: false }),
+		critters(),
 		robotsTxt(),
 		sitemap(),
 	],
