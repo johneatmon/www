@@ -163,7 +163,7 @@ article {
 		margin-top: 2rem;
 
 		& .callout {
-			background-color: hsl(var(--color-copy), 0.3);
+			background-color: hsl(var(--color-copy), 0.25);
 			padding: 1.5rem;
 			margin-block: 1rem;
 			border-radius: 0.25rem;
