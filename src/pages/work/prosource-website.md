@@ -51,7 +51,7 @@ Around 2019 — before I was made Content Strategist — the company engaged an 
   <figcaption>The second iteration of the ProSource website offered a significant improvement. Via <a href="https://web.archive.org/web/20191213101208/https://www.pstsonline.com/" rel="nofollow noopener noreferer">Internet Archive.</a></figcaption>
 </figure>
 
-In 2021, ProSource underwent a [huge rebrand project](#) &mdash; its biggest in 15 years. We evaluated our client base, our existing brand messaging, and website copy. We decided to focus on the four industries we knew we could serve best: healthcare, engineering, finance, and manufacturing.
+In 2021, ProSource underwent a [huge rebrand project](#) &mdash; its biggest in 15 years. We evaluated our existing clients, brand messaging, and website copy. We decided to focus on the four industries we knew we could serve best: healthcare, engineering, finance, and manufacturing.
 
 Another website iteration was in order. This time, we wouldn't be using Pronto and decided to bring it in house. It was at this point that I became the Content Strategist, and the website would be my first major project alongside the rebrand.
 
@@ -59,7 +59,11 @@ Another website iteration was in order. This time, we wouldn't be using Pronto a
 
 Very little was salvageable from the earlier websites. Because the rebrand shifted our entire target audience and message, everything had to be created from scratch. The only items we were able to reuse were some of the blogs written and posted by Pronto and some collateral pieces (which also had to be rebranded) that could be gated behind a form for email capture.
 
+### Design
+
 I helped write copy for the entire site. We also employed a marketing firm named [Bluleadz](https://www.bluleadz.com/) to help us write case studies for the website launch. At every step, we gathered feedback from a small handful of our customers, especially the ones occupying the industries we were targeting. This feedback was instrumental to help us remove IT jargon and present a more human-friendly design.
+
+Designs were created in Figma and sent to the team and our clients for review. I didn't worry too much about pixel-perfect wireframes, I knew there would be decisions I would make last-minute while coding up the designs.
 
 <figure>
   <Img
@@ -108,8 +112,6 @@ This stack was excellent to help me iterate on designs quickly. However, if I ha
 - Our company needed a two-factor authentication (2FA) webform to capture customer details when they enrolled. I used the [IT Glue](https://itglue.com/) REST API to parse and prettify data sent to our company knowledge base. At the time of writing, this has collected over 180 submissions successfully.
 - Launched with keyword-focused copy and optimized technical/content SEO.
 
-&rarr; [Visit the live website](https://www.getprosource.com/)
-
 <figure>
   <Img
     src='/src/img/projects/lighthouse_scores.png'
@@ -119,6 +121,8 @@ This stack was excellent to help me iterate on designs quickly. However, if I ha
   />
   <figcaption>Early Google Lighthouse scores at website relaunch. Caveat, there may be some perf regressions since.</figcaption>
 </figure>
+
+&rarr; [Visit the live website](https://www.getprosource.com/)
 
 ### What's Next?
 
