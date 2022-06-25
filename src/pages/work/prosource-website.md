@@ -6,7 +6,7 @@ title: ProSource (Website)
 description: A new marketing website for a huge rebrand.
 published: 2022-06-23
 image:
-  href: /src/img/projects/getprosource_hero.png
+  href: /src/img/projects/prosource-website/getprosource_hero.png
   alt: Screenshots of the live ProSource website in light mode and dark mode color schemes.
 tags: 
   - Front-End Web Development
@@ -31,7 +31,7 @@ The biggest pain point when I started as an intern way back in 2014 was the webs
 
 <figure>
   <Img
-    src='/src/img/projects/pstsonline.png'
+    src='/src/img/projects/prosource-website/pstsonline.png'
     alt="A screenshot of the www.pstsonline.com website from December 2014, via the Internet Archive's Wayback Machine."
     preload="avif"
     loading="lazy"
@@ -43,7 +43,7 @@ Around 2019 — before I was made Content Strategist — the company engaged an 
 
 <figure>
   <Img
-    src='/src/img/projects/pstsonline_2.png'
+    src='/src/img/projects/prosource-website/pstsonline_2.png'
     alt="A screenshot of the second www.pstsonline.com website interface from December 2019, via the Internet Archive's Wayback Machine."
     preload="avif"
     loading="lazy"
@@ -67,7 +67,7 @@ Designs were created in Figma and sent to the team and our clients for review. I
 
 <figure>
   <Img
-    src='/src/img/projects/getprosource_wireframes.png'
+    src='/src/img/projects/prosource-website/getprosource_wireframes.png'
     alt="Wireframe mock-ups designed in Figma. The wireframes are mega menu components in light mode and dark mode color schemes."
     preload="avif"
     loading="lazy"
@@ -85,7 +85,7 @@ By late August, things were running smoothly. At first, I struggled with the Ast
 
 <figure>
   <Img
-    src='/src/img/projects/getprosource_lightmode_darkmode.png'
+    src='/src/img/projects/prosource-website/getprosource_lightmode_darkmode.png'
     alt="Screenshots of the live ProSource website in light mode and dark mode color schemes."
     preload="avif"
     loading="lazy"
@@ -114,7 +114,7 @@ This stack was excellent to help me iterate on designs quickly. However, if I ha
 
 <figure>
   <Img
-    src='/src/img/projects/lighthouse_scores.png'
+    src='/src/img/projects/prosource-website/lighthouse_scores.png'
     alt="The Google Lighthouse scores for www.getprosource.com. The Performance score is 97/100, the Accessibility score is 100/100, the Best Practices score is 100/100, and the SEO score is 100/100."
     preload="avif"
     loading="lazy"
