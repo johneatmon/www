@@ -159,6 +159,11 @@ article {
 	line-height: 170%;
 	padding-block: max(2vh, 2rem);
 
+	& h3 {
+		border-bottom: 1px solid hsl(var(--color-copy), 0.1);
+		padding-bottom: 0.25rem;
+	}
+
 	& main {
 		margin-top: 2rem;
 
