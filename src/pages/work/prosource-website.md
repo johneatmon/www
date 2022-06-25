@@ -51,7 +51,7 @@ Around 2019 — before I was made Content Strategist — the company engaged an 
   <figcaption>The second iteration of the ProSource website offered a significant improvement. Via <a href="https://web.archive.org/web/20191213101208/https://www.pstsonline.com/" rel="nofollow noopener noreferer">Internet Archive.</a></figcaption>
 </figure>
 
-In 2021, ProSource underwent a [huge rebrand project](#) &mdash; its biggest in 15 years. We evaluated our existing clients, brand messaging, and website copy. We decided to focus on the four industries we knew we could serve best: healthcare, engineering, finance, and manufacturing.
+In 2021, ProSource underwent a [huge rebrand project](/work/prosource-rebrand) &mdash; its biggest in 15 years. We evaluated our existing clients, brand messaging, and website copy. We decided to focus on the four industries we knew we could serve best: healthcare, engineering, finance, and manufacturing.
 
 Another website iteration was in order. This time, we wouldn't be using Pronto and decided to bring it in house. It was at this point that I became the Content Strategist, and the website would be my first major project alongside the rebrand.
 
