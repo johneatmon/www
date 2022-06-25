@@ -19,9 +19,12 @@ const { content } = Astro.props;
 			<h1>
 				{content.title}
 			</h1>
-			<p class="roles">
+			<p class="lede">
 				<strong>Roles:</strong>&nbsp;
 				{content.tags.map((tag) => <span>{tag}</span><span class="dividers">&nbsp;&middot;&nbsp;</span>)}
+				<br />
+				<strong>Period:</strong>&nbsp;
+				{content.period.from}&ndash;{content.period.to}
 			</p>
 			<Img
 				src={content.image.href}
@@ -38,7 +41,7 @@ const { content } = Astro.props;
 		<main>
 			<slot />
 		</main>
-		<footer class="content-footer">
+		<footer>
 			<small>
 				<div>
 					Posted on <time datetime={machineDate(content.published)}>{readableDate(content.published)}</time>
@@ -61,15 +64,11 @@ const { content } = Astro.props;
 </BaseLayout>
 
 <style>
-	h1 {
-		margin-bottom: 1ex;
+	.lede {
+		margin-block: 1em;
 	}
 
-	.roles {
-		margin-bottom: 2ex;
-	}
-
-	.dividers:last-child {
+	.dividers:last-of-type {
 		display: none;
 	}
 </style>
