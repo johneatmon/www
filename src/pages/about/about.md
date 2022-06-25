@@ -6,9 +6,9 @@ Feel free to follow me on [Twitter](https://twitter.com/jmaeat) or [GitHub](http
 
 ## Colophon
 
-This website is built with [Astro](https://astro.build/), a small amount of CSS, and almost no JavaScript (I’m not very good at it anyway). There are no trackers or ads on this site — rejoice!
+This website is built with [Astro](https://astro.build/), a dash of CSS, and a hint of JavaScript. This site is hosted for free by [Netlify](https://www.netlify.com/). There are no trackers or ads on this site — rejoice!
 
-This site is set in [General Sans](https://www.fontshare.com/fonts/general-sans) by Indian Type Foundry.
+This site is set in [Gambetta](https://www.fontshare.com/fonts/gambetta) by Indian Type Foundry.
 
 <!-- ## Contact
 
