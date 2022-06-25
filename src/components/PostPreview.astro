@@ -10,9 +10,9 @@ const { post } = Astro.props as Props;
 
 <div class="post">
 	<a href={post.url}>
-		<h2>
+		<h3>
 			{post.frontmatter.title}
-		</h2>
+		</h3>
 	</a>
 	<small>
 		<time datetime={machineDate(post.frontmatter.published)}>
@@ -30,8 +30,8 @@ const { post } = Astro.props as Props;
 		flex-wrap: wrap;
 		padding-block: 1rem;
 
-		& h2 {
-			font-weight: 700;
+		& h3 {
+			font-size: var(--type-step-1);
 		}
 	}
 
