@@ -22,7 +22,7 @@ const description = "John Eatmon's recent hikes throughout the state of Washingt
 				</tr>
 			</thead>
 			<tbody>
-				{json.map((hike) => 
+				{json.sort((a, b) => new Date(b.dateHiked).valueOf() - new Date(a.dateHiked).valueOf()).map((hike) => 
 					<tr>
 						<td>
 							{hike.href ? (
