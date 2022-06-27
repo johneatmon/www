@@ -26,9 +26,12 @@ const description = "John Eatmon's recent hikes throughout the state of Washingt
 					<tr>
 						<td>
 							{hike.href ? (
-								<a href={hike.href}>
-									{hike.name}
-								</a>
+								<p>
+									<a class="trail-link" href={hike.href} rel="nofollow noopener noreferer" target="_blank">
+										{hike.name}
+									</a>
+									&nearr;
+								</p>
 							) : (
 								{hike.name}
 							)}
@@ -84,5 +87,8 @@ const description = "John Eatmon's recent hikes throughout the state of Washingt
 				text-align: left;
 			}
 		}
+
+	.trail-link {
+		display: inline-block;
 	}
 </style>
