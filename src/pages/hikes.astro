@@ -15,15 +15,18 @@ const description = "John Eatmon's recent hikes throughout the state of Washingt
 		<table>
 			<thead>
 				<tr>
+					<th> Date Hiked </th>
 					<th> Trail Name </th>
 					<th> Distance (mi) </th>
 					<th> Elevation (ft) </th>
-					<th> Date Hiked </th>
 				</tr>
 			</thead>
 			<tbody>
 				{json.sort((a, b) => new Date(b.dateHiked).valueOf() - new Date(a.dateHiked).valueOf()).map((hike) => 
 					<tr>
+						<td>
+							{hike.dateHiked}
+						</td>
 						<td>
 							{hike.href ? (
 								<p>
@@ -41,9 +44,6 @@ const description = "John Eatmon's recent hikes throughout the state of Washingt
 						</td>
 						<td>
 							{hike.elevation}
-						</td>
-						<td>
-							{hike.dateHiked}
 						</td>
 					</tr>
 				)}
