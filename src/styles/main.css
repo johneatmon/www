@@ -25,7 +25,8 @@
 	--font-stack-serif: 'Gambetta', 'Iowan Old Style', 'Apple Garamond', 'Baskerville',
 		'Times New Roman', 'Droid Serif', 'Times', 'Source Serif Pro', serif, 'Apple Color Emoji',
 		'Segoe UI Emoji', 'Segoe UI Symbol';
-	--font-stack-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+	--font-stack-mono: 'MD IO 0.4', Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+		monospace;
 
 	--type-step--1: clamp(0.83rem, calc(0.79rem + 0.2vw), 0.94rem);
 	--type-step-0: clamp(1rem, calc(0.95rem + 0.24vw), 1.13rem);
