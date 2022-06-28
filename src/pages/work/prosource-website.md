@@ -78,7 +78,7 @@ I didn't worry too much about creating pixel-perfect designs. I like to leave a 
 
 I knew I didn't want to work with WordPress again after our last experience. One day, while exploring GitHub, I stumbled upon [Astro](https://astro.build/). Astro is a newer static site generator (SSG) promising better developer experience. At the time, Astro was in early beta. Up for a challenge and against a tight deadline, I took a risk using beta software. I'm so glad I did.
 
-Development begin in mid-summer 2021. By late August, things were firing on all cylinders. Astro's templating syntax made development much faster than WordPress' disjointed approach. The wonderful [Astro Discord community](https://astro.build/chat) helped me out whenever I got stuck, enhancing my experience further.
+Development began in mid-summer 2021. By late August, things were firing on all cylinders. Astro's templating syntax made development much faster than WordPress' disjointed approach. The wonderful [Astro Discord community](https://astro.build/chat) helped me out whenever I got stuck, enhancing my experience further.
 
 In early September, the new site launched to coincide with our rebrand debut. It was a massive amount of work, but I managed to pull it off with the help of my team.
 
