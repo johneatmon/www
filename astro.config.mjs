@@ -18,6 +18,7 @@ export default defineConfig({
 		astroImageTools,
 		AutoImport({
 			imports: [
+				'./src/components/Figure.astro',
 				{
 					'astro-imagetools/components': ['Img'],
 					'astro-icon': ['Icon'],
