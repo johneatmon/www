@@ -23,7 +23,7 @@ const { content } = Astro.props;
 				{content.tags.map((tag) => <span>{tag}</span><span class="dividers">&nbsp;&middot;&nbsp;</span>)}
 				<br />
 				<strong>Period:</strong>&nbsp;
-				{content.period.from}&ndash;{content.period.to}
+				{content.period.from}{(content.period.to) && <span>&ndash;{content.period.to}</span>}
 			</p>
 			<Img
 				src={content.image.href}
