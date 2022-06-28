@@ -3,6 +3,7 @@ layout: ../../layouts/ProjectLayout.astro
 title: ProSource (Website)
 description: A new marketing website for a huge rebrand.
 published: 2022-06-23
+modified: 2022-06-27
 image:
   href: /src/img/projects/prosource-website/getprosource_hero.png
   alt: Screenshots of the live ProSource website in light mode and dark mode color schemes.
@@ -15,81 +16,80 @@ period:
   to: present
 ---
 
-ProSource is an Orlando-based IT services company. Since 2006, they've helped healthcare, engineering, finance, and manufacturing companies unlock their full potential by providing IT solutions tailored to their specific industry.
+ProSource provides IT services for healthcare, engineering, finance, and manufacturing companies.
 
 ## Background
 
-I started working at ProSource as an intern way back in 2014. After a brief spell away for school, I worked in various capacities for the company.
+The biggest pain point when I started as an intern way back in 2014 was the website. A previous intern created it in Adobe Dreamweaver. It was not accessible, had no SEO strategy, and needed a design refresh.
 
-In October of 2020, I became the first Content Strategist for ProSource. This post will primarily cover my content strategy role from 2020 onward.
+<Figure
+  image={{
+    href: "/src/img/projects/prosource-website/pstsonline.png",
+    alt: "A screenshot of the www.pstsonline.com website from December 2014, via the Internet Archive's Wayback Machine."
+  }}
+>
+  A relic of the past &mdash; the original ProSource site was written in Dreamweaver. Via <a href="https://web.archive.org/web/20150710010642/http://www.pstsonline.com/" rel="nofollow noopener noreferer">Internet Archive.</a>
+</Figure>
 
-<p class="callout">I have a separate post that delves into the <em>full</em> backstory of this project for ProSource, which you can <a href="#">read here</a>. This post will instead focus on the process, tech stack, and outcomes.</p>
+In 2019, ProSource hired a marketing firm to update the website. Hiring an outside firm didn't yield better results. All change requests or layout tweaks had to flow through the marketing firm, so they took way too long. The outside firm also didn't understand our message, services, and clients like we did.
 
-The biggest pain point when I started as an intern way back in 2014 was the website; it had been written in Adobe Dreamweaver by a previous intern. It was not accessible, had no SEO strategy, and needed a design refresh.
+<Figure
+  image={{
+    href: "/src/img/projects/prosource-website/pstsonline_2.png",
+    alt: "A screenshot of the second www.pstsonline.com website interface from December 2019, via the Internet Archive's Wayback Machine."
+  }}
+>
+  The second iteration of the ProSource website offered a significant improvement. Via <a href="https://web.archive.org/web/20191213101208/https://www.pstsonline.com/" rel="nofollow noopener noreferer">Internet Archive.</a>
+</Figure>
 
-<figure>
-  <Img
-    src='/src/img/projects/prosource-website/pstsonline.png'
-    alt="A screenshot of the www.pstsonline.com website from December 2014, via the Internet Archive's Wayback Machine."
-    preload="avif"
-    loading="lazy"
-  />
-  <figcaption>A relic of the past &mdash; the original ProSource site was written in Dreamweaver. Via <a href="https://web.archive.org/web/20150710010642/http://www.pstsonline.com/" rel="nofollow noopener noreferer">Internet Archive.</a></figcaption>
-</figure>
-
-Around 2019 — before I was made Content Strategist — the company engaged an IT-focused marketing/web design firm called Pronto Marketing. They created custom WordPress themes and hosted them in a multi-site environment. While this was much better than the site from 2014, our company hated how slowly changes and requests were implemented. Moreover, big changes were brewing.
-
-<figure>
-  <Img
-    src='/src/img/projects/prosource-website/pstsonline_2.png'
-    alt="A screenshot of the second www.pstsonline.com website interface from December 2019, via the Internet Archive's Wayback Machine."
-    preload="avif"
-    loading="lazy"
-  />
-  <figcaption>The second iteration of the ProSource website offered a significant improvement. Via <a href="https://web.archive.org/web/20191213101208/https://www.pstsonline.com/" rel="nofollow noopener noreferer">Internet Archive.</a></figcaption>
-</figure>
-
-In 2021, ProSource underwent a [huge rebrand project](/work/prosource-rebrand) &mdash; its biggest in 15 years. We evaluated our existing clients, brand messaging, and website copy. We decided to focus on the four industries we knew we could serve best: healthcare, engineering, finance, and manufacturing.
-
-Another website iteration was in order. This time, we wouldn't be using Pronto and decided to bring it in house. It was at this point that I became the Content Strategist, and the website would be my first major project alongside the rebrand.
+A [huge rebrand](/work/prosource-rebrand) in 2021, and a decision to redo the website in-house, became my first major projects as newly-appointed Content Strategist.
 
 ## Process
 
-Very little was salvageable from the earlier websites. Because the rebrand shifted our entire target audience and message, everything had to be created from scratch. The only items we were able to reuse were some of the blogs written and posted by Pronto and some collateral pieces (which also had to be rebranded) that could be gated behind a form for email capture.
+I began by taking stock of all existing content. I tagged everything for rework, reuse, or refuse. Very little was salvageable from the previous website iterations.
+
+I created a sitemap and sorted salvageable content under the appropriate page. We outsourced copy for critical pages to a marketing firm to speed things up.
 
 ### Design
 
-I helped write copy for the entire site. We also employed a marketing firm named [Bluleadz](https://www.bluleadz.com/) to help us write case studies for the website launch. At every step, we gathered feedback from a small handful of our customers, especially the ones occupying the industries we were targeting. This feedback was instrumental to help us remove IT jargon and present a more human-friendly design.
+Using Figma, I created wireframes to roughly place elements on each page. This helped me determine the amount of marketing copy needed to fill in the blanks. After I finished each page, I sent it to a small group of customers for feedback. The feedback helped us reduce IT jargon and build a more approachable design.
 
-Designs were created in Figma and sent to the team and our clients for review. I didn't worry too much about pixel-perfect wireframes, I knew there would be decisions I would make last-minute while coding up the designs.
+I didn't worry too much about creating pixel-perfect designs. I like to leave a little wiggle room for last-minute tweaks while coding up the designs.
 
-<figure>
-  <Img
-    src='/src/img/projects/prosource-website/getprosource_wireframes.png'
-    alt="Wireframe mock-ups designed in Figma. The wireframes are mega menu components in light mode and dark mode color schemes."
-    preload="avif"
-    loading="lazy"
-  />
-  <figcaption>Some early Figma mock-ups of navigation components using the new ProSource branding.</figcaption>
-</figure>
+<Figure 
+  image={{
+    href: "/src/img/projects/prosource-website/getprosource_wireframes.png",
+    alt: "Wireframe mock-ups designed in Figma. The wireframes are mega menu components in light mode and dark mode color schemes."
+  }}
+>
+  Some early Figma mock-ups of navigation components using the new ProSource branding.
+</Figure>
+
+<Figure
+  image={{
+    href: "/src/img/projects/prosource-website/getprosource_wireframes_2.png",
+    alt: "Wireframe mock-ups designed in Figma. ProSource team members' profile photos with colorful backgrounds are set in two color schemes, light mode and dark mode."
+  }}
+>
+  Testing bold, bright colors behind profile pictures to give each team member a bit of personality.
+</Figure>
 
 ### Development
 
-Initially, I was going to create a custom WordPress theme using Roots' [Sage](https://roots.io/sage) and [Bedrock](https://roots.io/bedrock) packages. But after discovering [Astro](https://astro.build/) — a newer static site generator (SSG) — I knew it would be the faster tooling I needed.
+I knew I didn't want to work with WordPress again after our last experience. One day, while exploring GitHub, I stumbled upon [Astro](https://astro.build/). Astro is a newer static site generator (SSG) promising better developer experience. At the time, Astro was in early beta. Up for a challenge and against a tight deadline, I took a risk using beta software. I'm so glad I did.
 
-Development began in mid-summer 2021 while Astro was still in beta. Though it was risky to use beta software for a company website, I was willing to take the risk to meet a tight deadline. I am so glad I did.
+Development begin in mid-summer 2021. By late August, things were firing on all cylinders. Astro's templating syntax made development much faster than WordPress' disjointed approach. The wonderful [Astro Discord community](https://astro.build/chat) helped me out whenever I got stuck, enhancing my experience further.
 
-By late August, things were running smoothly. At first, I struggled with the Astro syntax, but I quickly overcame these hurdles. After countless development hours in a few months' time, the new site was ready to go live.
+In early September, the new site launched to coincide with our rebrand debut. It was a massive amount of work, but I managed to pull it off with the help of my team.
 
-<figure>
-  <Img
-    src='/src/img/projects/prosource-website/getprosource_lightmode_darkmode.png'
-    alt="Screenshots of the live ProSource website in light mode and dark mode color schemes."
-    preload="avif"
-    loading="lazy"
-  />
-  <figcaption>The current ProSource website might be the only IT services provider website I've seen with dark mode.</figcaption>
-</figure>
+<Figure
+  image={{
+    href: "/src/img/projects/prosource-website/getprosource_lightmode_darkmode.png",
+    alt: "Screenshots of the live ProSource website in light mode and dark mode color schemes."
+  }}
+>
+  The current ProSource website might be the only IT services provider website I've seen with dark mode.
+</Figure>
 
 We launched in early September to coincide with our rebrand debut. It was a massive amount of work, but I managed to pull it off with the help of my team.
 
@@ -97,33 +97,33 @@ We launched in early September to coincide with our rebrand debut. It was a mass
 
 The following technologies were used to create the website:
 
-- [Astro](https://astro.build/) — a new static-site generator that promises "powerful developer experience." So far, it's lived up to its messaging and the Discord community has been a wonderful resource.
-- [Tailwind CSS](https://tailwindcss.com/) — the utility-first CSS framework. Though controversial in the web dev spheres, its power to iterate and design quickly helped tremendously with this project.
-- [Netlify + Functions & Forms](https://www.netlify.com/) — a jamstack-focused website host. I loved working with the [Netlify CLI](https://cli.netlify.com/) and I like the admin dashboard interface much more than other competitors. I used Netlify Forms to wire up the HTML forms and used Netlify Functions to handle any API requests to our documentation tool or HubSpot CRM.
+- [Astro](https://astro.build/) — a new static-site generator that promises "powerful developer experience." So far, it's lived up to its messaging and the community around it has made me so excited about web development.
+- [Tailwind CSS](https://tailwindcss.com/) — the utility-first CSS framework. Though controversial, the tool's power to iterate and design quickly helped a lot with this project.
+- [Netlify + Functions & Forms](https://www.netlify.com/) — a [jamstack](https://jamstack.org/what-is-jamstack/)-focused platform. I loved working with the [Netlify CLI](https://cli.netlify.com/) during development. I find Netlify's admin dashboard  much more intuitive to use than the competitors as well. I used Netlify Forms to wire up HTML forms on the site. Netlify Functions securely handle any API requests to our documentation tool or HubSpot CRM.
 
-This stack was excellent to help me iterate on designs quickly. However, if I had more time or could redo it, I would've added a headless CMS (like Strapi or Netlify CMS) to the mix. Astro can consume markdown frontmatter to easily stub out templated content (like blogs, case studies, etc.), but it becomes tough to wrangle frontmatter that a CMS could handle much better when you have large amounts of content.
+This stack was excellent to help me iterate on designs quickly. However, if I had more time or could redo it, I would've added a headless CMS (like Strapi or Netlify CMS) to the mix. Astro consumes markdown frontmatter well, but it becomes burdensome to keep it all consistent when you have a lot of content.
 
 ## Outcomes
 
-- Created 60+ pages of content, much of which needed new marketing copy, brand direction, and stock photography.
-- Used Netlify Functions to create API requests to HubSpot CRM — for email newsletter enrollments and our contact form.
-- Our company needed a two-factor authentication (2FA) webform to capture customer details when they enrolled. I used the [IT Glue](https://itglue.com/) REST API to parse and prettify data sent to our company knowledge base. At the time of writing, this has collected over 180 submissions successfully.
-- Launched with keyword-focused copy and optimized technical/content SEO.
+- Designed 60+ pages of content, much of which needed new marketing copy, brand direction, and stock photography.
+- Used Netlify Functions to create API requests to HubSpot CRM for email newsletter enrollments and the contact form.
+- Our company needed a two-factor authentication (2FA) enrollment webform. I used Netlify Functions to parse and prettify data before being sent to our knowledge base platform, [IT Glue](https://itglue.com/). At the time of writing, this has collected over 180 submissions successfully.
+- Launched the new website with keyword-focused copy, improved technical SEO, and an ongoing content marketing strategy.
 
-<figure>
-  <Img
-    src='/src/img/projects/prosource-website/lighthouse_scores.png'
-    alt="The Google Lighthouse scores for www.getprosource.com. The Performance score is 97/100, the Accessibility score is 100/100, the Best Practices score is 100/100, and the SEO score is 100/100."
-    preload="avif"
-    loading="lazy"
-  />
-  <figcaption>Early Google Lighthouse scores at website relaunch. Caveat, there may be some perf regressions since.</figcaption>
-</figure>
+<Figure
+  image={{
+    href: "/src/img/projects/prosource-website/lighthouse_scores.png",
+    alt: "The Google Lighthouse scores for www.getprosource.com. The Performance score is 97/100, the Accessibility score is 100/100, the Best Practices score is 100/100, and the SEO score is 100/100."
+  }}
+>
+  Early Google Lighthouse scores at website relaunch. Caveat, there may be some perf regressions since.
+</Figure>
+
 
 &rarr; [Visit the live website](https://www.getprosource.com/)
 
 ### What's Next?
 
-Since the September 2021 launch, many more iterations have been pushed through the pipeline. When I'm working on new design directions and code functionality, I use Netlify's Branch Deploy feature to test.
+Since September 2021, I've pushed many more iterations through the pipeline. I use Netlify's Branch Deploy feature to test new designs and code before modifying the live site.
 
-Currently, an experimental version of the site [exists here](https://next--getprosource.netlify.app/).
+This experimental branch of the ProSource website [exists here](https://next--getprosource.netlify.app/).
