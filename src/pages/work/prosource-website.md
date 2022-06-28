@@ -1,7 +1,5 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
-setup: |
-  import { Img } from 'astro-imagetools/components';
 title: ProSource (Website)
 description: A new marketing website for a huge rebrand.
 published: 2022-06-23

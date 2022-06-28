@@ -1,7 +1,5 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
-setup: |
-  import { Img } from 'astro-imagetools/components';
 title: ProSource (Rebrand)
 description: A new brand for a new focus.
 published: 2022-06-25
