@@ -21,7 +21,7 @@ Feel free to follow me on [Twitter](https://twitter.com/jmaeat) or [GitHub](http
 
 This website is built with [Astro](https://astro.build/), a dash of CSS, and a hint of JavaScript. This site is hosted for free by [Netlify](https://www.netlify.com/). There are no trackers or ads on this site — rejoice!
 
-This site is set in [Gambetta](https://www.fontshare.com/fonts/gambetta) by Indian Type Foundry.
+This site is typeset in [Gambetta](https://www.fontshare.com/fonts/gambetta) by Indian Type Foundry.
 
 <!-- ## Contact
 
