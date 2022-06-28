@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   astro: 1.0.0-beta.56
+  astro-auto-import: ^0.1.2
   astro-compress: ^0.0.11
   astro-critters: ^0.0.8
   astro-icon: ^0.7.1
@@ -17,6 +18,7 @@ specifiers:
 
 dependencies:
   astro: 1.0.0-beta.56
+  astro-auto-import: 0.1.2_astro@1.0.0-beta.56
   astro-compress: 0.0.11
   astro-critters: 0.0.8
   astro-icon: 0.7.1
@@ -1080,6 +1082,10 @@ packages:
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
     dev: false
 
+  /@types/node/18.0.0:
+    resolution: {integrity: sha512-cHlGmko4gWLVI27cGJntjs/Sj8th9aYwplmZFwmmgYQQvL5NUsgVJG7OddLvNfLqYS31KFN0s3qlaD9qCaxACA==}
+    dev: false
+
   /@types/parse5/6.0.3:
     resolution: {integrity: sha512-SuT16Q1K51EAVPz1K29DJ/sXjhSQ0zjvsypYJ6tlwVsRV9jwW5Adq2ch8Dq8kDBCkYnELS7N7VNCSB5nC56t/g==}
     dev: false
@@ -1091,7 +1097,7 @@ packages:
   /@types/sax/1.2.4:
     resolution: {integrity: sha512-pSAff4IAxJjfAXUG6tFkO7dsSbTmf8CtUpfhhZ5VhkRpC4628tJhh3+V6H1E+/Gs9piSzYKT5yzHO5M4GG9jkw==}
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 18.0.0
     dev: false
 
   /@types/unist/2.0.6:
@@ -1189,6 +1195,16 @@ packages:
     engines: {node: '>=4'}
     dependencies:
       tslib: 2.4.0
+    dev: false
+
+  /astro-auto-import/0.1.2_astro@1.0.0-beta.56:
+    resolution: {integrity: sha512-uMqChXkUoKv29YIBKfFWi8d3oXGDInyYyXjRRTrqM5yFHp2fTIvelG4ZpDV7jjNghKkW9g8dzSH389e0LlOjLQ==}
+    engines: {node: '>=16.0.0'}
+    peerDependencies:
+      astro: ^1.0.0-beta.56
+    dependencies:
+      '@types/node': 18.0.0
+      astro: 1.0.0-beta.56
     dev: false
 
   /astro-compress/0.0.11:
