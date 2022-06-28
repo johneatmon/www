@@ -91,8 +91,6 @@ In early September, the new site launched to coincide with our rebrand debut. It
   The current ProSource website might be the only IT services provider website I've seen with dark mode.
 </Figure>
 
-We launched in early September to coincide with our rebrand debut. It was a massive amount of work, but I managed to pull it off with the help of my team.
-
 ## Tech Stack
 
 The following technologies were used to create the website:
