@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@astrojs/prefetch': ^0.0.2
   astro: 1.0.0-beta.58
   astro-auto-import: ^0.1.2
   astro-compress: ^0.0.11
@@ -17,6 +18,7 @@ specifiers:
   prettier-plugin-astro: ^0.0.12
 
 dependencies:
+  '@astrojs/prefetch': 0.0.2
   astro: 1.0.0-beta.58
   astro-auto-import: 0.1.2_astro@1.0.0-beta.58
   astro-compress: 0.0.11
@@ -121,6 +123,12 @@ packages:
       locate-character: 2.0.5
       magic-string: 0.25.9
     dev: true
+
+  /@astrojs/prefetch/0.0.2:
+    resolution: {integrity: sha512-7uJTScd1WO1uEJ4/uNh4g095z0q+syw39dSC34OinqSRm6RY1sLO1MwsIfK7goFapgvOqdKriwsigSB8CKQt1Q==}
+    dependencies:
+      throttles: 1.0.1
+    dev: false
 
   /@astrojs/prism/0.4.1:
     resolution: {integrity: sha512-JxkrXFiFhfunOFBI2Xxwru9t4IzrLw+nfA7RkNnV8qP65BLidrwWS+NfZhOSVGTrbf+cQfF8QNe6O4gAX8wQHw==}
@@ -5040,6 +5048,11 @@ packages:
       acorn: 8.7.1
       commander: 2.20.3
       source-map-support: 0.5.21
+    dev: false
+
+  /throttles/1.0.1:
+    resolution: {integrity: sha512-fab7Xg+zELr9KOv4fkaBoe/b3L0GMGLd0IBSCn16GoE/Qx6/OfCr1eGNyEcDU2pUA79qQfZ8kPQWlRuok4YwTw==}
+    engines: {node: '>=6'}
     dev: false
 
   /timm/1.7.1:
