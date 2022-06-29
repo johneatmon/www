@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  astro: 1.0.0-beta.56
+  astro: 1.0.0-beta.58
   astro-auto-import: ^0.1.2
   astro-compress: ^0.0.11
   astro-critters: ^0.0.8
@@ -17,12 +17,12 @@ specifiers:
   prettier-plugin-astro: ^0.0.12
 
 dependencies:
-  astro: 1.0.0-beta.56
-  astro-auto-import: 0.1.2_astro@1.0.0-beta.56
+  astro: 1.0.0-beta.58
+  astro-auto-import: 0.1.2_astro@1.0.0-beta.58
   astro-compress: 0.0.11
   astro-critters: 0.0.8
   astro-icon: 0.7.1
-  astro-imagetools: 0.6.10_astro@1.0.0-beta.56
+  astro-imagetools: 0.6.10_astro@1.0.0-beta.58
   astro-robots-txt: 0.3.3
   astro-sitemap: 0.2.7
   linkedom: 0.14.2
@@ -136,8 +136,8 @@ packages:
       - typescript
     dev: false
 
-  /@astrojs/telemetry/0.1.3:
-    resolution: {integrity: sha512-MmC30gdA7z9wTA3XCFyKyrXy9SZtjy4ZzBz3UdOQ8xLSi5Yv1DlNFchHb6o1g5HfZ/ueLLa9HxQcrWtf0cUGwg==}
+  /@astrojs/telemetry/0.2.1:
+    resolution: {integrity: sha512-gE0G+Hz9EbPn7xXQu+PMyz6g6v828FIZut2n8l10kRmmlsJGezuXeCVH8JPE/A5qO1pOc2B43iYdZyMyRHXklQ==}
     engines: {node: ^14.15.0 || >=16.0.0}
     dependencies:
       ci-info: 3.3.2
@@ -1197,14 +1197,14 @@ packages:
       tslib: 2.4.0
     dev: false
 
-  /astro-auto-import/0.1.2_astro@1.0.0-beta.56:
+  /astro-auto-import/0.1.2_astro@1.0.0-beta.58:
     resolution: {integrity: sha512-uMqChXkUoKv29YIBKfFWi8d3oXGDInyYyXjRRTrqM5yFHp2fTIvelG4ZpDV7jjNghKkW9g8dzSH389e0LlOjLQ==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       astro: ^1.0.0-beta.56
     dependencies:
       '@types/node': 18.0.0
-      astro: 1.0.0-beta.56
+      astro: 1.0.0-beta.58
     dev: false
 
   /astro-compress/0.0.11:
@@ -1233,14 +1233,14 @@ packages:
       svgo: 2.8.0
     dev: false
 
-  /astro-imagetools/0.6.10_astro@1.0.0-beta.56:
+  /astro-imagetools/0.6.10_astro@1.0.0-beta.58:
     resolution: {integrity: sha512-b3+vCkud6HeWe3brUI7Rq/RXUPOtuv3GV/ENhd1+4mflISWgCWAEIFSTr+56R6/LUpMdh+ZlLjOQaCG5Ig1v7g==}
     engines: {node: ^14.15.0 || >=16.0.0}
     peerDependencies:
       astro: '>=0.26 || >=1.0.0-beta'
     dependencies:
       '@astropub/codecs': 0.4.4
-      astro: 1.0.0-beta.56
+      astro: 1.0.0-beta.58
       file-type: 17.1.1
       find-cache-dir: 3.3.2
       find-up: 6.3.0
@@ -1267,8 +1267,8 @@ packages:
       zod: 3.17.3
     dev: false
 
-  /astro/1.0.0-beta.56:
-    resolution: {integrity: sha512-E+hCIIY75Zc6fINIylhJvAZS7is1KPXIX/BJoUtwp52RBl8efsRV/cyhOzvGFdtVuRHTIIUC8a4tCJtqeLNGUQ==}
+  /astro/1.0.0-beta.58:
+    resolution: {integrity: sha512-LvlxuRmsp405vRYFcpqfYW1AphHUvY4uI9veDmL61m/O1lUvUhqRc8lX36Vej2GZHADr9HJOrulM4hfP/XmMWA==}
     engines: {node: ^14.15.0 || >=16.0.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -1276,7 +1276,7 @@ packages:
       '@astrojs/language-server': 0.13.4
       '@astrojs/markdown-remark': 0.11.3
       '@astrojs/prism': 0.4.1
-      '@astrojs/telemetry': 0.1.3
+      '@astrojs/telemetry': 0.2.1
       '@astrojs/webapi': 0.12.0
       '@babel/core': 7.18.5
       '@babel/generator': 7.18.2
@@ -4431,6 +4431,7 @@ packages:
   /qs/6.10.5:
     resolution: {integrity: sha512-O5RlPh0VFtR78y79rgcgKK4wbAI0C5zGVLztOIdpWX6ep368q5Hv6XRxDvXuZ9q3C6v+e3n8UfZZJw7IIG27eQ==}
     engines: {node: '>=0.6'}
+    deprecated: when using stringify with arrayFormat comma, `[]` is appended on single-item arrays. Upgrade to v6.11.0 or downgrade to v6.10.4 to fix.
     dependencies:
       side-channel: 1.0.4
     dev: false
