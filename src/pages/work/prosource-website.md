@@ -74,6 +74,15 @@ I didn't worry too much about creating pixel-perfect designs. I like to leave a 
   Testing bold, bright colors behind profile pictures to give each team member a bit of personality.
 </Figure>
 
+<Figure
+  image={{
+    href: "/src/img/projects/prosource-website/getprosource_wireframes_3.png",
+    alt: "Button components designed in Figma. There are primary buttons, secondary buttons, and icon buttons in light mode and dark mode color schemes."
+  }}
+>
+  Buttons, buttons, everywhere &mdash; in light and dark mode.
+</Figure>
+
 ### Development
 
 I knew I didn't want to work with WordPress again after our last experience. One day, while exploring GitHub, I stumbled upon [Astro](https://astro.build/). Astro is a newer static site generator (SSG) promising better developer experience. At the time, Astro was in early beta. Up for a challenge and against a tight deadline, I took a risk using beta software. I'm so glad I did.
