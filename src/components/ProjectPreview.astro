@@ -12,7 +12,8 @@ const { project } = Astro.props as Props;
 		alt={project.frontmatter.image.alt}
 		preload="avif"
 		loading="lazy"
-		objectFit="cover"
+		width={1024}
+		height={768}
 	/>
 	<h3>{project.frontmatter.title}</h3>
 	<span>&nbsp;— {project.frontmatter.description}</span>
