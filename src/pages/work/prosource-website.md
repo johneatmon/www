@@ -3,7 +3,7 @@ layout: ../../layouts/ProjectLayout.astro
 title: ProSource (Website)
 description: A new marketing website for a huge rebrand.
 published: 2022-06-23
-modified: 2022-06-27
+modified: 2022-06-28
 image:
   href: /src/img/projects/prosource-website/getprosource_hero.png
   alt: Screenshots of the live ProSource website in light mode and dark mode color schemes.
@@ -31,7 +31,7 @@ The biggest pain point when I started as an intern way back in 2014 was the webs
   A relic of the past &mdash; the original ProSource site was written in Dreamweaver. Via <a href="https://web.archive.org/web/20150710010642/http://www.pstsonline.com/" rel="nofollow noopener noreferer">Internet Archive.</a>
 </Figure>
 
-In 2019, ProSource hired a marketing firm to update the website. Hiring an outside firm didn't yield better results. All change requests or layout tweaks had to flow through the marketing firm, so they took way too long. The outside firm also didn't understand our message, services, and clients like we did.
+In 2019, ProSource hired a marketing firm to update the website. Hiring an outside firm didn't yield better results. They used a custom WordPress theme in a multi-site environment, which meant I couldn't make changes to the website myself. All change requests or layout tweaks had to flow through the firm, so they took way too long. The outside firm also didn't understand our message, services, and clients like we did.
 
 <Figure
   image={{
