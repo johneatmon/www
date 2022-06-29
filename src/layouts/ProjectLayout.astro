@@ -20,7 +20,7 @@ const { content } = Astro.props;
 			</h1>
 			<p class="lede">
 				<strong>Roles:</strong>&nbsp;
-				{content.tags.map((tag) => <span>{tag}</span><span class="dividers">&nbsp;&middot;&nbsp;</span>)}
+				<span class="roles">{content.tags.map((tag) => <span>{tag}</span><span class="divider">&nbsp;&middot;&nbsp;</span>)}</span>
 				<br />
 				<strong>Period:</strong>&nbsp;
 				{content.period.from}{(content.period.to) && <span>&ndash;{content.period.to}</span>}
@@ -62,7 +62,7 @@ const { content } = Astro.props;
 		margin-block: 1em;
 	}
 
-	.dividers:last-of-type {
+	.divider:last-child {
 		display: none;
 	}
 </style>
