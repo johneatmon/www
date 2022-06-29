@@ -23,6 +23,6 @@ This website is built with [Astro](https://astro.build/), a dash of CSS, and a h
 
 This site is typeset in [Gambetta](https://www.fontshare.com/fonts/gambetta) by Indian Type Foundry.
 
-<!-- ## Contact
+## Contact
 
-Email: [hi@jmae.xyz](mailto:hi@jmae.xyz?subject=Hello) -->
+Email: [hi@jmae.xyz](mailto:hi@jmae.xyz?subject=Hello)
