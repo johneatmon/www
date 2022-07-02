@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
 title: ProSource (Landing Pages)
-description: Ultra-specific pages designed to convert.
+description: Ultra-focused pages designed to convert leads.
 published: 2022-07-02
 image:
   href: /src/img/projects/prosource-landing-pages/landing_pages_hero.png
