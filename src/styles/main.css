@@ -2,16 +2,18 @@
 
 @font-face {
 	font-family: 'Gambetta';
-	src: url('/fonts/gambetta/Gambetta-Variable.woff2') format('woff2');
 	font-style: normal;
 	text-rendering: auto;
+	src: url('/fonts/gambetta/Gambetta-Variable.woff2') format('woff2');
+	font-display: swap;
 }
 
 @font-face {
 	font-family: 'Gambetta';
-	src: url('/fonts/gambetta/Gambetta-VariableItalic.woff2') format('woff2');
 	font-style: italic;
 	text-rendering: auto;
+	src: url('/fonts/gambetta/Gambetta-VariableItalic.woff2') format('woff2');
+	font-display: swap;
 }
 
 :root {
