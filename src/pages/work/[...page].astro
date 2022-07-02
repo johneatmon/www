@@ -39,9 +39,10 @@ const description = 'Things I\'ve worked on — projects past, present, and futu
 	.projects {
 		padding-block: 2rem;
 		--min: 15ch;
-		--gap: 1rem;
+		--gap: 1.25rem;
 		display: grid;
-		grid-gap: var(--gap);
+		column-gap: var(--gap);
+		row-gap: calc(1.25 * var(--gap));
 		/* min() with 100% prevents overflow
 		in extra narrow spaces */
 		grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
