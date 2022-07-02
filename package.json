@@ -1,5 +1,5 @@
 {
-  "name": "@johnnytest4real/www",
+  "name": "@jmaeat/www",
   "private": true,
   "scripts": {
     "dev": "astro dev",
