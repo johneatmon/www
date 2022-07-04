@@ -2,7 +2,7 @@
 layout: ../../layouts/ProjectLayout.astro
 title: ProSource (Rebrand)
 description: A rebrand for a refocused marketing strategy.
-published: 2022-06-15
+published: 2022-06-10
 modified: 2022-07-04
 image:
   href: /src/img/projects/prosource-rebrand/prosource_rebrand_hero.png
