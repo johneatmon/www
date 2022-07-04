@@ -9,3 +9,9 @@
   to = "https://jmae.xyz/:splat"
   status = 301
   force = true
+
+[[redirects]]
+  from = "https://main--jmae.netlify.app/*"
+  to = "https://jmae.xyz/:splat"
+  status = 301
+  force = true
