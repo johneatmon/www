@@ -6,7 +6,7 @@ export interface Props {
 const { project } = Astro.props as Props;
 ---
 
-<a href={project.url} class="project">
+<a href={project.frontmatter.redirect ?? project.url} class="project">
 	<Img
 		src={project.frontmatter.image.href}
 		alt={project.frontmatter.image.alt}
