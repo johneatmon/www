@@ -181,6 +181,10 @@ article {
 			margin-top: 1em;
 		}
 
+		& ul li::marker {
+			color: hsl(var(--color-accent), 0.69);
+		}
+
 		& figure {
 			padding-block: 1rem;
 
