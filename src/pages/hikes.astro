@@ -15,20 +15,26 @@ const description = "John Eatmon's recent hikes throughout the state of Washingt
 		<table>
 			<thead>
 				<tr>
+					<th> Date Hiked </th>
 					<th> Trail Name </th>
 					<th> Distance (mi) </th>
 					<th> Elevation (ft) </th>
-					<th> Date Hiked </th>
 				</tr>
 			</thead>
 			<tbody>
-				{json.map((hike) => 
+				{json.sort((a, b) => new Date(b.dateHiked).valueOf() - new Date(a.dateHiked).valueOf()).map((hike) => 
 					<tr>
 						<td>
+							{hike.dateHiked}
+						</td>
+						<td>
 							{hike.href ? (
-								<a href={hike.href}>
-									{hike.name}
-								</a>
+								<p>
+									<a class="trail-link" href={hike.href} rel="nofollow noopener noreferer" target="_blank">
+										{hike.name}
+									</a>
+									&nearr;
+								</p>
 							) : (
 								{hike.name}
 							)}
@@ -38,9 +44,6 @@ const description = "John Eatmon's recent hikes throughout the state of Washingt
 						</td>
 						<td>
 							{hike.elevation}
-						</td>
-						<td>
-							{hike.dateHiked}
 						</td>
 					</tr>
 				)}
@@ -69,20 +72,15 @@ const description = "John Eatmon's recent hikes throughout the state of Washingt
 		& th {
 			background-color: hsl(var(--color-copy));
 			color: hsl(var(--color-bg));
-			text-align: right;
-
-			&:first-of-type {
-				text-align: left;
-			}
+			text-align: left;
 		}
 
 		& td {
-			font-family: 'MD IO 0.4', var(--font-stack-mono);
-			text-align: right;
-
-			&:first-of-type {
-				text-align: left;
-			}
+			font-family: var(--font-stack-mono);
 		}
+	}
+
+	.trail-link {
+		display: inline-block;
 	}
 </style>

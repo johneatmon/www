@@ -1,0 +1,50 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import ProjectPreview from '@components/ProjectPreview.astro';
+
+export async function getStaticPaths({ paginate }) {
+	let allProjects = await Astro.glob('./*.md')
+		.then((res) => res.filter((x) => x.frontmatter.draft != true))
+		.then((res) =>
+			res.sort(
+				(a, b) => new Date(b.frontmatter.published).valueOf() - new Date(a.frontmatter.published).valueOf()
+			)
+		);
+
+	return paginate(allProjects, {
+		pageSize: 12,
+	});
+}
+const { page } = Astro.props;
+
+const title = 'My Work';
+const description = 'Things I\'ve worked on — projects past, present, and future.';
+---
+
+<BaseLayout {title} {description}>
+	<section class="hero" aria-labelledby="#title">
+		<h1 id="title">My Work</h1>
+		<small class="count"> {page.data.length} post{page.data.length > 1 && <span>s</span>} </small>
+	</section>
+	<section class="projects">
+		{page.data.map((project) =>
+			<ProjectPreview {project} />
+		)}
+		<div></div>
+		<div></div>
+	</section>
+</BaseLayout>
+
+<style>
+	.projects {
+		padding-block: 2rem;
+		--min: 15ch;
+		--gap: 1.25rem;
+		display: grid;
+		column-gap: var(--gap);
+		row-gap: calc(1.25 * var(--gap));
+		/* min() with 100% prevents overflow
+		in extra narrow spaces */
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+	}
+</style>

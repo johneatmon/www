@@ -1,5 +1,5 @@
 {
-  "name": "@johnnytest4real/www",
+  "name": "@jmaeat/www",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -13,11 +13,15 @@
     "prettier-plugin-astro": "^0.0.12"
   },
   "dependencies": {
-    "astro": "1.0.0-beta.50",
+    "@astrojs/prefetch": "^0.0.2",
+    "astro": "1.0.0-beta.63",
+    "astro-auto-import": "^0.1.2",
     "astro-compress": "^0.0.11",
+    "astro-critters": "^0.0.8",
     "astro-icon": "^0.7.1",
     "astro-imagetools": "^0.6.10",
     "astro-robots-txt": "^0.3.3",
+    "astro-sitemap": "^0.2.7",
     "linkedom": "0.14.2",
     "luxon": "^2.4.0",
     "postcss": "^8.4.12",

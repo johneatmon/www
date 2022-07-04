@@ -1,0 +1,40 @@
+---
+export interface Props {
+	project: any;
+}
+
+const { project } = Astro.props as Props;
+---
+
+<a href={project.url} class="project">
+	<Img
+		src={project.frontmatter.image.href}
+		alt={project.frontmatter.image.alt}
+		preload="avif"
+		loading="lazy"
+		width={1024}
+		height={768}
+	/>
+	<h2>{project.frontmatter.title}</h2>
+	<span>&nbsp;— {project.frontmatter.description}</span>
+</a>
+
+<style>
+	.project {
+		text-decoration: none;
+
+		& * {
+			opacity: 0.9;
+		}
+
+		&:hover * {
+			opacity: 1;
+		}
+
+		& h2 {
+			display: inline-block;
+			margin-top: 1rem;
+			font-size: 1rem;
+		}
+	}
+</style>

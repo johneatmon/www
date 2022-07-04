@@ -1,0 +1,17 @@
+---
+export interface Props {
+	image: {
+		href: string | URL;
+		alt?: string;
+	};
+}
+
+const { image } = Astro.props;
+---
+
+<figure>
+	<Img src={image.href} alt={image.alt ?? ''} preload="avif" loading="lazy" />
+	<figcaption>
+		<slot />
+	</figcaption>
+</figure>
