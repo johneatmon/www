@@ -3,7 +3,7 @@ layout: ../../layouts/ProjectLayout.astro
 title: ProSource (Website)
 description: A new marketing website for a huge rebrand.
 published: 2022-06-23
-modified: 2022-06-28
+modified: 2022-07-04
 image:
   href: /src/img/projects/prosource-website/getprosource_hero.png
   alt: Screenshots of the live ProSource website in light mode and dark mode color schemes.
@@ -114,7 +114,7 @@ This stack was excellent to help me iterate on designs quickly. However, if I ha
 
 - Designed 60+ pages of content, much of which needed new marketing copy, brand direction, and stock photography.
 - Used Netlify Functions to create API requests to HubSpot CRM for email newsletter enrollments and the contact form.
-- Our company needed a two-factor authentication (2FA) enrollment webform. I used Netlify Functions to parse and prettify data before being sent to our knowledge base platform, [IT Glue](https://itglue.com/). At the time of writing, this has collected over 180 submissions successfully.
+- Created a two-factor authentication (2FA) enrollment webform. I used Netlify Functions to parse and prettify data before being sent to our knowledge base platform, [IT Glue](https://itglue.com/). At the time of writing, this has collected over 180 submissions successfully.
 - Launched the new website with keyword-focused copy, improved technical SEO, and an ongoing content marketing strategy.
 
 <Figure
@@ -129,7 +129,7 @@ This stack was excellent to help me iterate on designs quickly. However, if I ha
 
 &rarr; [Visit the live website](https://www.getprosource.com/)
 
-### What's Next?
+## What's Next?
 
 Since September 2021, I've pushed many more iterations through the pipeline. I use Netlify's Branch Deploy feature to test new designs and code before modifying the live site.
 

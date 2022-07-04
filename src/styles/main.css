@@ -181,6 +181,10 @@ article {
 			margin-top: 1em;
 		}
 
+		& ul li::marker {
+			color: hsl(var(--color-accent), 0.69);
+		}
+
 		& figure {
 			padding-block: 1rem;
 
@@ -205,9 +209,7 @@ article {
 		& pre,
 		& code {
 			font-family: var(--font-stack-mono);
-			padding: 1rem 0.75rem;
 			border-radius: 0.25rem;
-			margin-block: 1.5rem;
 		}
 	}
 

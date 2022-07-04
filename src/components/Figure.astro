@@ -10,7 +10,7 @@ const { image } = Astro.props;
 ---
 
 <figure>
-	<Img src={image.href} alt={image.alt ?? ''} preload="avif" loading="lazy" />
+	<Img src={image.href} alt={image.alt ?? ''} preload="avif" format="webp" loading="lazy" />
 	<figcaption>
 		<slot />
 	</figcaption>
