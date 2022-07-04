@@ -2,7 +2,7 @@
 layout: ../../layouts/ProjectLayout.astro
 title: ProSource (Landing Pages)
 description: Ultra-focused pages designed to convert leads.
-published: 2022-06-27
+published: 2022-06-15
 image:
   href: /src/img/projects/prosource-landing-pages/landing_pages_hero.png
   alt: Screenshots of the live ProSource website in light mode and dark mode color schemes.
