@@ -10,15 +10,6 @@ image:
 tags: 
   - Branding
   - Graphic Design
-description: A rebrand for a refocus.
-published: 2022-06-15
-modified: 2022-06-28
-image:
-  href: https://www.getprosource.com/img/values_bg.png
-  alt: Screenshots of the live ProSource website in light mode and dark mode color schemes.
-tags: 
-  - Branding
-  - Design
   - Content Strategy
 period:
   from: 2020
