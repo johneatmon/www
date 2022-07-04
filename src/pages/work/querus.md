@@ -11,6 +11,7 @@ tags:
   - Web Design
 period:
   from: 2022
+draft: true
 ---
 
 ## Background
