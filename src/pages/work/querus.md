@@ -66,7 +66,7 @@ I also created custom classes to use for ornamental glyphs and small caps:
 .small-caps { font-feature-settings: "smcp" on; }
 ```
 
-Other than these typographic nuances, development in Astro &mdash; as always &mdash; was a pleasure. Deploying to Cloudflare Pages is not quite as ergonomic as Netlify, but it's still a relatively easy CI/CD system.
+Other than these typographic nuances, development in Astro &mdash; as always &mdash; was a pleasure. Deploying to Cloudflare Pages &mdash; like most jamstack CI/CD solutions &mdash; was a breeze.
 
 ## Tech Stack
 
@@ -74,7 +74,7 @@ The following technologies were used to create this microsite:
 
 - [Astro](https://astro.build/) — my go-to <abbr title="Static Site Generator">SSG</abbr>. It's so easy to get up-and-running.
 - [Tailwind CSS](https://tailwindcss.com/) — I wasn't really concerned with scale on this project nor would I be collaborating with anyone else. I opted for speed versus custom CSS.
-- [Cloudflare Pages](https://pages.cloudflare.com/) — I can't say I'm the biggest fan of Cloudflare's admin dashboard. It's a bit clunky to navigate. However, analytics and multiple team members can be added for the price of free — it's hard to complain about that.
+- [Cloudflare Pages](https://pages.cloudflare.com/) — analytics and multiple team members can be added for the price of free — my Dad was super stoked about that.
 
 In addition to these top-level tools/technologies, I also used the following Astro integrations:
 
