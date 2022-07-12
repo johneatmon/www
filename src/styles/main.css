@@ -73,26 +73,29 @@ figcaption {
 	font-size: var(--type-step--1);
 }
 
-body > main,
-body > header,
-body > footer {
+.wrapper {
 	display: grid;
-	grid-template-columns: 1fr min(100% - 2rem, 60ch) 1fr;
+	grid-template-columns: 1fr min(60ch, calc(100% - 2rem)) 1fr;
 }
 
-main > *,
-header > *,
-footer > * {
+.wrapper > * {
 	grid-column: 2;
-}
-
-footer {
-	padding-block: 2rem;
 }
 
 .full-bleed {
 	width: 100%;
 	grid-column: 1 / 4;
+	max-width: 50rem;
+	margin-inline: auto;
+
+	& figcaption {
+		max-width: min(70ch, calc(100% - 2rem));
+		margin-inline: auto;
+	}
+}
+
+footer {
+	padding-block: 2rem;
 }
 
 h1,
