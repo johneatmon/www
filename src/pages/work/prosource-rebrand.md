@@ -85,15 +85,6 @@ With these critical redesigns out of the way, I tackled each piece of marketing 
   Gated case study content, updated with the new design language.
 </Figure>
 
-<Figure
-  image={{
-    href: "/src/img/projects/prosource-rebrand/prosource_rebrand_ebook.png",
-    alt: "An ebook cover with the title: Demystifying the Cloud. What it is and why you should care."
-  }}
->
-  The most popular ebook &mdash; a gated piece of collateral on the [Resources](https://www.getprosource.com/resources/) page of the ProSource website.
-</Figure>
-
 All of this work took about a month to complete. Along with the redesigned [ProSource website](/work/prosource-website), these were my first projects as newly-appointed Content Strategist for ProSource.
 
 ## Tools & Technologies
