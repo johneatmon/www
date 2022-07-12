@@ -3,7 +3,7 @@ layout: ../../layouts/ProjectLayout.astro
 title: ProSource (Rebrand)
 description: A rebrand for a refocused marketing strategy.
 published: 2022-06-10
-modified: 2022-07-04
+modified: 2022-07-11
 image:
   href: /src/img/projects/prosource-rebrand/prosource_rebrand_hero.png
   alt: Wallpaper with a stylized letter p, which is the ProSource brandmark.
@@ -15,6 +15,13 @@ period:
   from: 2020
   to: 2021
 ---
+
+<div class="callout">
+  Hey there! Just to let you know, this case study is split into three parts:
+  1. You're currently reading about the ProSource rebrand
+  2. Learn about my work on the [ProSource website](/work/prosource-website)
+  3. Learn about my work on the [ProSource landing pages](/work/prosource-landing-pages)
+</div>
 
 ProSource provides IT services for healthcare, engineering, finance, and manufacturing companies.
 
