@@ -51,6 +51,8 @@
 html {
 	background-color: hsl(var(--color-bg));
 	color: hsl(var(--color-copy));
+	overflow-y: auto;
+	scrollbar-gutter: stable;
 }
 
 html,
