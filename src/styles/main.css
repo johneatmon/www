@@ -219,7 +219,11 @@ article {
 	& footer {
 		margin-block: 1rem;
 		padding-block: 1rem;
-		border-top: 1px solid hsla(var(--color-copy), 0.1);
+
+		& .border {
+			border-top: 1px solid hsla(var(--color-copy), 0.1);
+			padding: 1rem 0 0.5rem 0;
+		}
 	}
 }
 

@@ -39,6 +39,7 @@ const { content } = Astro.props;
 			<slot />
 		</main>
 		<footer class="wrapper">
+			<div class="border"></div>
 			<small>
 				<div>
 					Posted on <time datetime={machineDate(content.published)}>{readableDate(content.published)}</time>
