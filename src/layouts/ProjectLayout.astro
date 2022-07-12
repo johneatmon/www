@@ -15,7 +15,7 @@ const { content } = Astro.props;
 	tags={content.tags}
 >
 	<article>
-		<header>
+		<header class="wrapper">
 			<h1>
 				{content.title}
 			</h1>
@@ -33,10 +33,10 @@ const { content } = Astro.props;
 				loading="eager"
 			/>
 		</header>
-		<main>
+		<main class="wrapper">
 			<slot />
 		</main>
-		<footer>
+		<footer class="wrapper">
 			<small>
 				<div>
 					Posted on <time datetime={machineDate(content.published)}>{readableDate(content.published)}</time>
