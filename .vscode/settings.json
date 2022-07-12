@@ -1,18 +1,22 @@
 {
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "cSpell.words": ["Astro", "frontmatter"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.formatOnSave": true,
+  "emmet.includeLanguages": {
+    "astro": "html"
+  },
   "files.exclude": {
     "**/dist": true,
     "**/node_modules": true
   },
+  "prettier.documentSelectors": ["**/*.astro"],
   "search.exclude": {
     "**/dist": true
-  },
-  "emmet.includeLanguages": {
-    "astro": "html"
-  },
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  },
-  "cSpell.words": ["Astro"],
-  "prettier.documentSelectors": ["**/*.astro"]
+  }
 }
