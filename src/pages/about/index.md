@@ -13,7 +13,7 @@ description: Everything you never needed to know about me.
 
 Hi, there. My name is John.
 
-I’m a content strategist from Orlando living in Tacoma. I love working at the intersection of content and design. When I’m not at my desk, I’m most likely [hiking](/hikes) around the beautiful state of WA.
+I’m a designer and developer from Orlando living in Tacoma. I'm currently the Content Strategist for [ProSource](https://www.getprosource.com/). When I’m not at my desk, I’m most likely [hiking](/hikes) around the beautiful state of WA.
 
 Feel free to follow me on [Twitter](https://twitter.com/jmaeat) or [GitHub](https://github.com/jmaeat).
 
