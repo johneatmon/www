@@ -8,12 +8,12 @@ image:
   href: /src/img/projects/prosource-website/getprosource_hero.png
   alt: Screenshots of the live ProSource website in light mode and dark mode color schemes.
 tags: 
+  - User Research
+  - Information Architecture
   - Front-End Web Development
-  - Web Design
-  - Content Strategy
 period:
-  from: 2021
-  to: present
+  from: June 2021
+  to: Sept 2021
 ---
 
 <div class="callout">
