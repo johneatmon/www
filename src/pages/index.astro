@@ -3,7 +3,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import PostPreview from '@components/PostPreview.astro';
 
 const title = 'Generalist UX Designer';
-const description = 'Designer, developer, and writer living from Orlando living in Tacoma.';
+const description = 'Designer, developer, and writer from Orlando living in Tacoma.';
 
 const posts = await Astro.glob('./posts/*.md');
 const filteredPosts = await posts.filter((x) => x.frontmatter.draft != true);
