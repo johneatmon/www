@@ -11,17 +11,15 @@ const filteredPosts = await posts.filter((x) => x.frontmatter.draft != true);
 ---
 
 <BaseLayout {title} {description}>
-	<div class="wrapper">
-		<section class="hero" aria-labelledby="#title">
-			<h1 id="title">Writing</h1>
-			<small class="count">
+	<div class='wrapper'>
+		<section class='hero' aria-labelledby='#title'>
+			<h1 id='title'>Writing</h1>
+			<small class='count'>
 				{filteredPosts.length} post{filteredPosts.length > 1 && <span>s</span>}
 			</small>
 		</section>
-		<section class="posts">
-			{filteredPosts.map((post) => 
-				<PostPreview post={post} />
-			)}
+		<section class='posts'>
+			{filteredPosts.map((post) => <PostPreview post={post} />)}
 		</section>
 	</div>
 </BaseLayout>
