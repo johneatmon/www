@@ -147,6 +147,10 @@ a {
 	}
 }
 
+.site-title {
+	text-decoration: none;
+}
+
 .hero {
 	padding-block: max(2vh, 2rem);
 	display: flex;
