@@ -2,9 +2,8 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import PostPreview from '@components/PostPreview.astro';
 
-const title = 'Content Strategy & Miscellany';
-const description =
-	'I’m a front-end web developer, designer, and content strategist living in Tacoma, WA.';
+const title = 'Generalist UX Designer';
+const description = 'Designer, developer, and writer living from Orlando living in Tacoma.';
 
 const posts = await Astro.glob('./posts/*.md');
 const filteredPosts = await posts.filter((x) => x.frontmatter.draft != true);
