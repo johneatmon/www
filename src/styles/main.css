@@ -39,20 +39,21 @@
 	--type-step-5: clamp(2.49rem, calc(2.37rem + 0.61vw), 2.8rem);
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
+html {
+	block-size: 100%;
+	color-scheme: light;
+	background-color: hsl(var(--color-bg));
+	color: hsl(var(--color-copy));
+	overflow-y: auto;
+	scrollbar-gutter: stable;
+
+	&[data-theme='dark'] {
+		color-scheme: dark;
 		--color-bg: 247, 15%, 12%;
 		--color-copy: 150, 2%, 82%;
 		--color-accent: 120, 22%, 70%;
 		--color-label: black;
 	}
-}
-
-html {
-	background-color: hsl(var(--color-bg));
-	color: hsl(var(--color-copy));
-	overflow-y: auto;
-	scrollbar-gutter: stable;
 }
 
 html,
@@ -66,8 +67,10 @@ body > footer {
 }
 
 body {
+	position: relative;
 	font-family: var(--font-stack-serif);
 	font-size: var(--type-step-0);
+	min-block-size: 100%;
 }
 
 small,
