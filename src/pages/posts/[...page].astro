@@ -1,0 +1,49 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import PostPreview from '@components/PostPreview.astro';
+
+const title = 'My Writing';
+const description = 'The musings and meditations of a designer and developer.';
+
+export async function getStaticPaths({ paginate }) {
+	const allPosts = await Astro.glob('./*.md')
+		.then((res) => res.filter((x) => x.frontmatter.draft !== true))
+		.then((res) =>
+			res.sort(
+				(a, b) =>
+					new Date(b.frontmatter.published).valueOf() - new Date(a.frontmatter.published).valueOf()
+			)
+		);
+
+	return paginate(allPosts, {
+		pageSize: 15,
+	});
+}
+
+const { page } = Astro.props;
+
+const prev = page.url.prev;
+const next = page.url.next;
+---
+
+<BaseLayout {title} {description} {prev} {next}>
+	<div class='wrapper'>
+		<section class='hero' aria-labelledby='#title'>
+			<h1 id='title'>Writing</h1>
+			<small class='count'>
+				{page.data.length} post{page.data.length > 1 && <span>s</span>}
+			</small>
+		</section>
+		<section class='posts'>
+			{page.data.map((post) => <PostPreview post={post} />)}
+		</section>
+	</div>
+</BaseLayout>
+
+<style>
+	.posts {
+		padding-block: 2rem;
+		display: flex;
+		flex-direction: column;
+	}
+</style>

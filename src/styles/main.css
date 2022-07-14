@@ -162,6 +162,17 @@ a {
 	border-bottom: 1px solid hsl(var(--color-copy), 0.1);
 }
 
+.projects {
+	padding-block: 2rem;
+	--min: 15ch;
+	--gap: 1.25rem;
+	display: grid;
+	column-gap: var(--gap);
+	row-gap: calc(1.25 * var(--gap));
+	/* min() with 100% prevents overflow in extra narrow spaces */
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+}
+
 .count {
 	background-color: hsl(var(--color-accent));
 	color: var(--color-label);
