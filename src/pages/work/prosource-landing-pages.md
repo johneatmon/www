@@ -12,15 +12,15 @@ tags:
   - Web Design
   - Content Strategy
 period:
-  from: 2021
-  to: present
+  from: Sept 2021
+  to: June 2022
 ---
 
 <div class="callout">
   Hey there! Just to let you know, this case study is split into three parts:
-  1. You're currently reading about the ProSource landing pages
-  2. Learn about my work on the [ProSource website](/work/prosource-website)
-  3. Learn about my work on the [ProSource rebrand](/work/prosource-rebrand)
+  1. You're currently reading about the ProSource landing pages.
+  2. Learn about my work on the [ProSource website](/work/prosource-website).
+  3. Learn about my work on the [ProSource rebrand](/work/prosource-rebrand).
 </div>
 
 ProSource provides IT services for healthcare, engineering, finance, and manufacturing companies.
