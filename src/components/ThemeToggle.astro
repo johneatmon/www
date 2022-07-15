@@ -37,15 +37,23 @@
 </style>
 
 <script is:inline>
+	const storageKey = 'theme-preference';
+
 	const onClick = () => {
 		// flip current value
 		theme.value = theme.value === 'light' ? 'dark' : 'light';
 
-		reflectPreference();
+		setPreference();
 	};
 
 	const getColorPreference = () => {
-		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+		if (localStorage.getItem(storageKey)) return localStorage.getItem(storageKey);
+		else return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	};
+
+	const setPreference = () => {
+		localStorage.setItem(storageKey, theme.value);
+		reflectPreference();
 	};
 
 	const reflectPreference = () => {
@@ -74,6 +82,6 @@
 		.matchMedia('(prefers-color-scheme: dark)')
 		.addEventListener('change', ({ matches: isDark }) => {
 			theme.value = isDark ? 'dark' : 'light';
-			reflectPreference();
+			setPreference();
 		});
 </script>
