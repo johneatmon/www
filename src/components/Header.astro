@@ -2,7 +2,7 @@
 const links = [
 	{
 		label: 'Writing',
-		href: '/',
+		href: '/posts',
 	},
 	{
 		label: 'Hikes',
@@ -19,21 +19,19 @@ const links = [
 ];
 ---
 
-<header>
+<header class='wrapper'>
 	<nav>
-		<p>
+		<a href='/' class='site-title'>
 			<strong>J.M.A. Eatmon</strong>
-			<br />
-			Content Strategy & Miscellany
-		</p>
-		<ul role="list">
-			{links.map((link) => 
+		</a>
+		<ul role='list'>
+			{links.map((link) => (
 				<li>
 					<a href={link.href} rel="prefetch">
 						{link.label}
 					</a>
 				</li>
-			)}
+			))}
 		</ul>
 	</nav>
 </header>

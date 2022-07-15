@@ -14,16 +14,17 @@ const description = content.description ?? document.querySelector('p:first-of-ty
 
 <BaseLayout {title} {description} type="article" section="Article" datePublished={content.published} dateModified={content.modified}>
 	<article>
-		<header>
+		<header class="wrapper">
 			<h1>
 				{content.title}
 			</h1>
 		</header>
-		<main>
+		<main class="wrapper">
 			<slot />
 		</main>
 		{(content.published || content.modified || content.tags) && (
-			<footer class="content-footer">
+			<footer class="wrapper">
+				<div class="border"></div>
 				<small>
 					<div>
 						{(content.published) && (

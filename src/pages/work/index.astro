@@ -1,0 +1,58 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import ProjectPreview from '@components/ProjectPreview.astro';
+
+let mainProjects = await Astro.glob('./*.md')
+	.then((res) => res.filter((x) => x.frontmatter.type != 'sideproject'))
+	.then((res) =>
+		res.sort(
+			(a, b) => new Date(b.frontmatter.published).valueOf() - new Date(a.frontmatter.published).valueOf()
+		)
+	);
+
+let sideProjects = await Astro.glob('./*.md')
+	.then((res) => res.filter((x) => x.frontmatter.type === 'sideproject'))
+	.then((res) =>
+		res.sort((a, b) => new Date(b.frontmatter.published).valueOf() - new Date(a.frontmatter.published).valueOf()
+		)
+	);
+
+const title = 'My Work';
+const description = 'The projects I\'ve worked on — past, present, and future.';
+
+const postCount = mainProjects.length + sideProjects.length;
+---
+
+<BaseLayout {title} {description}>
+	<div class="wrapper">
+		<section class="hero" aria-labelledby="#title">
+			<h1 id="title">My Work</h1>
+			<small class="count">{postCount} project{(postCount) > 1 && <span>s</span>}</small>
+		</section>
+		<section aria-labelledby="#case-studies">
+			<h2 id="case-studies">
+				Case Studies
+			</h2>
+			<div class="projects">
+				{mainProjects.map((project) =>
+					<ProjectPreview {project} />
+				)}
+			</div>
+		</section>
+		<section aria-labelledby="#side-projects">
+			<h2 id="side-projects">Side Projects</h2>
+			<div class="projects">
+				{sideProjects.map((project) =>
+					<ProjectPreview {project} />
+				)}
+				<span aria-hidden="true"></span>
+			</div>
+		</section>
+	</div>
+</BaseLayout>
+
+<style>
+	section[aria-labelledby] + section[aria-labelledby] {
+		margin-block-start: 2rem;
+	}
+</style>

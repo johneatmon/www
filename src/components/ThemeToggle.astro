@@ -1,0 +1,87 @@
+<!-- Source: https://github.com/argyleink/gui-challenges/tree/main/theme-switch -->
+<button
+	class='theme-toggle'
+	id='theme-toggle'
+	title='Toggle theme'
+	aria-label='auto'
+	aria-live='polite'
+>
+	<div class='circle'></div>
+</button>
+
+<style>
+	.theme-toggle {
+		--size: 1.5rem;
+		position: fixed;
+		bottom: 1rem;
+		right: 1rem;
+		background: none;
+		border: none;
+		padding: 0;
+		inline-size: var(--size);
+		block-size: var(--size);
+		aspect-ratio: 1;
+		border-radius: 100%;
+		cursor: pointer;
+		touch-action: manipulation;
+		-webkit-tap-highlight-color: transparent;
+		outline-offset: 5px;
+
+		& .circle {
+			inline-size: 100%;
+			block-size: 100%;
+			border-radius: 999px;
+			background-color: hsl(var(--color-accent));
+		}
+	}
+</style>
+
+<script is:inline>
+	const storageKey = 'theme-preference';
+
+	const onClick = () => {
+		// flip current value
+		theme.value = theme.value === 'light' ? 'dark' : 'light';
+
+		setPreference();
+	};
+
+	const getColorPreference = () => {
+		if (localStorage.getItem(storageKey)) return localStorage.getItem(storageKey);
+		else return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	};
+
+	const setPreference = () => {
+		localStorage.setItem(storageKey, theme.value);
+		reflectPreference();
+	};
+
+	const reflectPreference = () => {
+		document.firstElementChild.setAttribute('data-theme', theme.value);
+
+		document.querySelector('#theme-toggle')?.setAttribute('aria-label', theme.value);
+	};
+
+	const theme = {
+		value: getColorPreference(),
+	};
+
+	// set early so no page flashes / CSS is made aware
+	reflectPreference();
+
+	window.onload = () => {
+		// set on load so screen readers can see latest value on the button
+		reflectPreference();
+
+		// now this script can find and listen for clicks on the control
+		document.querySelector('#theme-toggle').addEventListener('click', onClick);
+	};
+
+	// sync with system changes
+	window
+		.matchMedia('(prefers-color-scheme: dark)')
+		.addEventListener('change', ({ matches: isDark }) => {
+			theme.value = isDark ? 'dark' : 'light';
+			setPreference();
+		});
+</script>

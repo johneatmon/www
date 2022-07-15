@@ -6,7 +6,8 @@ module.exports = {
   tabWidth: 2,
   trailingComma: 'es5',
   useTabs: true,
-  plugins: ['./node_modules/prettier-plugin-astro'],
+  plugins: [require.resolve('prettier-plugin-astro')],
+  astroAllowShorthand: true,
   overrides: [
     {
       files: '*.astro',

@@ -2,7 +2,9 @@
 layout: ../../layouts/ProjectLayout.astro
 title: Querus
 description: A digital business card microsite for Dad.
+type: sideproject
 published: 2022-06-06
+redirect: https://querus.io/
 image:
   href: https://querus.io/querus_og.png
   alt: The Querus logo. It features a tree with long roots. Overlaid on the tree, a banner reads Querus.

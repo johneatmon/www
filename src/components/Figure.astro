@@ -9,7 +9,8 @@ export interface Props {
 const { image } = Astro.props;
 ---
 
-<figure>
+
+<figure class="full-bleed">
 	<Img src={image.href} alt={image.alt ?? ''} preload="avif" format="webp" loading="lazy" />
 	<figcaption>
 		<slot />

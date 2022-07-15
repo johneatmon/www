@@ -1,121 +1,99 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
-title: ProSource (Website)
-description: A new marketing website for a huge rebrand.
+setup: |
+  import WebsiteAccordion from '@components/WebsiteAccordion.astro'
+title: ProSource (Website Redesign)
+description: A redesigned marketing website to coincide with a huge rebrand.
 published: 2022-06-23
-modified: 2022-07-04
+modified: 2022-07-14
 image:
   href: /src/img/projects/prosource-website/getprosource_hero.png
   alt: Screenshots of the live ProSource website in light mode and dark mode color schemes.
 tags: 
+  - User Research
+  - Information Architecture
   - Front-End Web Development
-  - Web Design
-  - Content Strategy
+challenge: Website redesign that connects better with potential buyers and matches new brand identity — and do it in ~4 months.
 period:
-  from: 2021
-  to: present
+  from: June 2021
+  to: Sept 2021
 ---
 
-ProSource provides IT services for healthcare, engineering, finance, and manufacturing companies.
+<div class="callout">
+  Hi, there. Just to let you know, this project technically kicked off with the development of our brand attributes and a new brand identity. You can read about [that rebrand project here](/work/prosource-rebrand). Okay, onward!
+</div>
 
-## Background
+## Empathize
 
-The biggest pain point when I started as an intern way back in 2014 was the website. A previous intern created it in Adobe Dreamweaver. It was not accessible, had no SEO strategy, and needed a design refresh.
-
-<Figure
-  image={{
-    href: "/src/img/projects/prosource-website/pstsonline.png",
-    alt: "A screenshot of the www.pstsonline.com website from December 2014, via the Internet Archive's Wayback Machine."
-  }}
->
-  A relic of the past &mdash; the original ProSource site was written in Dreamweaver. Via <a href="https://web.archive.org/web/20150710010642/http://www.pstsonline.com/" rel="nofollow noopener noreferer">Internet Archive.</a>
-</Figure>
-
-In 2019, ProSource hired a marketing firm to update the website. Hiring an outside firm didn't yield better results. They used a custom WordPress theme in a multi-site environment, which meant I couldn't make changes to the website myself. All change requests or layout tweaks had to flow through the firm, so they took way too long. The outside firm also didn't understand our message, services, and clients like we did.
+I started by researching our potential buyers. I decided the best place to start would be analyzing the *current* buyers. Using a combination of research and data from a client survey, I gathered the information for further analysis. This would be used to determine how we could position our website to better serve buyers. Additionally, this process highlighted ways we could better serve our existing customers, too.
 
 <Figure
   image={{
-    href: "/src/img/projects/prosource-website/pstsonline_2.png",
-    alt: "A screenshot of the second www.pstsonline.com website interface from December 2019, via the Internet Archive's Wayback Machine."
+    href: "/src/img/projects/prosource-website/user_research.png",
+    alt: "A slide showcasing user research. The primary question reads: Who care the current ProSource customers and how can we use this information to empathize with potential buyers? Underneath, there are 4 columns, each with a heading and paragraph. The column reads: Primarily healthcare or healthcare-adjacent, We found that over 50% of the customer base was in the healthcare industry or a healthcare-adjacent field. The second column reads: Key stakeholders were predominantly women, Many of the surveyed stakeholders were office/practice managers or CFOs, and were predominantly women. The third column reads: Based in Central FL despite nationwide message, Despite nationwide messaging/positioning, the overwhelming majority of customers were based in Orlando, FL. The fourth and final column reads: Became a client because they were unhappy, Surveyed customers became ProSource customers because they were unhappy or underserved from their previous provider."
   }}
 >
-  The second iteration of the ProSource website offered a significant improvement. Via <a href="https://web.archive.org/web/20191213101208/https://www.pstsonline.com/" rel="nofollow noopener noreferer">Internet Archive.</a>
+  User research into our existing customers. Data was collected from survey results and basic investigation.
 </Figure>
 
-A [huge rebrand](/work/prosource-rebrand) in 2021, and a decision to redo the website in-house, became my first major projects as newly-appointed Content Strategist.
+## Brainstorm
 
-## Process
+After researching our users, I helped develop personas in collaboration with the business development team. This process helped us understand the needs of our customers and how our redesigned website could serve their needs better. The rationale was: if we could improve the site for our current customers, then we would likely be improving the design for *future* customers.
 
-I began by taking stock of all existing content. I tagged everything for rework, reuse, or refuse. Very little was salvageable from the previous website iterations.
+<Figure
+  image={{
+    href: "/src/img/projects/prosource-website/user_personas.png",
+    alt: "A slide showcasing user personas. There are two profiles with 4 columns under each with the following category titles: Description, Goals, Challenges, and Demographics. The first persona is for Mindy, the Office Manager. Description – Manages a medical practice on behalf of a doctor or doctors. Goals – 1) Keep the doctors happy. 2) Ensure employees are productive. 3) Keep costs low. Challenges – 1) Ensuring smooth office operations 2) HIPAA compliance 3) Limited authority to approve changes. Demographics – Age, 42; Income, $70–90K; Education, AA or BA/BS. The second persona is for Sally, the CFO. Description – Financial operations for a multi-location, physician-owned medical practice. Goals – 1) Minimize expense 2) Maximize value of consumed services 3) Care for CapEx projects. Challenges – 1) Increased spend on CapEx 2) Emerging virtual health technologies 3) High expense for low-perceived value. Demographics – Age, 35; Income, $100K+; Education, BS/BA or MBA."
+  }}
+>
+  User personas were created by analyzing our survey results and using profile information from key stakeholders of current customers.
+</Figure>
 
-I created a sitemap and sorted salvageable content under the appropriate page. We outsourced copy for critical pages to a marketing firm to speed things up.
+## Information Architecture
 
-### Design
+### Content Audit
 
-Using Figma, I created wireframes to roughly place elements on each page. This helped me determine the amount of marketing copy needed to fill in the blanks. After I finished each page, I sent it to a small group of customers for feedback. The feedback helped us reduce IT jargon and build a more approachable design.
+I took stock of all existing content by running a content audit. I tagged everything with a simple RAG status: red was unsalvageable, amber required major edits, green meant it was either good to go or required minor edits. Very little was salvageable from previous website iterations.
 
-I didn't worry too much about creating pixel-perfect designs. I like to leave a little wiggle room for last-minute tweaks while coding up the designs.
+### Sitemap
+
+I created a sitemap and sorted salvageable content under the appropriate page. We outsourced copy for critical pages to an outside marketing firm to speed things up.
+
+<Figure
+  image={{
+    href: "/src/img/projects/prosource-website/ia_sitemap.png",
+    alt: "A slide showcasing the sitemap. There are four columns, each with a heading and bullet points underneath representing links or webpages. The first column heading is Primary navigation. Under it: Homepage; About Us (mega-menu) with sub-bullets: About Us (page), Our Team (link to section), Our Values, Our Partners, Careers, and News/Updates; Our Services; Industries with a sub-bullet: Healthcare, Finance, Engineering, Manufacturing; Resources (mega-menu) with sub-bullets: Resources (page), Customer Stories, Blog, Guides and eBooks, and Webinars (Ask a Pro); Contact Us; CTA: Let's Chat. The second column heading is Footer navigation. Under it: Services (links to page sections) with sub-bullets: Outsourced IT, IT Augmentation, Cyber Security, Cloud Services, Voice Services, and IT Projects/IT Consulting; Industries with sub-bullets: Healthcare, Engineering, Finance, and Manufacturing; Resources with sub-bullets: Blog, Customer Stories, Guides & eBooks, and Webinars. The third column heading is Footer navigation (cont.). Under it: Support with sub-bullets: Contact Us, Cloud Password Reset, TR Onboarding Form, 2FA Enrollment, Sitemap; Company with sub-bullets: About Us, Careers, News & Updates, Our Partners, Terms & Conditions with sub-bullets: MSA, Hosted Services, Managed IT Services, Voice Services; and Privacy Policy. The fourth, and final, column heading is Taxonomies. Under it: News & Updates with sub-bullets: Press Release, Employee Spotlight, Partner Spotlight, Service Update; Blog with sub-bullets: Cloud, Cyber Security, Data Management, (Managed) IT, and vCIO strategies; Customer Stories (Case Studies) with sub-bullets: Healthcare, Engineering, Finance, and Manufacturing; and Guides & eBooks with sub-bullets: Cloud, Cyber Security, and (Managed) IT."
+  }}
+>
+  The sitemap helped organize content from the audit and would later help me in the development phase.
+</Figure>
+
+## Prototypes
+
+Using Figma, I created wireframes to roughly place elements on each page. This helped me determine the amount of marketing copy needed to fill in the blanks. After I finished each page, I sent it to a small group of customers for feedback and testing. The feedback helped us reduce IT jargon and build a more approachable design.
+
+These wireframes were halfway between low- and high-fidelity. They were not pixel-perfect, I left a little wiggle room for last-minute adjustments during development.
 
 <Figure 
   image={{
-    href: "/src/img/projects/prosource-website/getprosource_wireframes.png",
-    alt: "Wireframe mock-ups designed in Figma. The wireframes are mega menu components in light mode and dark mode color schemes."
+    href: "/src/img/projects/prosource-website/prototypes.png",
+    alt: "Wireframe mock-ups designed in Figma. The wireframes featured are an about page, values page, and a sample customer story (case study)."
   }}
 >
-  Some early Figma mock-ups of navigation components using the new ProSource branding.
+  Some early Figma mock-ups the About Us, Our Values, and a sample Customer Story — in light and dark modes.
 </Figure>
 
-<Figure
-  image={{
-    href: "/src/img/projects/prosource-website/getprosource_wireframes_2.png",
-    alt: "Wireframe mock-ups designed in Figma. ProSource team members' profile photos with colorful backgrounds are set in two color schemes, light mode and dark mode."
-  }}
->
-  Testing bold, bright colors behind profile pictures to give each team member a bit of personality.
-</Figure>
+## Development
 
-<Figure
-  image={{
-    href: "/src/img/projects/prosource-website/getprosource_wireframes_3.png",
-    alt: "Button components designed in Figma. There are primary buttons, secondary buttons, and icon buttons in light mode and dark mode color schemes."
-  }}
->
-  Buttons, buttons, everywhere &mdash; in light and dark mode.
-</Figure>
+Development began in mid-summer 2021. By late August, things were firing on all cylinders. In early September, the new site launched to coincide with our rebrand debut. It was a massive amount of work, but I managed to pull it off with the help of my team.
 
-### Development
-
-I knew I didn't want to work with WordPress again after our last experience. One day, while exploring GitHub, I stumbled upon [Astro](https://astro.build/). Astro is a newer static site generator (SSG) promising better developer experience. At the time, Astro was in early beta. Up for a challenge and against a tight deadline, I took a risk using beta software. I'm so glad I did.
-
-Development began in mid-summer 2021. By late August, things were firing on all cylinders. Astro's templating syntax made development much faster than WordPress' disjointed approach. The wonderful [Astro Discord community](https://astro.build/chat) helped me out whenever I got stuck, enhancing my experience further.
-
-In early September, the new site launched to coincide with our rebrand debut. It was a massive amount of work, but I managed to pull it off with the help of my team.
-
-<Figure
-  image={{
-    href: "/src/img/projects/prosource-website/getprosource_lightmode_darkmode.png",
-    alt: "Screenshots of the live ProSource website in light mode and dark mode color schemes."
-  }}
->
-  The current ProSource website might be the only IT services provider website I've seen with dark mode.
-</Figure>
-
-## Tech Stack
+### Tech Stack
 
 The following technologies were used to create the website:
 
-- [Astro](https://astro.build/) — a new static-site generator that promises "powerful developer experience." So far, it's lived up to its messaging and the community around it has made me so excited about web development.
-- [Tailwind CSS](https://tailwindcss.com/) — the utility-first CSS framework. Though controversial, the tool's power to iterate and design quickly helped a lot with this project.
-- [Netlify + Functions & Forms](https://www.netlify.com/) — a [jamstack](https://jamstack.org/what-is-jamstack/)-focused platform. I loved working with the [Netlify CLI](https://cli.netlify.com/) during development. I find Netlify's admin dashboard  much more intuitive to use than the competitors as well. I used Netlify Forms to wire up HTML forms on the site. Netlify Functions securely handle any API requests to our documentation tool or HubSpot CRM.
-
-This stack was excellent to help me iterate on designs quickly. However, if I had more time or could redo it, I would've added a headless CMS (like Strapi or Netlify CMS) to the mix. Astro consumes markdown frontmatter well, but it becomes burdensome to keep it all consistent when you have a lot of content.
-
-## Outcomes
-
-- Designed 60+ pages of content, much of which needed new marketing copy, brand direction, and stock photography.
-- Used Netlify Functions to create API requests to HubSpot CRM for email newsletter enrollments and the contact form.
-- Created a two-factor authentication (2FA) enrollment webform. I used Netlify Functions to parse and prettify data before being sent to our knowledge base platform, [IT Glue](https://itglue.com/). At the time of writing, this has collected over 180 submissions successfully.
-- Launched the new website with keyword-focused copy, improved technical SEO, and an ongoing content marketing strategy.
+- [Astro](https://astro.build/) — a new static-site generator that promises "powerful developer experience."
+- [Tailwind CSS](https://tailwindcss.com/) — the utility-first CSS framework.
+- [Netlify + Functions & Forms](https://www.netlify.com/) — a [jamstack](https://jamstack.org/what-is-jamstack/)-focused platform.
 
 <Figure
   image={{
@@ -126,11 +104,20 @@ This stack was excellent to help me iterate on designs quickly. However, if I ha
   Early Google Lighthouse scores at website relaunch. Caveat, there may be some perf regressions since.
 </Figure>
 
+## Conclusion
+
+If there was more time, I would liked to have created tests for customers to complete. When we asked for feedback, they merely reviewed the website on their own time and jotted down a few thoughts — there weren't a set of tasks to complete to highlight flow pain-points.
+
+If you're curious, you can see some of the earlier iterations of the website below:
+
+<WebsiteAccordion />
+
+Overall, I am pleased with how the redesign turned out, especially for a product design and development team of one.
+
+### Outcomes
+
+- Redesigned over 60 pages of content total to align with brand attributes and user personas
+- Addressed core challenges brought up in customer feedback
+- Better organization for content marketing: blog, customer stories, videos, webinars, and more
 
 &rarr; [Visit the live website](https://www.getprosource.com/)
-
-## What's Next?
-
-Since September 2021, I've pushed many more iterations through the pipeline. I use Netlify's Branch Deploy feature to test new designs and code before modifying the live site.
-
-This experimental branch of the ProSource website [exists here](https://next--getprosource.netlify.app/).

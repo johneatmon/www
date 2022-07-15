@@ -1,33 +1,100 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import PostPreview from '@components/PostPreview.astro';
+import ProjectPreview from '@components/ProjectPreview.astro';
 
-const title = 'Content Strategy & Miscellany';
-const description =
-	'I’m a front-end web developer, designer, and content strategist living in Tacoma, WA.';
+let featuredProjects = await Astro.glob('./work/*.md')
+	.then((res) =>
+		res.filter((x) => x.frontmatter.type != 'sideproject' && x.frontmatter.draft != true)
+	)
+	.then((res) =>
+		res.sort(
+			(a, b) =>
+				new Date(b.frontmatter.published).valueOf() - new Date(a.frontmatter.published).valueOf()
+		)
+	)
+	.then((res) => res.slice(0, 2));
 
-const posts = await Astro.glob('./posts/*.md');
-const filteredPosts = await posts.filter((x) => x.frontmatter.draft != true);
+const title = 'UX/UI Design Generalist';
+const description = 'Designer, developer, and writer from Orlando living in Tacoma.';
 ---
 
 <BaseLayout {title} {description}>
-	<section class="hero" aria-labelledby="#title">
-		<h1 id="title">Writing</h1>
-		<small class="count">
-			{filteredPosts.length} post{filteredPosts.length > 1 && <span>s</span>}
-		</small>
-	</section>
-	<section class="posts">
-		{filteredPosts.map((post) => 
-			<PostPreview post={post} />
-		)}
-	</section>
+	<div class='wrapper'>
+		<section class='hero--home' aria-labelledby='#title'>
+			<div class='avatar'>
+				<Img
+					src='/src/img/me.png'
+					alt='A photo of me standing in front of Mt. Rainier in Washington state.'
+					height={200}
+					width={200}
+				/>
+			</div>
+			<div class='intro'>
+				<h1 id='#title'>Hello, my name is John.</h1>
+				<p>
+					I’m a UX/UI design generalist passionate about problem solving and building enjoyable
+					user experiences. I’m currently the Content Strategist for <a
+						href='https://www.getprosource.com/'
+						>ProSource
+					</a>.
+				</p>
+				<p>
+					Learn more <a href='/about'>about me</a> or <a href='mailto:hi@jmae.xyz'>get in touch</a>.
+				</p>
+			</div>
+		</section>
+		<section aria-labelledby='#selected-works'>
+			<h2 id='selected-works'>Featured Case Studies</h2>
+			<div class="projects">
+				{featuredProjects.map((project) =>
+					<ProjectPreview {project} />
+				)}
+			</div>
+		</section>
+	</div>
 </BaseLayout>
 
 <style>
-	.posts {
-		padding-block: 2rem;
-		display: flex;
-		flex-direction: column;
+	.avatar {
+		border-radius: 999px;
+		overflow: hidden;
+		width: 200px;
+		height: 200px;
+		aspect: 1 / 1;
+		margin-block-end: 2rem;
+	}
+
+	.hero--home {
+		padding-block: max(2vh, 2rem);
+		margin-block-end: 2rem;
+		border-bottom: 1px solid hsl(var(--color-copy), 0.1);
+
+		& h1 {
+			font-size: var(--type-step-4);
+		}
+
+		& .intro > * + * {
+			margin-top: 1em;
+		}
+	}
+
+	@media only screen and (min-width: 489px) {
+		.avatar {
+			margin-block-end: 0;
+		}
+
+		.hero--home {
+			display: grid;
+			gap: 2rem;
+			grid-template-columns: min(200px, 100%) auto;
+		}
+	}
+
+	#selected-works {
+		font-size: var(--type-step-2);
+	}
+	
+	.projects {
+		--min: 20ch;
 	}
 </style>

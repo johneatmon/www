@@ -2,7 +2,8 @@
 layout: ../../layouts/ProjectLayout.astro
 title: ProSource (Landing Pages)
 description: Ultra-focused pages designed to convert leads.
-published: 2022-06-27
+published: 2022-06-15
+modified: 2022-07-11
 image:
   href: /src/img/projects/prosource-landing-pages/landing_pages_hero.png
   alt: Screenshots of the live ProSource website in light mode and dark mode color schemes.
@@ -11,9 +12,16 @@ tags:
   - Web Design
   - Content Strategy
 period:
-  from: 2021
-  to: present
+  from: Sept 2021
+  to: June 2022
 ---
+
+<div class="callout">
+  Hey there! Just to let you know, this case study is split into three parts:
+  1. You're currently reading about the ProSource landing pages.
+  2. Learn about my work on the [ProSource website](/work/prosource-website).
+  3. Learn about my work on the [ProSource rebrand](/work/prosource-rebrand).
+</div>
 
 ProSource provides IT services for healthcare, engineering, finance, and manufacturing companies.
 

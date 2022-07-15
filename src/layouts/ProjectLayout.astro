@@ -15,28 +15,37 @@ const { content } = Astro.props;
 	tags={content.tags}
 >
 	<article>
-		<header>
+		<header class="wrapper">
 			<h1>
 				{content.title}
 			</h1>
-			<p class="lede">
-				<strong>Roles:</strong>&nbsp;
-				<span class="roles">{content.tags.map((tag) => <span>{tag}</span><span class="divider">&nbsp;&middot;&nbsp;</span>)}</span>
-				<br />
-				<strong>Period:</strong>&nbsp;
-				{content.period.from}{(content.period.to) && <span>&ndash;{content.period.to}</span>}
-			</p>
-			<Img
-				src={content.image.href}
-				alt={content.image.alt}
-				preload="avif"
-				loading="eager"
-			/>
+			<dl class="lede">
+				{content.challenge && (
+					<>
+						<dt><strong>Challenge:</strong>&nbsp;</dt>
+						<dd><span>{content.challenge}</span></dd>
+					</>
+				)}
+				<dt><strong>My roles:</strong></dt>
+				<dd><span class="roles">{content.tags.map((tag) => <span>{tag}</span><span class="divider">,&nbsp;</span>)}</span></dd>
+				<dt><strong>Period:</strong></dt>
+				<dd>{content.period.from}{(content.period.to) && <span>&ndash;{content.period.to}</span>}</dd>
+			</dl>
+			<div class="full-bleed">
+				<Img
+					src={content.image.href}
+					alt={content.image.alt}
+					preload="avif"
+					loading="eager"
+					placeholder="none"
+				/>
+			</div>
 		</header>
-		<main>
+		<main class="wrapper">
 			<slot />
 		</main>
-		<footer>
+		<footer class="wrapper">
+			<div class="border"></div>
 			<small>
 				<div>
 					Posted on <time datetime={machineDate(content.published)}>{readableDate(content.published)}</time>

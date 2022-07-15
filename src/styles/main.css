@@ -39,18 +39,21 @@
 	--type-step-5: clamp(2.49rem, calc(2.37rem + 0.61vw), 2.8rem);
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
+html {
+	block-size: 100%;
+	color-scheme: light;
+	background-color: hsl(var(--color-bg));
+	color: hsl(var(--color-copy));
+	overflow-y: auto;
+	scrollbar-gutter: stable;
+
+	&[data-theme='dark'] {
+		color-scheme: dark;
 		--color-bg: 247, 15%, 12%;
 		--color-copy: 150, 2%, 82%;
 		--color-accent: 120, 22%, 70%;
 		--color-label: black;
 	}
-}
-
-html {
-	background-color: hsl(var(--color-bg));
-	color: hsl(var(--color-copy));
 }
 
 html,
@@ -64,8 +67,10 @@ body > footer {
 }
 
 body {
+	position: relative;
 	font-family: var(--font-stack-serif);
 	font-size: var(--type-step-0);
+	min-block-size: 100%;
 }
 
 small,
@@ -73,26 +78,29 @@ figcaption {
 	font-size: var(--type-step--1);
 }
 
-body > main,
-body > header,
-body > footer {
+.wrapper {
 	display: grid;
-	grid-template-columns: 1fr min(100% - 2rem, 60ch) 1fr;
+	grid-template-columns: 1fr min(62ch, calc(100% - 2rem)) 1fr;
 }
 
-main > *,
-header > *,
-footer > * {
+.wrapper > * {
 	grid-column: 2;
-}
-
-footer {
-	padding-block: 2rem;
 }
 
 .full-bleed {
 	width: 100%;
 	grid-column: 1 / 4;
+	max-width: 50rem;
+	margin-inline: auto;
+
+	& figcaption {
+		max-width: min(70ch, calc(100% - 2rem));
+		margin-inline: auto;
+	}
+}
+
+footer {
+	padding-block: 2rem;
 }
 
 h1,
@@ -142,12 +150,27 @@ a {
 	}
 }
 
+.site-title {
+	text-decoration: none;
+}
+
 .hero {
 	padding-block: max(2vh, 2rem);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	border-bottom: 1px solid hsl(var(--color-copy), 0.1);
+}
+
+.projects {
+	padding-block: 2rem;
+	--min: 15ch;
+	--gap: 1.25rem;
+	display: grid;
+	column-gap: var(--gap);
+	row-gap: calc(1.25 * var(--gap));
+	/* min() with 100% prevents overflow in extra narrow spaces */
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
 }
 
 .count {
@@ -167,6 +190,13 @@ article {
 		padding-bottom: 0.25rem;
 	}
 
+	& header > dl {
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		gap: 1rem;
+		padding-block: 0.5rem;
+	}
+
 	& main {
 		margin-top: 2rem;
 
@@ -178,7 +208,11 @@ article {
 		}
 
 		& > * + * {
-			margin-top: 1em;
+			margin-block-start: 1em;
+		}
+
+		& ul li::marker {
+			color: hsl(var(--color-accent), 0.69);
 		}
 
 		& ul li::marker {
@@ -190,7 +224,7 @@ article {
 
 			& figcaption {
 				opacity: 0.8;
-				margin-top: 1em;
+				margin-block-start: 1em;
 				font-style: italic;
 				text-align: center;
 			}
@@ -216,7 +250,11 @@ article {
 	& footer {
 		margin-block: 1rem;
 		padding-block: 1rem;
-		border-top: 1px solid hsla(var(--color-copy), 0.1);
+
+		& .border {
+			border-top: 1px solid hsla(var(--color-copy), 0.1);
+			padding: 1rem 0 0.5rem 0;
+		}
 	}
 }
 
