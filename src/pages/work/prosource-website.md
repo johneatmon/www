@@ -68,7 +68,7 @@ I created a sitemap and sorted salvageable content under the appropriate page. W
   The sitemap helped organize content from the audit and would later help me in the development phase.
 </Figure>
 
-## Prototypes
+## Wireframes
 
 Using Figma, I created wireframes to roughly place elements on each page. This helped me determine the amount of marketing copy needed to fill in the blanks. After I finished each page, I sent it to a small group of customers for feedback and testing. The feedback helped us reduce IT jargon and build a more approachable design.
 
