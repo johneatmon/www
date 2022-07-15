@@ -1,0 +1,49 @@
+---
+import Figure from '@components/Figure.astro';
+---
+
+<details>
+	<summary>
+		<h3>Website, circa 2014</h3>
+	</summary>
+	<Figure
+		image={{
+			href: '/src/img/projects/prosource-website/pstsonline.png',
+			alt: "A screenshot of the www.pstsonline.com website from December 2014, via the Internet Archive's Wayback Machine.",
+		}}
+	>
+		A relic of the past &mdash; the original ProSource site was written in Dreamweaver. Via <a
+			href='https://web.archive.org/web/20150710010642/http://www.pstsonline.com/'
+			rel='nofollow noopener noreferer'
+			>Internet Archive.
+		</a>
+	</Figure>
+</details>
+<details>
+	<summary>
+		<h3>Website, circa 2019</h3>
+	</summary>
+	<Figure
+		image={{
+			href: '/src/img/projects/prosource-website/pstsonline_2.png',
+			alt: "A screenshot of the second www.pstsonline.com website interface from December 2019, via the Internet Archive's Wayback Machine.",
+		}}
+	>
+		The second iteration of the ProSource website offered a significant improvement. Via <a
+			href='https://web.archive.org/web/20191213101208/https://www.pstsonline.com/'
+			rel='nofollow noopener noreferer'
+			>Internet Archive.
+		</a>
+	</Figure>
+</details>
+
+<style>
+	h3 {
+		font-size: var(--type-scale-2);
+		display: inline-block;
+	}
+
+	summary {
+		cursor: pointer;
+	}
+</style>

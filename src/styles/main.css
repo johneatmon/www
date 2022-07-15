@@ -190,6 +190,13 @@ article {
 		padding-bottom: 0.25rem;
 	}
 
+	& header > dl {
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		gap: 1rem;
+		padding-block: 0.5rem;
+	}
+
 	& main {
 		margin-top: 2rem;
 

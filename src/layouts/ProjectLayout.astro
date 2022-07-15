@@ -19,13 +19,18 @@ const { content } = Astro.props;
 			<h1>
 				{content.title}
 			</h1>
-			<p class="lede">
-				<strong>My roles:</strong>&nbsp;
-				<span class="roles">{content.tags.map((tag) => <span>{tag}</span><span class="divider">&nbsp;&middot;&nbsp;</span>)}</span>
-				<br />
-				<strong>Period:</strong>&nbsp;
-				{content.period.from}{(content.period.to) && <span>&ndash;{content.period.to}</span>}
-			</p>
+			<dl class="lede">
+				{content.challenge && (
+					<>
+						<dt><strong>Challenge:</strong>&nbsp;</dt>
+						<dd><span>{content.challenge}</span></dd>
+					</>
+				)}
+				<dt><strong>My roles:</strong></dt>
+				<dd><span class="roles">{content.tags.map((tag) => <span>{tag}</span><span class="divider">,&nbsp;</span>)}</span></dd>
+				<dt><strong>Period:</strong></dt>
+				<dd>{content.period.from}{(content.period.to) && <span>&ndash;{content.period.to}</span>}</dd>
+			</dl>
 			<div class="full-bleed">
 				<Img
 					src={content.image.href}
