@@ -215,6 +215,10 @@ article {
 			color: hsl(var(--color-accent), 0.69);
 		}
 
+		& ul li::marker {
+			color: hsl(var(--color-accent), 0.69);
+		}
+
 		& figure {
 			padding-block: 1rem;
 
