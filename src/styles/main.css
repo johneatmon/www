@@ -208,7 +208,7 @@ article {
 		}
 
 		& > * + * {
-			margin-top: 1em;
+			margin-block-start: 1em;
 		}
 
 		& ul li::marker {
@@ -220,7 +220,7 @@ article {
 
 			& figcaption {
 				opacity: 0.8;
-				margin-top: 1em;
+				margin-block-start: 1em;
 				font-style: italic;
 				text-align: center;
 			}
