@@ -3,11 +3,11 @@ layout: ../../layouts/ProjectLayout.astro
 setup: |
   import WebsiteAccordion from '@components/WebsiteAccordion.astro'
 title: ProSource (Website Redesign)
-description: A redesigned marketing website to coincide with a huge rebrand.
+description: A refreshed website design to coincide with a rebrand.
 published: 2022-06-23
 modified: 2022-07-14
 image:
-  href: /src/img/projects/prosource-website/getprosource_hero.png
+  href: '/src/img/projects/prosource-website/getprosource_website_cover.png'
   alt: Screenshots of the live ProSource website in light mode and dark mode color schemes.
 tags: 
   - User Research
