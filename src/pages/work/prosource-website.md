@@ -112,7 +112,7 @@ If you're curious, you can see some of the earlier iterations of the website bel
 
 <WebsiteAccordion />
 
-Overall, I am pleased with how the redesign turned out, especially for a product design and development team of one.
+Overall, I am pleased with how the redesign turned out, especially given the tight deadline.
 
 ### Outcomes
 
