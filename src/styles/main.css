@@ -5,7 +5,7 @@
 	font-style: normal;
 	text-rendering: auto;
 	src: url('/fonts/gambetta/Gambetta-Variable.woff2') format('woff2');
-	font-display: swap;
+	font-display: optional;
 }
 
 @font-face {
@@ -13,7 +13,7 @@
 	font-style: italic;
 	text-rendering: auto;
 	src: url('/fonts/gambetta/Gambetta-VariableItalic.woff2') format('woff2');
-	font-display: swap;
+	font-display: optional;
 }
 
 :root {
