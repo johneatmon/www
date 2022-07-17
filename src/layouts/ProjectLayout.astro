@@ -9,6 +9,10 @@ const { content } = Astro.props;
 <BaseLayout 
 	title={content.title}
 	description={content.description}
+	image={{
+		href: new URL(content.image.href, Astro.site),
+		alt: content.image.alt
+	}}
 	type="article" section="Project"
 	datePublished={machineDate(content.published)}
 	dateModified={content.modified ? machineDate(content.modified) : ''}

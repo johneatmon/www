@@ -4,7 +4,7 @@ import Header from '@components/Header.astro';
 import ThemeToggle from '@components/ThemeToggle.astro';
 import Footer from '@components/Footer.astro';
 
-const { title, description, type, section, tags, datePublished, dateModified, prev, next } =
+const { title, description, image, type, section, tags, datePublished, dateModified, prev, next } =
 	Astro.props;
 ---
 
@@ -13,6 +13,7 @@ const { title, description, type, section, tags, datePublished, dateModified, pr
 		<BaseHead
 			{title}
 			{description}
+			{image}
 			{type}
 			{section}
 			{tags}

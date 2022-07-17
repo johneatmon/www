@@ -4,6 +4,10 @@ import '@styles/main.css';
 export interface Props {
 	title: string;
 	description: string;
+	image?: {
+		href: string | URL,
+		alt: string
+	};
 	type?: string;
 	section?: string;
 	tags?: string[];
@@ -13,12 +17,24 @@ export interface Props {
 	next?: string;
 }
 
-const { title, description, type = "website", section, tags, datePublished, dateModified, prev, next } = Astro.props as Props;
 
-const image = {
-	href: `https://cdn.statically.io/og/${title}.jpg`,
-	alt: `Alt image for the ${title} page.`
-};
+
+const {
+	title,
+	description,
+	image = {
+		href: `https://cdn.statically.io/og/${title}.jpg`,
+		alt: `Alt image for the ${title} page.`
+	},
+	type = "website",
+	section,
+	tags,
+	datePublished,
+	dateModified,
+	prev,
+	next
+} = Astro.props as Props;
+
 ---
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />

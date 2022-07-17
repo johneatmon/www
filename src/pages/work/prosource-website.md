@@ -8,7 +8,7 @@ published: 2022-06-23
 modified: 2022-07-14
 image:
   href: '/src/img/projects/prosource-website/getprosource_website_cover.png'
-  alt: Screenshots of the live ProSource website in light mode and dark mode color schemes.
+  alt: A high-fidelity mockup of the ProSource website homepage on a laptop.
 tags: 
   - User Research
   - Information Architecture
@@ -25,7 +25,7 @@ period:
 
 ## Empathize
 
-I started by researching our potential buyers. I decided the best place to start would be analyzing the *current* buyers. Using a combination of research and data from a client survey, I gathered the information for further analysis. This would be used to determine how we could position our website to better serve buyers. Additionally, this process highlighted ways we could better serve our existing customers, too.
+I started by researching our potential buyers. I started by analyzing the *current* buyers. Using a combination of research and data from a client survey, I gathered the information for further analysis. This would be used to determine how we could position our website to better serve buyers. Additionally, this process highlighted ways we could better serve our existing customers, too.
 
 <Figure
   image={{
@@ -53,7 +53,7 @@ After researching our users, I helped develop personas in collaboration with the
 
 ### Content Audit
 
-I took stock of all existing content by running a content audit. I tagged everything with a simple RAG status: red was unsalvageable, amber required major edits, green meant it was either good to go or required minor edits. Very little was salvageable from previous website iterations.
+I took stock of all existing content by running a content audit. I tagged everything with a simple RAG status: red was unsalvageable, amber required major edits, and green meant it was either good to go or required minor edits. Very little was salvageable from previous website iterations.
 
 ### Sitemap
 
@@ -106,7 +106,7 @@ The following technologies were used to create the website:
 
 ## Conclusion
 
-If there was more time, I would liked to have created tests for customers to complete. When we asked for feedback, they merely reviewed the website on their own time and jotted down a few thoughts — there weren't a set of tasks to complete to highlight flow pain-points.
+If I had more time, I would have conducted usability tests. When we asked for feedback, they merely reviewed the website on their own time and jotted down a few thoughts — there weren't a set of tasks to complete to highlight flow pain points.
 
 If you're curious, you can see some of the earlier iterations of the website below:
 
@@ -116,7 +116,7 @@ Overall, I am pleased with how the redesign turned out, especially given the tig
 
 ### Outcomes
 
-- Redesigned over 60 pages of content total to align with brand attributes and user personas
+- Redesigned over 60 pages of content to align with brand attributes and user personas
 - Addressed core challenges brought up in customer feedback
 - Better organization for content marketing: blog, customer stories, videos, webinars, and more
 

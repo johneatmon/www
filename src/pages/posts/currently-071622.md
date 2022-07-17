@@ -3,6 +3,7 @@ layout: ../../layouts/PostLayout.astro
 title: Currently
 published: 2022-07-15
 tags:
+  - currently
   - personal
   - journal
 ---
