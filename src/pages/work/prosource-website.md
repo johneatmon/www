@@ -8,7 +8,7 @@ published: 2022-06-23
 modified: 2022-07-14
 image:
   href: '/src/img/projects/prosource-website/getprosource_website_cover.png'
-  alt: Screenshots of the live ProSource website in light mode and dark mode color schemes.
+  alt: A high-fidelity mockup of the ProSource website homepage on a laptop.
 tags: 
   - User Research
   - Information Architecture
