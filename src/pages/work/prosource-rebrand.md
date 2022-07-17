@@ -54,7 +54,7 @@ We also developed [a culture guide](https://www.getprosource.com/about-us/our-va
 
 Our bread and butter was healthcare or healthcare-adjacent companies. Eventually, we expanded our focus to include engineering, finance, and manufacturing customers.
 
-We created user personas for the new brand, which helped during the website redesign process. You can [read more about the user personas here](/work/prosource-website#brainstorm).
+We created user personas for the new brand, which helped during the website redesign process. You can [read more about the user personas here](/work/prosource-website#user-personas).
 
 ## Redesigned Assets
 
