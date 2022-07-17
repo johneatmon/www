@@ -2,18 +2,19 @@
 layout: ../../layouts/ProjectLayout.astro
 title: ProSource (Rebrand)
 description: A rebrand for a refocused marketing strategy.
-published: 2022-06-10
+published: 2022-06-20
 modified: 2022-07-11
 image:
-  href: /src/img/projects/prosource-rebrand/prosource_rebrand_hero.png
+  href: /src/img/projects/prosource-rebrand/design_system.png
   alt: Wallpaper with a stylized letter p, which is the ProSource brandmark.
 tags: 
   - Branding
   - Graphic Design
+  - Brand Strategy
   - Content Strategy
 period:
-  from: 2020
-  to: 2021
+  from: May 2021
+  to: Sept 2021
 ---
 
 <div class="callout">
