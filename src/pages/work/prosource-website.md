@@ -5,7 +5,7 @@ setup: |
 title: ProSource (Website Redesign)
 description: A refreshed website design to coincide with a rebrand.
 published: 2022-06-23
-modified: 2022-07-14
+modified: 2022-07-17
 image:
   href: '/src/img/projects/prosource-website/getprosource_website_cover.png'
   alt: A high-fidelity mockup of the ProSource website homepage on a laptop.
@@ -20,12 +20,12 @@ period:
 ---
 
 <div class="callout">
-  Hi, there. Just to let you know, this project technically kicked off with the development of our brand attributes and a new brand identity. You can read about [that rebrand project here](/work/prosource-rebrand). Okay, onward!
+  Hi, there. Just to let you know, this project technically kicked off with the development of our brand attributes and a new brand identity. Read about that process in more detail in my [rebrand project case study](/work/prosource-rebrand). Okay, onward!
 </div>
 
-## Empathize
+## User Research
 
-I started by researching our potential buyers. I started by analyzing the *current* buyers. Using a combination of research and data from a client survey, I gathered the information for further analysis. This would be used to determine how we could position our website to better serve buyers. Additionally, this process highlighted ways we could better serve our existing customers, too.
+I started by researching our buyers. Using a combination of secondary research and data from a client survey, I analyzed our customer demographics and challenges. I used this information to determine how we could position our website to better speak to the needs and challenges of buyers. Additionally, this process highlighted ways we could improve the experience for existing customers, too.
 
 <Figure
   image={{
@@ -33,12 +33,12 @@ I started by researching our potential buyers. I started by analyzing the *curre
     alt: "A slide showcasing user research. The primary question reads: Who care the current ProSource customers and how can we use this information to empathize with potential buyers? Underneath, there are 4 columns, each with a heading and paragraph. The column reads: Primarily healthcare or healthcare-adjacent, We found that over 50% of the customer base was in the healthcare industry or a healthcare-adjacent field. The second column reads: Key stakeholders were predominantly women, Many of the surveyed stakeholders were office/practice managers or CFOs, and were predominantly women. The third column reads: Based in Central FL despite nationwide message, Despite nationwide messaging/positioning, the overwhelming majority of customers were based in Orlando, FL. The fourth and final column reads: Became a client because they were unhappy, Surveyed customers became ProSource customers because they were unhappy or underserved from their previous provider."
   }}
 >
-  User research into our existing customers. Data was collected from survey results and basic investigation.
+  Research data was collected from survey results and secondary research.
 </Figure>
 
-## Brainstorm
+### User Personas
 
-After researching our users, I helped develop personas in collaboration with the business development team. This process helped us understand the needs of our customers and how our redesigned website could serve their needs better. The rationale was: if we could improve the site for our current customers, then we would likely be improving the design for *future* customers.
+After researching our users, I helped develop personas in collaboration with the business development team. This process helped us understand the needs of our customers and how our redesigned website could serve their needs better. The rationale was: if we could improve the site for our current customers, then we would likely be improving the design for *future* customers, too.
 
 <Figure
   image={{
@@ -70,9 +70,9 @@ I created a sitemap and sorted salvageable content under the appropriate page. W
 
 ## Wireframes
 
-Using Figma, I created wireframes to roughly place elements on each page. This helped me determine the amount of marketing copy needed to fill in the blanks. After I finished each page, I sent it to a small group of customers for feedback and testing. The feedback helped us reduce IT jargon and build a more approachable design.
+I created wireframes in Figma. This helped me determine the amount of marketing copy needed for each page. After I finished each page, I sent it to a small group of customers and peers for feedback and testing. The feedback helped us reduce IT jargon and build a more approachable design — brighter colors, larger type size, and more relatable imagery.
 
-These wireframes were halfway between low- and high-fidelity. They were not pixel-perfect, I left a little wiggle room for last-minute adjustments during development.
+In this phase, wireframes were halfway between low- and high-fidelity. They were not pixel-perfect, as I left a little wiggle room for last-minute adjustments during development.
 
 <Figure 
   image={{
@@ -106,7 +106,7 @@ The following technologies were used to create the website:
 
 ## Conclusion
 
-If I had more time, I would have conducted usability tests. When we asked for feedback, they merely reviewed the website on their own time and jotted down a few thoughts — there weren't a set of tasks to complete to highlight flow pain points.
+If I had more time, I would have conducted usability tests. When we asked for feedback, customers/peers merely reviewed the website on their own time and jotted down a few thoughts — there weren't a set of tasks to complete to highlight flow pain points.
 
 If you're curious, you can see some of the earlier iterations of the website below:
 
@@ -117,7 +117,7 @@ Overall, I am pleased with how the redesign turned out, especially given the tig
 ### Outcomes
 
 - Redesigned over 60 pages of content to align with brand attributes and user personas
-- Addressed core challenges brought up in customer feedback
-- Better organization for content marketing: blog, customer stories, videos, webinars, and more
+- Addressed core challenges brought up in customer/peers feedback
+- Better organization for content marketing: blog, customer stories, videos, webinars, etc.
 
 &rarr; [Visit the live website](https://www.getprosource.com/)
