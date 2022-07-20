@@ -265,3 +265,11 @@ article {
 	gap: 0.5rem;
 	text-transform: lowercase;
 }
+
+.lede {
+	margin-block: 1em;
+}
+
+.divider:last-child {
+	display: none;
+}
