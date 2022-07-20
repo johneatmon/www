@@ -12,6 +12,7 @@ image:
 tags: 
   - User Research
   - Information Architecture
+  - Wireframing
   - Front-End Web Development
 challenge: Website redesign that connects better with potential buyers and matches new brand identity — and do it in ~4 months.
 period:
