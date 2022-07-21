@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
 title: Querus
-description: A digital business card microsite for Dad.
+description: A digital business card microsite for my Dad.
 published: 2022-06-06
 image:
   href: https://querus.io/querus_og.png

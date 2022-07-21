@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
 title: Tacoma Porchfest
-description: A website to promote Tacoma's first Porchfest.
+description: A website to promote Tacoma, WA’s first Porchfest.
 published: 2022-06-10
 image:
   href: /src/img/projects/tacoma-porchfest/tacoma_porchfest_hero.png

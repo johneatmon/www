@@ -8,10 +8,10 @@ image:
   href: /src/img/projects/prosource-rebrand/design_system.png
   alt: A stylized mockup of the ProSource design system, including tyography, colors, buttons, and footer/mega-menu components.
 tags:
-  - Graphic Design
-  - Brand Strategy
+  - Design System
+  - Visual Design
   - Content Strategy
-  - Design Systems
+  - Brand Strategy
 challenge: Create a new brand identity that resonates with high-value and high-complexity industry buyers.
 period:
   from: May 2021
