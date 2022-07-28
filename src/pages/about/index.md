@@ -19,7 +19,7 @@ Feel free to follow me on [Twitter](https://twitter.com/jmaeat) or [GitHub](http
 
 ## Colophon
 
-This website is built with [Astro](https://astro.build/), a dash of CSS, and a hint of JavaScript. If you're curious about the Astro integrations I used for this site, you can check out [the project on GitHub](https://github.com/jmaeat/www#readme). This site is hosted for free by [Netlify](https://www.netlify.com/). There are no trackers or ads on this site — rejoice!
+This website is built with [Astro](https://astro.build/), a dash of CSS, and a hint of JavaScript. If you're curious about the Astro integrations I used for this site, you can check out [the project on GitHub](https://github.com/jmaeat/www#readme). This site is hosted for free by [Netlify](https://www.netlify.com/). This site is tracked with [Plausible Analytics](https://plausible.io/jmae.xyz), a privacy-friendly alternative to Google Analytics.
 
 This site is typeset in [Gambetta](https://www.fontshare.com/fonts/gambetta) by Indian Type Foundry.
 
