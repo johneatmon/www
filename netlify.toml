@@ -1,0 +1,25 @@
+[build]
+  command = 'yarn build'
+  publish = 'dist'
+
+[[redirects]]
+  from = "https://jmae.netlify.app/*"
+  to = "https://jmae.xyz/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://main--jmae.netlify.app/*"
+  to = "https://jmae.xyz/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/js/script.js"
+  to = "https://plausible.io/js/script.js"
+  status = 200
+
+[[redirects]]
+  from = "/api/event"
+  to = "https://plausible.io/api/event"
+  status = 200
