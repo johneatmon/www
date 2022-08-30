@@ -1,15 +1,38 @@
 ---
+import '../styles/main.css';
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
+
+		<title>John Eatmon</title>
+
+		{
+			!import.meta.env.DEV && (
+				<link rel="preload" href="/fonts/soehne/woff2/soehne-400.woff2" as="font" />
+				<link rel="preload" href="/fonts/soehne/woff2/soehne-400-kursiv.woff2" as="font" />
+				<link rel="preload" href="/fonts/soehne/woff2/soehne-500.woff2" as="font" />
+				<link rel="preload" href="/fonts/soehne/woff2/soehne-500-kursiv.woff2" as="font" />
+				<link rel="preload" href="/fonts/soehne/woff2/soehne-700.woff2" as="font" />
+				<link rel="preload" href="/fonts/soehne/woff2/soehne-700-kursiv.woff2" as="font" />
+				<link rel="preload" href="/fonts/soehne/woff2/soehne-800.woff2" as="font" />
+				<link rel="preload" href="/fonts/soehne/woff2/soehne-800-kursiv.woff2" as="font" />
+			)
+		}
+
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+
+		<link
+			rel="icon"
+			href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨🏻‍💻</text></svg>"
+		/>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<h1>John Eatmon</h1>
+    <p>
+      This site is a work in progress. Obviously.
+    </p>
 	</body>
 </html>
