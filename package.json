@@ -14,7 +14,10 @@
     "prettier-plugin-astro": "^0.5.3"
   },
   "dependencies": {
-    "astro": "^1.1.2"
-  },
-  "version": "0.0.0"
+    "astro": "^1.1.2",
+    "open-props": "^1.4.14",
+    "postcss": "^8.4.16",
+    "postcss-jit-props": "^1.0.7",
+    "postcss-preset-env": "^7.8.0"
+  }
 }
