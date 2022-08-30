@@ -1,0 +1,9 @@
+/*
+  Cache-Control: max-age=480, stale-while-revalidate=360, public
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block
+	Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Accept-CH: DPR, Viewport-Width, Width
+  Content-Security-Policy: default-src 'self' https:; font-src 'self' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data:; script-src 'self' https: 'unsafe-eval' 'unsafe-inline'; connect-src 'self' https:; block-all-mixed-content; upgrade-insecure-requests; base-uri 'self' https:; object-src 'none' https:; worker-src 'self' https:; manifest-src 'self' https:; media-src 'self' https:; form-action 'self' https:; frame-src 'self' https:; frame-ancestors 'self' https:;
+  Permissions-Policy: geolocation=(), microphone=(), usb=(), sync-xhr=(self), camera=(), browsing-topics=(), join-ad-interest-group=(), run-ad-auction=()
