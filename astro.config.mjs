@@ -6,4 +6,9 @@ import image from '@astrojs/image';
 export default defineConfig({
 	site: 'https://jmae.xyz',
 	integrations: [image()],
+	vite: {
+		ssr: {
+			external: ['svgo'],
+		},
+	},
 });
