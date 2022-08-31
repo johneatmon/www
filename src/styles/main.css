@@ -1,5 +1,112 @@
-@import 'font.css';
+@import 'reset.css';
+
+:root {
+	--jm-light: 0deg 0% 96%;
+	--jm-dark: 200deg 6% 10%;
+	--jm-mid: 200deg 13% 48%;
+	--jm-primary: 227deg 76% 56%;
+	--jm-secondary: 9deg 100% 59%;
+
+	--font-size-fl-00: clamp(0.73rem, calc(0.72rem + 0.04vw), 0.75rem);
+	--font-size-fl-0: clamp(0.88rem, calc(0.83rem + 0.24vw), 1rem);
+	--font-size-fl-1: clamp(1.05rem, calc(0.94rem + 0.55vw), 1.33rem);
+	--font-size-fl-2: clamp(1.26rem, calc(1.06rem + 1.01vw), 1.78rem);
+	--font-size-fl-3: clamp(1.51rem, calc(1.18rem + 1.67vw), 2.37rem);
+	--font-size-fl-4: clamp(1.81rem, calc(1.29rem + 2.62vw), 3.16rem);
+
+	--size-fl-1/4: clamp(0.19rem, calc(0.16rem + 0.12vw), 0.25rem);
+	--size-fl-1\/2: clamp(0.38rem, calc(0.33rem + 0.24vw), 0.5rem);
+	--size-fl-3/4: clamp(0.56rem, calc(0.49rem + 0.37vw), 0.75rem);
+	--size-fl-1: clamp(0.75rem, calc(0.65rem + 0.49vw), 1rem);
+	--size-fl-1\.25: clamp(0.94rem, calc(0.82rem + 0.61vw), 1.25rem);
+	--size-fl-1.5: clamp(1.13rem, calc(0.98rem + 0.73vw), 1.5rem);
+	--size-fl-2: clamp(1.5rem, calc(1.3rem + 0.98vw), 2rem);
+	--size-fl-2\.5: clamp(1.88rem, calc(1.63rem + 1.22vw), 2.5rem);
+	--size-fl-3: clamp(2.25rem, calc(1.96rem + 1.46vw), 3rem);
+	--size-fl-3\.5: clamp(2.63rem, calc(2.28rem + 1.71vw), 3.5rem);
+	--size-fl-4: clamp(3rem, calc(2.61rem + 1.95vw), 4rem);
+	--size-fl-4\.5: clamp(3.38rem, calc(2.94rem + 2.2vw), 4.5rem);
+	--size-fl-5: clamp(3.75rem, calc(3.26rem + 2.44vw), 5rem);
+	--size-fl-6: clamp(4.5rem, calc(3.91rem + 2.93vw), 6rem);
+	--size-fl-7: clamp(5.25rem, calc(4.57rem + 3.41vw), 7rem);
+	--size-fl-8: clamp(6rem, calc(5.22rem + 3.9vw), 8rem);
+	--size-fl-9: clamp(6.75rem, calc(5.87rem + 4.39vw), 9rem);
+	--size-fl-10: clamp(7.5rem, calc(6.52rem + 4.88vw), 10rem);
+	--size-fl-11: clamp(8.25rem, calc(7.18rem + 5.37vw), 11rem);
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body > footer {
+	position: sticky;
+	top: 100vh;
+}
 
 body {
-	font-family: 'Soehne', var(--font-sans);
+	background-color: hsl(var(--jm-light));
+	color: hsl(var(--jm-dark));
+	font-family: 'Söhne', 'Soehne', var(--font-sans);
+	font-size: var(--font-size-fl-0);
+}
+
+html[data-theme='dark'] body {
+	--jm-mid: 200deg 13% 58%;
+	--jm-primary: 227deg 76% 66%;
+	--jm-secondary: 9deg 100% 69%;
+
+	background-color: hsl(var(--jm-dark));
+	color: hsl(var(--jm-light));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: var(--font-weight-7);
+	line-height: 1.2;
+}
+
+a {
+	white-space: nowrap;
+}
+
+.font-serif {
+	font-family: 'Newsreader', var(--font-serif);
+}
+
+.container {
+	max-width: min(100% - 2rem, 58.125rem);
+	margin-inline: auto;
+}
+
+.title--lg {
+	font-size: var(--font-size-fl-4);
+	letter-spacing: -1%;
+}
+
+.title--smol {
+	font-size: var(--font-size-fl-00);
+	font-weight: var(--font-weight-8);
+	letter-spacing: var(--font-letterspacing-2);
+	color: hsl(var(--jm-mid));
+}
+
+.link {
+	font-weight: var(--font-weight-5);
+	color: inherit;
+	text-decoration-color: hsl(var(--jm-primary) / 0.5);
+	text-underline-offset: 0.125em;
+	text-decoration-thickness: 0.125em;
+	transition-property: text-decoration-color;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 300ms;
+
+	&:hover {
+		text-decoration-color: hsl(var(--jm-primary));
+	}
 }
