@@ -4,24 +4,47 @@ import { Icon } from 'astro-icon';
 
 <!-- Source: https://github.com/argyleink/gui-challenges/tree/main/theme-switch -->
 <button id="theme-toggle" title="Toggle theme" aria-label="auto" aria-live="polite">
-	<Icon name="akar-icons:sun" />
-	<!-- <Icon name='moon' class='w-fl-1.25 aspect-square stroke-mid block dark:hidden' /> -->
+	<Icon name="akar-icons:sun" class="light" />
+	<Icon name="akar-icons:moon" />
 </button>
 
-<style>
+<style lang="css">
 	button {
 		background: none;
 		border: 0;
 		cursor: pointer;
 		touch-action: manipulation;
-		outline-offset: 4px;
+		aspect-ratio: 1/1;
+		display: grid;
+		place-items: center;
+		padding: var(--size-fl-1\/2);
+		border-radius: 0.25em;
+		color: hsl(var(--jm-mid));
+
+		&:hover {
+			background-color: var(--hover-bg);
+			color: hsl(var(--jm-primary));
+		}
 	}
 
 	[astro-icon] {
 		block-size: var(--size-fl-1\.25);
 		inline-size: var(--size-fl-1\.25);
-		aspect-ratio: 1/1;
-		color: hsl(var(--jm-primary));
+		color: inherit;
+	}
+
+	[astro-icon='akar-icons:moon'] {
+		display: none;
+	}
+
+	html[data-theme='dark'] {
+		& [astro-icon='akar-icons:sun'] {
+			display: none;
+		}
+
+		& [astro-icon='akar-icons:moon'] {
+			display: block;
+		}
 	}
 </style>
 

@@ -6,6 +6,8 @@
 	--jm-mid: 200deg 13% 48%;
 	--jm-primary: 227deg 76% 56%;
 	--jm-secondary: 9deg 100% 59%;
+	--border-color: rgba(0, 0, 0, 0.1);
+	--hover-bg: rgba(0, 0, 0, 0.05);
 
 	--font-size-fl-00: clamp(0.73rem, calc(0.72rem + 0.04vw), 0.75rem);
 	--font-size-fl-0: clamp(0.88rem, calc(0.83rem + 0.24vw), 1rem);
@@ -56,6 +58,8 @@ html[data-theme='dark'] body {
 	--jm-mid: 200deg 13% 58%;
 	--jm-primary: 227deg 76% 66%;
 	--jm-secondary: 9deg 100% 69%;
+	--border-color: rgba(256, 256, 256, 0.1);
+	--hover-bg: rgba(256, 256, 256, 0.05);
 
 	background-color: hsl(var(--jm-dark));
 	color: hsl(var(--jm-light));
