@@ -1,0 +1,50 @@
+---
+import { Image } from '@astrojs/image/components';
+
+const { project } = Astro.props;
+---
+
+<li>
+	<a href={project.url} class="img-top">
+		<Image
+			src={project.frontmatter.image.href}
+			alt={project.frontmatter.image.alt}
+			width={449}
+			aspectRatio={4 / 3}
+		/>
+	</a>
+	<a href={project.url} class="link">
+		<h3>{project.frontmatter.title}</h3>
+	</a>
+	<p>{project.frontmatter.description}</p>
+</li>
+
+<style lang="css">
+	li {
+		display: flex;
+		flex-direction: column;
+		row-gap: var(--size-fl-1\/2);
+	}
+
+	h3 {
+		font-weight: var(--font-weight-5);
+	}
+
+	.img-top {
+		margin-block-end: var(--size-fl-3\/4);
+		border-radius: 0.25rem;
+		overflow: hidden;
+
+		&:hover {
+			& img {
+				transition-timing-function: var(--ease-in-out-1);
+				transition-duration: 300ms;
+				transform: scale(1.05);
+			}
+		}
+	}
+
+	p {
+		color: hsl(var(--jm-mid));
+	}
+</style>

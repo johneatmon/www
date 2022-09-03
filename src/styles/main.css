@@ -18,10 +18,10 @@
 
 	--size-fl-1/4: clamp(0.19rem, calc(0.16rem + 0.12vw), 0.25rem);
 	--size-fl-1\/2: clamp(0.38rem, calc(0.33rem + 0.24vw), 0.5rem);
-	--size-fl-3/4: clamp(0.56rem, calc(0.49rem + 0.37vw), 0.75rem);
+	--size-fl-3\/4: clamp(0.56rem, calc(0.49rem + 0.37vw), 0.75rem);
 	--size-fl-1: clamp(0.75rem, calc(0.65rem + 0.49vw), 1rem);
 	--size-fl-1\.25: clamp(0.94rem, calc(0.82rem + 0.61vw), 1.25rem);
-	--size-fl-1.5: clamp(1.13rem, calc(0.98rem + 0.73vw), 1.5rem);
+	--size-fl-1\.5: clamp(1.13rem, calc(0.98rem + 0.73vw), 1.5rem);
 	--size-fl-2: clamp(1.5rem, calc(1.3rem + 0.98vw), 2rem);
 	--size-fl-2\.5: clamp(1.88rem, calc(1.63rem + 1.22vw), 2.5rem);
 	--size-fl-3: clamp(2.25rem, calc(1.96rem + 1.46vw), 3rem);
@@ -79,6 +79,69 @@ a {
 	white-space: nowrap;
 }
 
+article {
+	padding-block: var(--size-fl-5);
+
+	& header,
+	& main,
+	& footer {
+		display: grid;
+		grid-template-columns:
+			1fr
+			min(40rem, calc(100% - 2rem))
+			1fr;
+
+		& > * {
+			grid-column: 2;
+		}
+	}
+
+	& main > * + * {
+		margin-block-start: 1.5em;
+	}
+
+	& .full-bleed {
+		max-width: min(100%, 58.125rem);
+		margin-inline: auto;
+		grid-column: 1 / -1;
+	}
+
+	& h1 {
+		font-size: var(--font-size-fl-3);
+		margin-block-end: var(--size-fl-2);
+	}
+
+	& h2 {
+		font-size: var(--font-size-fl-2);
+	}
+
+	& h3 {
+		font-size: var(--font-size-fl-1);
+	}
+
+	& h4 {
+		font-size: var(--font-size-fl-0);
+	}
+
+	& footer {
+		margin-block-start: var(--size-fl-3\.5);
+		color: hsl(var(--jm-mid));
+
+		& .tags {
+			display: flex;
+			flex-wrap: wrap;
+			margin-block-start: var(--size-fl-1\/2);
+			gap: var(--size-fl-1\/2);
+		}
+	}
+}
+
+@media (min-width: 930px) {
+	figure picture img {
+		border-radius: 0.25rem;
+	}
+}
+
 .font-serif {
 	font-family: 'Newsreader', var(--font-serif);
 }
@@ -100,7 +163,8 @@ a {
 	color: hsl(var(--jm-mid));
 }
 
-.link {
+.link,
+article main a {
 	font-weight: var(--font-weight-5);
 	color: inherit;
 	text-decoration-color: hsl(var(--jm-primary) / 0.5);
@@ -110,7 +174,15 @@ a {
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-duration: 300ms;
 
-	&:hover {
+	&:hover,
+	&:focus,
+	&:active {
 		text-decoration-color: hsl(var(--jm-primary));
+	}
+}
+
+.img-top {
+	& img {
+		width: 100%;
 	}
 }

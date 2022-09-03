@@ -1,0 +1,46 @@
+---
+import { Picture } from '@astrojs/image/components';
+
+interface Props {
+	image: {
+		href: any;
+		alt: string;
+	};
+	width?: number;
+	aspectRatio?: number;
+	figClasses?: string;
+}
+
+const { image, aspectRatio = 16 / 9, figClasses } = Astro.props as Props;
+---
+
+<figure class={figClasses}>
+	<Picture
+		src={image.href}
+		alt={image.alt}
+		sizes="(max-width: 400px) 100vw, 930px"
+		widths={[400, 500, 930]}
+		{aspectRatio}
+		loading="lazy"
+	/>
+	{
+		'default' in Astro.slots && (
+			<figcaption class="font-serif">
+				<slot />
+			</figcaption>
+		)
+	}
+</figure>
+
+<style>
+	figcaption {
+		color: hsl(var(--jm-mid));
+		max-width: min(100%, calc(40rem - 2rem));
+		margin-block-start: 1em;
+		margin-inline: auto;
+		font-size: var(--font-size-fl-00);
+		margin-inline: auto;
+		font-style: italic;
+		text-align: center;
+	}
+</style>

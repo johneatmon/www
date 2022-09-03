@@ -1,0 +1,61 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { machineDate, readableDate } from '@/scripts/dates';
+
+const { content } = Astro.props;
+---
+
+<BaseLayout
+	title={content.title}
+	description={content.description}
+	type="article"
+	section="Article"
+	tags={content.tags}
+	datePublished={machineDate(content.published)}
+	dateModified={machineDate(content.published)}
+>
+	<article>
+		<header>
+			<h1>
+				{content.title}
+			</h1>
+		</header>
+		<main>
+			<slot />
+		</main>
+		<footer>
+			<small>
+				{
+					content.published && (
+						<span>
+							Posted
+							<time datetime={machineDate(content.published)}>
+								{readableDate(content.published)}
+							</time>
+						</span>
+					)
+				}
+				{content.published && content.modified && <span>&nbsp;&middot;&nbsp;</span>}
+				{
+					content.modified && (
+						<span>
+							Modified
+							<time datetime={machineDate(content.modified)}>{readableDate(content.modified)}</time>
+						</span>
+					)
+				}
+			</small>
+			{
+				content.tags && (
+					<small class="tags">
+						{content.tags
+							.sort((a, b) => a.localeCompare(b))
+							.map((tag) => (
+								<span>#{tag}</span>
+							))}
+					</small>
+				)
+			}
+		</footer>
+	</article>
+</BaseLayout>

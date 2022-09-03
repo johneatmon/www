@@ -1,0 +1,58 @@
+---
+import { machineDate, readableDate } from '@scripts/dates';
+
+const { post } = Astro.props;
+---
+
+<li>
+	<a href={post.url} class="link">
+		<h3>
+			{post.frontmatter.title}
+		</h3>
+		<time datetime={machineDate(post.frontmatter.published)}
+			>{readableDate(post.frontmatter.published)}
+		</time>
+	</a>
+</li>
+
+<style>
+	li:not(:last-child) {
+		border-bottom: 1px solid var(--border-color);
+	}
+
+	a {
+		padding: var(--size-fl-1);
+		margin-inline: calc(var(--size-fl-1) * -1);
+		text-decoration: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: var(--size-fl-2);
+
+		&:hover,
+		&:active,
+		&:focus {
+			background: var(--hover-bg);
+
+			& h3 {
+				color: hsl(var(--jm-primary));
+			}
+		}
+	}
+
+	@media (min-width: 930px) {
+		a {
+			border-radius: 0.25rem;
+		}
+	}
+
+	h3 {
+		font-weight: var(--font-weight-5);
+		font-size: var(--font-size-fl-0);
+	}
+
+	time {
+		font-weight: var(--font-weight-4);
+		color: hsl(var(--jm-mid));
+	}
+</style>
