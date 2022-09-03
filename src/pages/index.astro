@@ -1,7 +1,29 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { socialLinks, secondaryNavigation } from '@data/config';
+import ProjectPreview from '@components/ProjectPreview.astro';
+import PostPreview from '@components/PostPreview.astro';
 import { Icon } from 'astro-icon';
+
+let featuredCaseStudies = await Astro.glob('./work/*.mdx')
+	.then((res) => res.filter((x) => x.frontmatter.draft != true))
+	.then((res) =>
+		res.sort(
+			(a, b) =>
+				new Date(b.frontmatter.published).valueOf() - new Date(a.frontmatter.published).valueOf()
+		)
+	)
+	.then((res) => res.slice(0, 2));
+
+let featuredPosts = await Astro.glob('./posts/*.mdx')
+	.then((res) => res.filter((x) => x.frontmatter.draft != true))
+	.then((res) =>
+		res.sort(
+			(a, b) =>
+				new Date(b.frontmatter.published).valueOf() - new Date(a.frontmatter.published).valueOf()
+		)
+	)
+	.then((res) => res.slice(0, 3));
 
 const socials = socialLinks.sort((a, b) => a.label.localeCompare(b.label));
 ---
@@ -13,27 +35,16 @@ const socials = socialLinks.sort((a, b) => a.label.localeCompare(b.label));
 			and <em class="font-serif">coffee addict</em> based in Tacoma.
 		</h1>
 	</section>
+	<section aria-labelledby="#case-studies" class="container">
+		<h2 id="case-studies" class="title--smol">Featured case studies</h2>
+		<ul role="list">
+			{featuredCaseStudies.map((project) => <ProjectPreview {project} />)}
+		</ul>
+	</section>
 	<section aria-labelledby="#blogroll" class="container">
 		<h2 id="#blogroll" class="title--smol">Recent blog posts</h2>
 		<ul role="list" class="blogroll">
-			<li>
-				<a href="#" class="link">
-					<h3>Great typefaces that aren’t Inter</h3>
-				</a>
-				<time>Jun 21, 2022</time>
-			</li>
-			<li>
-				<a href="#" class="link">
-					<h3>Currently No1</h3>
-				</a>
-				<time>Jun 21, 2022</time>
-			</li>
-			<li>
-				<a href="#" class="link">
-					<h3>This post took 2 years to write</h3>
-				</a>
-				<time>Jun 21, 2022</time>
-			</li>
+			{featuredPosts.map((post) => <PostPreview {post} />)}
 		</ul>
 	</section>
 	<div class="container sections">
@@ -93,7 +104,7 @@ const socials = socialLinks.sort((a, b) => a.label.localeCompare(b.label));
 
 <style>
 	section[aria-labelledby='#title'] {
-		padding-block-start: var(--size-fl-8);
+		padding-block-start: clamp(2.63rem, calc(1.31rem + 6.59vw), 6rem);
 	}
 
 	.icon-link {
@@ -108,30 +119,27 @@ const socials = socialLinks.sort((a, b) => a.label.localeCompare(b.label));
 		}
 	}
 
+	section[aria-labelledby='#case-studies'] {
+		padding-block-start: var(--size-fl-5);
+
+		& ul {
+			padding-block-start: var(--size-fl-1);
+			--min: 30ch;
+			display: grid;
+			grid-gap: var(--size-fl-2);
+			/* min() with 100% prevents overflow in extra narrow spaces */
+			grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+		}
+	}
+
 	section[aria-labelledby='#blogroll'] {
 		padding-block-start: var(--size-fl-3\.5);
 	}
 
 	.blogroll {
-		margin-block-start: var(--size-fl-2);
+		margin-block-start: var(--size-fl-1);
 		display: flex;
 		flex-direction: column;
-		row-gap: var(--size-fl-1);
-
-		& li {
-			display: flex;
-			justify-content: space-between;
-			column-gap: var(--size-fl-2);
-		}
-
-		& h3 {
-			font-weight: var(--font-weight-5);
-			font-size: var(--font-size-fl-0);
-		}
-
-		& time {
-			color: hsl(var(--jm-mid));
-		}
 	}
 
 	.sections {
