@@ -66,7 +66,7 @@ const {
 <meta property="og:type" content={type} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+<meta property="og:url" content={new URL(Astro.url.pathname, Astro.site).href} />
 <meta property="og:site_name" content={site.name} />
 {dateModified && <meta property="og:updated_time" content={dateModified} />}
 {image && (
@@ -101,7 +101,7 @@ const {
 <meta name="theme-color" content="#f6f6f6" media="(prefers-color-scheme: light)" />
 <meta name="color-scheme" content="light dark" />
 
-<link rel="canonical" href={Astro.url.pathname, Astro.site} />
+<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨🏻‍💻</text></svg>" />
 {prev && <link rel="prev" aria-label="Previous Page" href={new URL(prev, Astro.site).href} />}
 {next && <link rel="next" aria-label="Next Page" href={new URL(next, Astro.site).href} />}
