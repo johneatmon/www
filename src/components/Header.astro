@@ -20,17 +20,20 @@ import ThemeToggle from '@components/ThemeToggle.astro';
 			}
 		</ul>
 	</nav>
-	<ThemeToggle />
+	<div class="toggle">
+		<ThemeToggle />
+	</div>
 </header>
 
 <style>
 	header {
-		max-width: calc(100% - 2rem);
-		margin-inline: auto;
+		position: relative;
 		padding-block: var(--size-fl-2\.5);
+		padding-inline: 0.5rem;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		align-items: center;
 		gap: var(--size-fl-2);
 
 		& a {
@@ -41,6 +44,7 @@ import ThemeToggle from '@components/ThemeToggle.astro';
 
 		& nav {
 			display: flex;
+			flex-wrap: wrap;
 			align-items: center;
 
 			& ul {
@@ -49,18 +53,39 @@ import ThemeToggle from '@components/ThemeToggle.astro';
 			}
 
 			& a {
+				font-size: clamp(0.75rem, calc(0.65rem + 0.49vw), 1rem);
 				background-color: none;
 				padding-block: var(--size-fl-1\/2);
-				padding-inline: var(--size-fl-1);
+				padding-inline: clamp(0.5rem, calc(0.57rem + 0.61vw), 1rem);
 				border-radius: 0.25em;
 				transition-property: text-decoration-color;
 				transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 				transition-duration: 300ms;
 
-				&:hover {
-					background-color: rgba(0, 0, 0, 0.05);
+				&:hover,
+				&:focus,
+				&:active {
+					background-color: var(--hover-bg);
 				}
 			}
+		}
+	}
+
+	@media (min-width: 62.5rem) {
+		header {
+			padding-inline: 2rem;
+		}
+	}
+
+	@media (max-width: 531px) {
+		nav ul {
+			width: 100%;
+		}
+
+		.toggle {
+			position: absolute;
+			top: var(--size-fl-2\.5);
+			right: 0.5rem;
 		}
 	}
 </style>
