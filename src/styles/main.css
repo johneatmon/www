@@ -50,7 +50,7 @@ body > footer {
 body {
 	background-color: hsl(var(--jm-light));
 	color: hsl(var(--jm-dark));
-	font-family: 'Söhne', 'Soehne', var(--font-sans);
+	font-family: 'Söhne', var(--font-sans);
 	font-size: var(--font-size-fl-0);
 }
 
