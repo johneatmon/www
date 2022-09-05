@@ -1,3 +1,5 @@
+export { HIKES } from '@data/hikes';
+
 export const site = {
 	name: 'John Eatmon',
 	fallbackTitle: 'Designer, Developer & Coffee Addict',

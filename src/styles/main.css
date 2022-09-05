@@ -164,7 +164,8 @@ article {
 }
 
 .link,
-article main a {
+article main a,
+table td a {
 	font-weight: var(--font-weight-5);
 	color: inherit;
 	text-decoration-color: hsl(var(--jm-primary) / 0.5);

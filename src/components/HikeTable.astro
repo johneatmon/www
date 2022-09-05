@@ -1,0 +1,86 @@
+---
+import { HIKES } from '@data/config';
+import { machineDate, readableDate } from '@scripts/dates';
+---
+
+<table>
+	<thead>
+		<tr>
+			<th>Trail Name</th>
+			<th>Date Hiked</th>
+			<th>Distance (mi)</th>
+			<th>Elevation (ft)</th>
+		</tr>
+	</thead>
+	<tbody>
+		{
+			HIKES.sort((a, b) => new Date(b.dateHiked).valueOf() - new Date(a.dateHiked).valueOf()).map(
+				(hike) => (
+					<tr>
+						<td>
+							<p>
+								<a
+									class="trail-link"
+									href={hike.href ?? '#'}
+									rel="nofollow noopener noreferer"
+									target="_blank"
+								>
+									{hike.name}
+								</a>
+								&nearr;
+							</p>
+						</td>
+						<td>
+							<time datetime={machineDate(hike.dateHiked)}>{readableDate(hike.dateHiked)}</time>
+						</td>
+						<td>{hike.miles.toFixed(1)}</td>
+						<td>{hike.elevation.toLocaleString('en-US')}</td>
+					</tr>
+				)
+			)
+		}
+	</tbody>
+</table>
+
+<style lang="css">
+	table {
+		border-collapse: collapse;
+		margin-block: var(--size-fl-2);
+		display: block;
+		width: 100%;
+		white-space: nowrap;
+		overflow-x: auto;
+		font-size: 90%;
+		line-height: 1;
+
+		& th,
+		& td {
+			width: 100%;
+		}
+
+		& th:where(:nth-child(1), :nth-child(2)),
+		& td:where(:nth-child(1), :nth-child(2)) {
+			text-align: left;
+		}
+
+		& th:where(:nth-child(3), :nth-child(4)),
+		& td:where(:nth-child(3), :nth-child(4)) {
+			text-align: right;
+		}
+
+		& th,
+		& td {
+			padding: 0.75rem;
+			border: 1px dashed hsl(var(--jm-dark), 0.1);
+		}
+
+		& th {
+			background-color: hsl(var(--jm-dark) / 0.75);
+			color: hsl(var(--jm-light));
+		}
+
+		& td:not(:nth-child(1)) {
+			font-family: var(--font-mono);
+		}
+	}
+</style>

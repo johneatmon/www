@@ -1,0 +1,55 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { HIKES } from '@data/config';
+import HikeTable from '@components/HikeTable.astro';
+
+const title = 'Recent Hikes';
+const description =
+	"Hikes I've completed recently since moving to Washington in the summer of 2021.";
+---
+
+<BaseLayout {title} {description}>
+	<section aria-labelledby="#title" class="container">
+		<h1 id="title" class="title--lg">Recent Hikes</h1>
+		<p>
+			Hikes I've completed since moving to Washington state in the summer of 2021. So far, I've
+			completed <span class="count">{HIKES.length} hikes</span> in total.
+		</p>
+	</section>
+	<section aria-labelledby="#hikes" class="container">
+		<h2 id="hikes" class="title--smol">Hikes</h2>
+		<HikeTable />
+	</section>
+</BaseLayout>
+
+<style lang="css">
+	section[aria-labelledby='#title'] {
+		padding-block-start: clamp(2.63rem, calc(1.31rem + 6.59vw), 6rem);
+
+		& h1 {
+			margin-block-end: 0.5em;
+		}
+
+		& p {
+			color: hsl(var(--jm-mid));
+			max-width: 40rem;
+		}
+
+		& .count {
+			color: hsl(var(--jm-light));
+			font-weight: var(--font-weight-5);
+		}
+	}
+
+	html[data-theme='light'] .count {
+		color: hsl(var(--jm-dark));
+	}
+
+	section[aria-labelledby='#hikes'] {
+		padding-block-start: var(--size-fl-5);
+
+		& h2 {
+			margin-block-end: var(--size-fl-2);
+		}
+	}
+</style>
