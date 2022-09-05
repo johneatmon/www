@@ -3,16 +3,16 @@ import { Image } from '@astrojs/image/components';
 
 const { project } = Astro.props;
 
-const cloudflareAccountHash = import.meta.env.CLOUDFLARE_ACCOUNT_HASH;
-const cloudflareDeliveryURL = `https://imagedelivery.net/${cloudflareAccountHash}/${
-	project.frontmatter.image.id
-}/${project.frontmatter.image.variant ?? `cover`}`;
+// const cloudflareAccountHash = import.meta.env.CLOUDFLARE_ACCOUNT_HASH;
+// const cloudflareDeliveryURL = `https://imagedelivery.net/${cloudflareAccountHash}/${
+// 	project.frontmatter.image.id
+// }/${project.frontmatter.image.variant ?? `cover`}`;
 ---
 
 <li>
 	<a href={project.url} class="img-top">
 		<Image
-			src={cloudflareDeliveryURL}
+			src={project.frontmatter.image.href}
 			alt={project.frontmatter.image.alt}
 			width={1366}
 			height={1026}
