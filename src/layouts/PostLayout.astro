@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import ProjectHeader from '@components/ProjectHeader.astro';
 import { machineDate, readableDate } from '@/scripts/dates';
 
 const { content } = Astro.props;
@@ -9,16 +10,24 @@ const { content } = Astro.props;
 	title={content.title}
 	description={content.description}
 	type="article"
-	section="Article"
+	section={Astro.url.toString().includes('work') ? 'Case Study' : 'Article'}
 	tags={content.tags}
 	datePublished={machineDate(content.published)}
 	dateModified={machineDate(content.published)}
 >
 	<article>
 		<header>
-			<h1>
-				{content.title}
-			</h1>
+			{
+				content.image &&
+				content.description &&
+				content.role &&
+				content.tools &&
+				content.duration ? (
+					<ProjectHeader {content} />
+				) : (
+					<h1>{content.title}</h1>
+				)
+			}
 		</header>
 		<main>
 			<slot />
