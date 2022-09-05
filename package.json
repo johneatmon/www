@@ -16,7 +16,7 @@
   "dependencies": {
     "@astrojs/image": "^0.5.0",
     "@astrojs/mdx": "^0.11.1",
-    "astro": "^1.1.2",
+    "astro": "^1.1.5",
     "astro-icon": "^0.7.3",
     "luxon": "^3.0.3",
     "open-props": "^1.4.14",
