@@ -82,6 +82,7 @@ a {
 
 article {
 	padding-block: var(--size-fl-5);
+	line-height: 170%;
 
 	& header,
 	& main,
