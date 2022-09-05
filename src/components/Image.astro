@@ -25,7 +25,9 @@ const {
 } = Astro.props as Props;
 
 const cloudflareAccountHash = import.meta.env.CLOUDFLARE_ACCOUNT_HASH;
-const cloudflareDeliveryURL = `https://imagedelivery.net/${cloudflareAccountHash}/${imageId}/${variant}`;
+const cloudflareDeliveryURL = `https://imagedelivery.net/${cloudflareAccountHash}/${imageId}/${
+	variant ?? `public`
+}`;
 ---
 
 <Image
