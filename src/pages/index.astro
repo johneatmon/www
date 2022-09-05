@@ -4,6 +4,7 @@ import { socialLinks, secondaryNavigation } from '@data/config';
 import ProjectPreview from '@components/ProjectPreview.astro';
 import PostPreview from '@components/PostPreview.astro';
 import { Icon } from 'astro-icon';
+import { HIKES } from '@data/config';
 
 let featuredCaseStudies = await Astro.glob('./work/*.mdx')
 	.then((res) => res.filter((x) => x.frontmatter.draft != true))
@@ -24,6 +25,10 @@ let featuredPosts = await Astro.glob('./posts/*.mdx')
 		)
 	)
 	.then((res) => res.slice(0, 3));
+
+const recentHikes = HIKES.sort(
+	(a, b) => new Date(b.dateHiked).valueOf() - new Date(a.dateHiked).valueOf()
+).slice(0, 3);
 
 const socials = socialLinks.sort((a, b) => a.label.localeCompare(b.label));
 ---
@@ -66,9 +71,16 @@ const socials = socialLinks.sort((a, b) => a.label.localeCompare(b.label));
 		<section aria-labelledby="#recent-hikes">
 			<h3 id="recent-hikes" class="title--smol">Recent hikes</h3>
 			<ul role="list">
-				<li><a class="link" href="#">Spectacle Lake</a>&nbsp;&nearr;</li>
-				<li><a class="link" href="#">Greg Ball via Granite Creek Trail</a>&nbsp;&nearr;</li>
-				<li><a class="link" href="#">Lake Thompson Trail</a>&nbsp;&nearr;</li>
+				{
+					recentHikes.map((hike) => (
+						<li>
+							<a href={hike.href} class="link">
+								{hike.name}
+							</a>
+							&nbsp;&nearr;
+						</li>
+					))
+				}
 			</ul>
 		</section>
 		<section
