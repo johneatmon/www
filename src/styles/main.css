@@ -1,4 +1,5 @@
 @import 'reset.css';
+@import 'font.css';
 
 :root {
 	--jm-light: 0deg 0% 96%;
