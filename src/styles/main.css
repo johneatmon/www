@@ -189,3 +189,7 @@ table td a {
 		height: auto;
 	}
 }
+
+html[data-theme='light'] .border > img {
+	border: 1px solid hsl(var(--jm-dark) / 0.1);
+}
