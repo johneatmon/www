@@ -2,12 +2,17 @@
 import { Image } from '@astrojs/image/components';
 
 const { project } = Astro.props;
+
+const cloudflareAccountHash = import.meta.env.CLOUDFLARE_ACCOUNT_HASH;
+const cloudflareDeliveryURL = `https://imagedelivery.net/${cloudflareAccountHash}/${
+	project.frontmatter.image.id
+}/${project.frontmatter.image.variant ?? `public`}`;
 ---
 
 <li>
 	<a href={project.url} class="img-top">
 		<Image
-			src={project.frontmatter.image.href}
+			src={cloudflareDeliveryURL}
 			alt={project.frontmatter.image.alt}
 			width={449}
 			aspectRatio={4 / 3}

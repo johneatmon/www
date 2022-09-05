@@ -3,8 +3,9 @@ import { Picture } from '@astrojs/image/components';
 
 interface Props {
 	image: {
-		href: any;
-		alt: string;
+		id: string;
+		variant?: string;
+		alt?: string;
 	};
 	width?: number;
 	aspectRatio?: number;
@@ -12,12 +13,17 @@ interface Props {
 }
 
 const { image, aspectRatio = 16 / 9, figClasses } = Astro.props as Props;
+
+const cloudflareAccountHash = import.meta.env.CLOUDFLARE_ACCOUNT_HASH;
+const cloudflareDeliveryURL = `https://imagedelivery.net/${cloudflareAccountHash}/${image.id}/${
+	image.variant ?? `public`
+}`;
 ---
 
 <figure class={figClasses}>
 	<Picture
-		src={image.href}
-		alt={image.alt}
+		src={cloudflareDeliveryURL}
+		alt={image.alt ?? ''}
 		sizes="(max-width: 400px) 100vw, 930px"
 		widths={[400, 500, 930]}
 		{aspectRatio}
