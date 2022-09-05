@@ -186,5 +186,6 @@ table td a {
 .img-top {
 	& img {
 		width: 100%;
+		height: auto;
 	}
 }
