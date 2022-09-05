@@ -1,0 +1,77 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import PostPreview from '@components/PostPreview.astro';
+
+const title = 'My Writing';
+const description = 'The musings and meditations of a designer and developer.';
+
+export async function getStaticPaths({ paginate }) {
+	const allPosts = await Astro.glob('./*.mdx')
+		.then((res) => res.filter((x) => x.frontmatter.draft != true))
+		.then((res) =>
+			res.sort(
+				(a, b) =>
+					new Date(b.frontmatter.published).valueOf() - new Date(a.frontmatter.published).valueOf()
+			)
+		);
+
+	return paginate(allPosts, {
+		pageSize: 15,
+	});
+}
+
+const { page } = Astro.props;
+
+const prev = page.url.next;
+const next = page.url.next;
+---
+
+<BaseLayout {title} {description} {prev} {next}>
+	<section aria-labelledby="#title" class="container">
+		<h1 id="title" class="title--lg">{title}</h1>
+		<p>
+			I write about design, development, tech, and other things going on in my life. So far, I’ve
+			written <span class="count">{page.data.length} posts</span> in total.
+		</p>
+	</section>
+	<section aria-labelledby="#blogroll" class="container">
+		<h2 id="blogroll" class="title--smol">Recent blog posts</h2>
+		<ul role="list" class="blogroll">
+			{page.data.map((post) => <PostPreview {post} />)}
+		</ul>
+	</section>
+</BaseLayout>
+
+<style lang="css">
+	section[aria-labelledby='#title'] {
+		padding-block-start: clamp(2.63rem, calc(1.31rem + 6.59vw), 6rem);
+
+		& h1 {
+			margin-block-end: 0.5em;
+		}
+
+		& p {
+			color: hsl(var(--jm-mid));
+			max-width: 40rem;
+		}
+
+		& .count {
+			color: hsl(var(--jm-light));
+			font-weight: var(--font-weight-5);
+		}
+	}
+
+	html[data-theme='light'] .count {
+		color: hsl(var(--jm-dark));
+	}
+
+	section[aria-labelledby='#blogroll'] {
+		padding-block-start: var(--size-fl-3\.5);
+	}
+
+	.blogroll {
+		margin-block-start: var(--size-fl-1);
+		display: flex;
+		flex-direction: column;
+	}
+</style>
