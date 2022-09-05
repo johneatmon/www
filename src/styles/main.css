@@ -138,8 +138,15 @@ article {
 	}
 }
 
+figure img,
+header img {
+	width: 100%;
+	height: auto;
+}
+
 @media (min-width: 930px) {
-	figure picture img {
+	figure img,
+	header img {
 		border-radius: 0.25rem;
 	}
 }
