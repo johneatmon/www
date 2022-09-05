@@ -52,6 +52,7 @@ import { machineDate, readableDate } from '@scripts/dates';
 		overflow-x: auto;
 		font-size: 90%;
 		line-height: 1;
+		margin-inline: -0.75rem;
 
 		& th,
 		& td {
@@ -75,12 +76,17 @@ import { machineDate, readableDate } from '@scripts/dates';
 		}
 
 		& th {
-			background-color: hsl(var(--jm-dark) / 0.75);
+			background-color: hsl(var(--jm-dark) / 0.8);
 			color: hsl(var(--jm-light));
 		}
 
 		& td:not(:nth-child(1)) {
 			font-family: var(--font-mono);
 		}
+	}
+
+	html[data-theme='dark'] table th {
+		background-color: hsl(var(--jm-light) / 0.8);
+		color: hsl(var(--jm-dark));
 	}
 </style>
