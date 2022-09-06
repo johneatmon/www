@@ -1,0 +1,167 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { RESUME } from '@data/config';
+import ThemeToggle from '@components/ThemeToggle.astro';
+
+const title = 'Résumé';
+const description =
+	"I'm a product designer with 2 years experience in front-end web development and design. I'm Currently responsible for managing and leading digital product designs from ideation to launch.";
+---
+
+<BaseLayout {title} {description}>
+	<article aria-labelledby="#name" class="container">
+		<header>
+      <div>
+        <h1 id="name">{RESUME.header.name}</h1>
+        <p>
+          {RESUME.header.title}<br />
+          {RESUME.header.location}
+        </p>
+      </div>
+      <div class="button">
+        <ThemeToggle />
+      </div>
+		</header>
+		<main>
+			<section>
+				<h2 class="title--smol">About</h2>
+				<p>
+					{RESUME.about}
+				</p>
+			</section>
+			<section>
+				<h2 class="title--smol">Contact</h2>
+				<ul role="list" class="contact">
+					{
+						RESUME.contact.map((method) => (
+							<li>
+								<span class="medium">{method.name}</span>
+								<br />
+								<a href={method.href} rel="noopener noreferer nofollow">
+									{method.label}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+			<section class="xp">
+				<h2 class="title--smol">Experience</h2>
+				<ul role="list">
+					{
+						RESUME.experience.map((xp) => (
+							<li>
+								<span class="medium">{xp.period}</span>
+								<br />
+								<strong>{xp.title}</strong> &mdash; {xp.company}
+								<br />
+								<small class="medium">{xp.location}</small>
+								<ul role="list">
+									{xp.description.map((desc) => (
+										<li>{desc}</li><br class="last" />
+									))}
+								</ul>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+      <section class="projects">
+        <h2 class="title--smol">Projects</h2>
+        <ul role="list">
+          {RESUME.projects.map((project) =>
+            <li>
+              <span class="medium">{project.period}</span><br />
+              <a href={project.href} class="link">
+                {project.title}
+              </a>
+              <br />
+              <small class="medium">{project.role}</small>
+            </li>
+          )}
+        </ul>
+      </section>
+      <section class="education">
+        <h2 class="title--smol">Education</h2>
+        <ul role="list">
+          {RESUME.education.map((edu) =>
+            <li>
+              <span class="medium">{edu.date}</span><br />
+              <strong>{edu.degree}</strong><br />
+              <small class="medium">{edu.university}</small>
+            </li>
+          )}
+        </ul>
+      </section>
+		</main>
+		<footer>
+			<small>Modified <time datetime={new Date().toISOString()}>{new Date().toDateString()}</time></small>
+		</footer>
+	</article>
+</BaseLayout>
+
+<style lang="css">
+	article {
+		padding-block-start: var(--size-fl-3\.5);
+
+		& .title--smol {
+			color: hsl(var(--jm-primary));
+			margin-block-end: var(--size-fl-1);
+		}
+	}
+
+	header {
+    position: relative !important;
+
+    & .button {
+      position: absolute !important;
+      top: 0;
+      right: 5vw;
+      /* transform: translateY(-50%); */
+    }
+
+		& h1 {
+			font-size: var(--font-size-fl-1) !important;
+			margin-block-end: unset !important;
+		}
+
+		& p {
+			font-size: var(--font-size-fl-1);
+			color: hsl(var(--jm-mid));
+		}
+	}
+
+	main {
+		padding-block-start: var(--size-fl-4\.5);
+		display: flex;
+		flex-direction: column;
+		row-gap: var(--size-fl-2);
+	}
+
+	.contact {
+		display: flex;
+		flex-direction: column;
+		row-gap: var(--size-fl-2);
+	}
+
+	.medium {
+		font-weight: var(--font-weight-5);
+		color: hsl(var(--jm-mid));
+	}
+
+  ul {
+    margin-block-start: var(--size-fl-1);
+
+    & .last:last-child {
+      display: none;
+    } 
+  }
+
+  .xp > ul,
+  .projects > ul,
+  .education > ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--size-fl-2);
+  }
+</style>

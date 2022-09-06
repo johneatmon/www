@@ -1,3 +1,4 @@
+export { RESUME } from '@data/resume';
 export { HIKES } from '@data/hikes';
 
 export const site = {
