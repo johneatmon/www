@@ -9,6 +9,7 @@ interface Props {
 	};
 	width?: number;
 	height?: number;
+	format?: 'avif' | 'jpeg' | 'png' | 'webp';
 	aspectRatio?: number;
 	figClasses?: string;
 }
@@ -19,6 +20,7 @@ const {
 	height = 768,
 	aspectRatio = 16 / 9,
 	figClasses,
+	format = 'avif',
 } = Astro.props as Props;
 
 const cloudflareAccountHash = import.meta.env.CLOUDFLARE_ACCOUNT_HASH;
@@ -35,6 +37,7 @@ const cloudflareDeliveryURL = `https://imagedelivery.net/${cloudflareAccountHash
 		{height}
 		aspectRatio={width && height ? '' : aspectRatio}
 		loading="lazy"
+		{format}
 	/>
 	{
 		'default' in Astro.slots && (
