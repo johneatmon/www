@@ -23,7 +23,7 @@ const { title, description, image, type, section, tags, datePublished, dateModif
 		/>
 	</head>
 	<body>
-		{!(Astro.url.pathname === '/about/resume') && <Header />}
+		<Header />
 		<main>
 			<slot />
 		</main>
