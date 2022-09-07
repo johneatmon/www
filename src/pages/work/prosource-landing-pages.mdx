@@ -24,8 +24,72 @@ duration:
 modified: 2022-08-30
 ---
 
+import Figure from '@components/Figure.astro';
+
 ## Background
 
 Hosting desktop versions of QuickBooks is a core offering of ProSource. When ProSource became an [Intuit Authorized Hosting Service Provider](https://quickbooks.intuit.com/learn-support/en-us/help-article/product-setup/hosting-providers-authorized-intuit/L3RAbICtq_US_en_US), the company wanted a dedicated landing page to track and convert leads generated from the Intuit website.
 
-The QuickBooks landing page was the first designed for a specific niche — another was created for the [Florida Radiological Society conference](https://www.flrad.org/2022-annual-meeting-frs-frbma/) ProSource attended in July 2022.
+A healthcare landing page was created for the [Florida Radiological Society conference](https://www.flrad.org/2022-annual-meeting-frs-frbma/) ProSource attended in July 2022.
+
+## Process
+
+To write the copy for the QuickBooks landing page, I first surveyed current hosting customers and asked why they chose us. Their primary reason? They didn't like their previous hosting provider. Digging deeper, these customers didn't like the previous providers' technology stack, customer support, and security. All of these bullet points were emphasized in the marketing copy for the website:
+
+### Focus on HIPAA
+
+For the healthcare page, we decided to focus on HIPAA compliance, which is the framework that dictates
+the majority of technology decisions for healthcare companies. We created an assessment gated behind
+an email capture to capture leads:
+
+<Figure
+	image={{
+		id: 'a7f8435e-1cfc-4f02-993a-74a2044fcd00',
+		alt: 'A screenshot of the gated HIPAA assessment module on the ProSource healthcare landing page.',
+		variant: 'public',
+	}}
+	width={1366}
+	height={768}
+	figClasses="full-bleed"
+>
+	In order to take the HIPAA assessment, you have to enter an email address, which is sent to
+	HubSpot.
+</Figure>
+
+### Design
+
+I created a few frames in Figma and tried swapping around sections to see which flowed better. Eventually, these were A/B tested to determine which layout results in a higher conversion rate.
+
+<Figure
+	image={{
+		id: '961e3372-d3d0-4bcd-0b7b-f18f024d8000',
+		alt: 'A mockup of the healthcare landing page designed in Figma.',
+		variant: 'public',
+	}}
+	width={1366}
+	height={768}
+	figClasses="full-bleed"
+>
+	Ultimately, I decided that the HIPAA assessment should be the focus for the healthcare landing
+	page.
+</Figure>
+
+### Development
+
+After the designs were run by peers, stakeholders, and a select few customers, I developed the pages using [AstroJS](https://astro.build/). For the interactive quiz portion, I used Svelte. Results from the survey are automatically attached to contacts in HubSpot using a Netlify Function.
+
+## Tech Stack
+
+The following technologies were used to create the landing pages:
+
+- [Astro](https://astro.build/) — a new static site generator that promises "powerful developer experience." So far, it's lived up to its messaging and the community around it has made me so excited about web development.
+- [Tailwind CSS](https://tailwindcss.com/) — the utility-first CSS framework. Though controversial, the tool's power to iterate and design quickly helped a lot with this project.
+- [Netlify + Functions](https://www.netlify.com/) — like the [main marketing website](/work/prosource-website), the landing pages are hosted on Netlify. Netlify Functions in conjunction with Svelte are used to securely create/update HubSpot contacts using the [HubSpot API](https://github.com/HubSpot/hubspot-api-nodejs).
+- [Svelte](https://svelte.dev/) — the HIPAA assessment was inspired by an open-source [trivia project](https://github.com/manan30/svelte-trivia) written in Svelte.
+- [HubSpot](hubspot.com/) — the gold-standard for CRMs out there. I use the meetings embed as the main CTA for the landing pages. Additionally, the Svelte HIPAA assessment creates a contact in HubSpot and attaches the takers' results upon completion.
+
+## Outcomes
+
+- Wrote new marketing copy entirely from scratch.
+- Designed and developed landing pages for the company’s healthcare and hosted QuickBooks Desktop campaigns, which have converted leads at a 10% conversion rate (industry average is around 2%).
+- Created a Svelte-powered HIPAA assessment on the healthcare landing page; HIPAA knowledge/best practices are tested and the takers' results are sent to HubSpot via their REST API and Netlify Functions.
