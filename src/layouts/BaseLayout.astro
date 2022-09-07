@@ -1,14 +1,13 @@
 ---
 import BaseHead from '@components/BaseHead.astro';
 import Header from '@components/Header.astro';
-import ThemeToggle from '@components/ThemeToggle.astro';
 import Footer from '@components/Footer.astro';
 
 const { title, description, image, type, section, tags, datePublished, dateModified, prev, next } =
 	Astro.props;
 ---
 
-<html lang='en'>
+<html lang="en" dir="ltr">
 	<head>
 		<BaseHead
 			{title}
@@ -26,9 +25,8 @@ const { title, description, image, type, section, tags, datePublished, dateModif
 	<body>
 		<Header />
 		<main>
-			<slot></slot>
+			<slot />
 		</main>
 		<Footer />
-		<ThemeToggle />
 	</body>
 </html>

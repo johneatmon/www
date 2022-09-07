@@ -1,0 +1,45 @@
+---
+import { Image } from '@astrojs/image/components';
+export interface Props {
+	imageId: string;
+	variant?: string;
+	alt?: string;
+	width: number;
+	height?: number;
+	format?: 'avif' | 'jpeg' | 'png' | 'webp';
+	aspectRatio?: string;
+	loading?: string;
+	classes?: string;
+	styles?: string;
+}
+
+const {
+	imageId,
+	variant = 'public',
+	alt = '',
+	width = 1366,
+	height = 768,
+	format = 'webp',
+	loading = 'lazy',
+	aspectRatio = '16/9',
+	classes,
+	styles,
+} = Astro.props as Props;
+
+const cloudflareAccountHash = import.meta.env.CLOUDFLARE_ACCOUNT_HASH;
+const cloudflareDeliveryURL = `https://imagedelivery.net/${cloudflareAccountHash}/${imageId}/${
+	variant ?? `public`
+}`;
+---
+
+<Image
+	src={cloudflareDeliveryURL}
+	{alt}
+	{width}
+	{height}
+	{format}
+	{loading}
+	aspectRatio={width && height ? '' : aspectRatio}
+	class={classes}
+	style={styles}
+/>

@@ -1,52 +1,64 @@
 ---
-export interface Props {
-	project: any;
-}
+import { Image } from '@astrojs/image/components';
 
-const { project } = Astro.props as Props;
+const { project } = Astro.props;
 
-const tags = project.frontmatter.tags;
+const cloudflareAccountHash = import.meta.env.CLOUDFLARE_ACCOUNT_HASH;
+const cloudflareDeliveryURL = `https://imagedelivery.net/${cloudflareAccountHash}/${
+	project.frontmatter.image.id
+}/${project.frontmatter.image.variant ?? `cover`}`;
 ---
 
-<a href={project.frontmatter.redirect ?? project.url} class='project'>
-	{project.frontmatter.image && (
-		<Img
-			src={project.frontmatter.image.href}
+<li>
+	<a href={project.url} class="img-top">
+		<Image
+			src={cloudflareDeliveryURL}
 			alt={project.frontmatter.image.alt}
-			preload="avif"
+			width={1366}
+			height={1026}
 			loading="lazy"
-			width={1024}
-			height={768}
-			placeholder="none"
+			format="webp"
 		/>
-	)}
-	<h3>{project.frontmatter.title}</h3><br />
-	<small class="roles">
-		{tags
-			? tags.map((tag) => (
-					<span>{tag}</span>
-					<span class="divider">,&nbsp;</span>
-			  ))
-			: project.frontmatter.description}
-	</small>
-</a>
+	</a>
+	<a href={project.url} class="link">
+		<h3>{project.frontmatter.title}</h3>
+	</a>
+	<p>{project.frontmatter.description}</p>
+</li>
 
-<style>
-	.project {
-		text-decoration: none;
+<style lang="css">
+	li {
+		display: flex;
+		flex-direction: column;
+		row-gap: var(--size-fl-1\/2);
+	}
 
-		& * {
-			opacity: 0.9;
+	h3 {
+		font-weight: var(--font-weight-5);
+	}
+
+	.img-top {
+		margin-block-end: var(--size-fl-3\/4);
+		margin-inline: -1rem;
+		overflow: hidden;
+
+		&:hover {
+			& img {
+				transition-timing-function: var(--ease-in-out-1);
+				transition-duration: 300ms;
+				transform: scale(1.05);
+			}
 		}
+	}
 
-		&:hover * {
-			opacity: 1;
+	@media (min-width: 38.125rem) {
+		.img-top {
+			border-radius: 0.25rem;
+			margin-inline: unset;
 		}
+	}
 
-		& h3 {
-			display: inline-block;
-			margin-top: 1rem;
-			font-size: 1rem;
-		}
+	p {
+		color: hsl(var(--jm-mid));
 	}
 </style>

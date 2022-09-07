@@ -1,41 +1,64 @@
 ---
 import { machineDate, readableDate } from '@scripts/dates';
 
-export interface Props {
-	post: any;
-}
-
-const { post } = Astro.props as Props;
+const { post } = Astro.props;
 ---
 
-<div class="post">
-	<a href={post.url}>
-		<h2>
+<li>
+	<a href={post.url} class="link">
+		<h3>
 			{post.frontmatter.title}
-		</h2>
-	</a>
-	<small>
-		<time datetime={machineDate(post.frontmatter.published)}>
-			{readableDate(post.frontmatter.published)}
+		</h3>
+		<time datetime={machineDate(post.frontmatter.published)}
+			>{readableDate(post.frontmatter.published)}
 		</time>
-	</small>
-</div>
+	</a>
+</li>
 
 <style>
-	.post {
+	li:not(:last-child) {
+		border-bottom: 1px solid var(--border-color);
+	}
+
+	a {
+		padding: var(--size-fl-1);
+		margin-inline: calc(var(--size-fl-1) * -1);
+		text-decoration: none;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		gap: 1rem;
-		flex-wrap: wrap;
-		padding-block: 1rem;
+		column-gap: var(--size-fl-2);
 
-		& h2 {
-			font-size: var(--type-step-1);
+		&:hover,
+		&:active,
+		&:focus {
+			background: var(--hover-bg);
+
+			& h3 {
+				color: hsl(var(--jm-primary));
+			}
 		}
 	}
 
-	.post:not(:last-child) {
-		border-bottom: 1px dashed hsl(var(--color-copy), 0.1);
+	@media (min-width: 930px) {
+		a {
+			border-radius: 0.25rem;
+		}
+	}
+
+	h3 {
+		font-weight: var(--font-weight-5);
+		font-size: var(--font-size-fl-0);
+	}
+
+	time {
+		font-weight: var(--font-weight-4);
+		color: hsl(var(--jm-mid));
+	}
+
+	@media (max-width: 360px) {
+		time {
+			font-size: 80%;
+		}
 	}
 </style>

@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import PostPreview from '@components/PostPreview.astro';
+import ProjectPreview from '@components/ProjectPreview.astro';
 
 const title = 'My Writing';
-const description = 'The musings and meditations of a designer and developer.';
+const description =
+	"Design projects I've lead and managed from ideation to launch — primarily in the technology space.";
 
 export async function getStaticPaths({ paginate }) {
 	const allPosts = await Astro.glob('./*.mdx')
@@ -28,16 +29,15 @@ const next = page.url.next;
 
 <BaseLayout {title} {description} {prev} {next}>
 	<section aria-labelledby="#title" class="container">
-		<h1 id="title" class="title--lg">{title}</h1>
+		<h1 id="title" class="title--lg">My Work</h1>
 		<p>
-			I write about design, development, tech, and other things going on in my life. So far, I’ve
-			written <span class="count">{page.data.length} posts</span> in total.
+			{description}
 		</p>
 	</section>
-	<section aria-labelledby="#blogroll" class="container">
-		<h2 id="blogroll" class="title--smol">Recent blog posts</h2>
-		<ul role="list" class="blogroll">
-			{page.data.map((post) => <PostPreview {post} />)}
+	<section aria-labelledby="#case-studies" class="container">
+		<h2 id="case-studies" class="title--smol">Case studies</h2>
+		<ul role="list">
+			{page.data.map((project) => <ProjectPreview {project} />)}
 		</ul>
 	</section>
 </BaseLayout>
@@ -61,17 +61,16 @@ const next = page.url.next;
 		}
 	}
 
-	html[data-theme='light'] .count {
-		color: hsl(var(--jm-dark));
-	}
-
-	section[aria-labelledby='#blogroll'] {
+	section[aria-labelledby='#case-studies'] {
 		padding-block-start: var(--size-fl-3\.5);
-	}
 
-	.blogroll {
-		margin-block-start: var(--size-fl-1);
-		display: flex;
-		flex-direction: column;
+		& ul {
+			padding-block-start: var(--size-fl-1);
+			--min: 30ch;
+			display: grid;
+			grid-gap: var(--size-fl-2);
+			/* min() with 100% prevents overflow in extra narrow spaces */
+			grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+		}
 	}
 </style>

@@ -1,0 +1,64 @@
+---
+import { Image } from '@astrojs/image/components';
+
+const { content } = Astro.props;
+
+const cloudflareAccountHash = import.meta.env.CLOUDFLARE_ACCOUNT_HASH;
+const cloudflareDeliveryURL = `https://imagedelivery.net/${cloudflareAccountHash}/${
+	content.image.id
+}/${content.image.variant ?? `cover`}`;
+---
+
+<Image
+	src={cloudflareDeliveryURL}
+	alt={content.image.alt}
+	width={1366}
+	height={1026}
+	loading="eager"
+	class="full-bleed"
+  format="webp"
+/>
+<div class="project-header">
+  <h1>{content.title}</h1>
+  <dl>
+    <div>
+      <dt class="title--smol">Challenge</dt>
+      <dd>{content.description}</dd>
+    </div>
+    <div>
+      <dt class="title--smol">My role</dt>
+      <dd>{content.role}</dd>
+    </div>
+    <div>
+      <dt class="title--smol">Tools</dt>
+      <dd>{content.tools.map((tool) => <span>{tool}</span><span class="last">,&nbsp;</span>)}</dd>
+    </div>
+    <div>
+      <dt class="title--smol">Duration</dt>
+      <dd>{content.duration.from}&ndash;{content.duration.to}</dd>
+    </div>
+  </dl>
+</div>
+
+<style lang="css">
+  .project-header {
+    padding-block: var(--size-fl-2\.5);
+    border-bottom: 1px solid var(--border-color);
+    margin-block-end: var(--size-fl-2\.5);
+  }
+
+  dl {
+    --min: 30ch;
+    display: grid;
+    grid-gap: var(--size-fl-2);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+  }
+
+  dt {
+    margin-block-end: var(--size-fl-1\/2);
+  }
+
+  .last:last-child {
+    display: none;
+  }
+</style>

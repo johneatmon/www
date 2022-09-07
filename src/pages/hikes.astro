@@ -1,88 +1,55 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import json from '@data/hikes.json';
+import { HIKES } from '@data/config';
+import HikeTable from '@components/HikeTable.astro';
 
 const title = 'Recent Hikes';
-const description = "John Eatmon's recent hikes throughout the state of Washington.";
+const description =
+	"Hikes I've completed recently since moving to Washington in the summer of 2021.";
 ---
 
 <BaseLayout {title} {description}>
-	<div class="wrapper">
-		<section class="hero" aria-labelledby="#title">
-			<h1 id="title">Hikes</h1>
-			<small class="count">{json.length} hikes </small>
-		</section>
-		<section>
-			<table>
-				<thead>
-					<tr>
-						<th> Date Hiked </th>
-						<th> Trail Name </th>
-						<th> Distance (mi) </th>
-						<th> Elevation (ft) </th>
-					</tr>
-				</thead>
-				<tbody>
-					{json.sort((a, b) => new Date(b.dateHiked).valueOf() - new Date(a.dateHiked).valueOf()).map((hike) => 
-						<tr>
-							<td>
-								{hike.dateHiked}
-							</td>
-							<td>
-								{hike.href ? (
-									<p>
-										<a class="trail-link" href={hike.href} rel="nofollow noopener noreferer" target="_blank">
-											{hike.name}
-										</a>
-										&nearr;
-									</p>
-								) : (
-									{hike.name}
-								)}
-							</td>
-							<td>
-								{hike.miles}
-							</td>
-							<td>
-								{hike.elevation}
-							</td>
-						</tr>
-					)}
-				</tbody>
-			</table>
-		</section>
-	</div>
+	<section aria-labelledby="#title" class="container">
+		<h1 id="title" class="title--lg">Recent Hikes</h1>
+		<p>
+			I’m recording the hikes I’ve completed since moving to Washington state in the summer of 2021.
+			So far, I’ve completed <span class="count">{HIKES.length} hikes</span> in total.
+		</p>
+	</section>
+	<section aria-labelledby="#hikes" class="container">
+		<h2 id="hikes" class="title--smol">Hikes</h2>
+		<HikeTable />
+	</section>
 </BaseLayout>
 
-<style>
-	table {
-		border-collapse: collapse;
-		margin-block: 2rem;
-		display: block;
-		width: 100%;
-		white-space: nowrap;
-		overflow-x: auto;
-		font-size: 90%;
-		line-height: 1;
+<style lang="css">
+	section[aria-labelledby='#title'] {
+		padding-block-start: clamp(2.63rem, calc(1.31rem + 6.59vw), 6rem);
 
-		& th,
-		& td {
-			padding: 0.75rem;
-			border: 1px dashed hsl(var(--color-copy), 0.1);
+		& h1 {
+			margin-block-end: 0.5em;
 		}
 
-		& th {
-			background-color: hsl(var(--color-copy));
-			color: hsl(var(--color-bg));
-			text-align: left;
+		& p {
+			color: hsl(var(--jm-mid));
+			max-width: 40rem;
 		}
 
-		& td {
-			font-family: var(--font-stack-mono);
+		& .count {
+			color: hsl(var(--jm-light));
+			font-weight: var(--font-weight-5);
 		}
 	}
 
-	.trail-link {
-		display: inline-block;
+	html[data-theme='light'] .count {
+		color: hsl(var(--jm-dark));
+	}
+
+	section[aria-labelledby='#hikes'] {
+		padding-block-start: var(--size-fl-5);
+
+		& h2 {
+			margin-block-end: var(--size-fl-2);
+		}
 	}
 </style>

@@ -1,59 +1,93 @@
 ---
-const links = [
-	{
-		label: 'Writing',
-		href: '/posts',
-	},
-	{
-		label: 'Hikes',
-		href: '/hikes',
-	},
-	{
-		label: 'Work',
-		href: '/work',
-	},
-	{
-		label: 'About',
-		href: '/about',
-	},
-];
+import { site, primaryNavigation } from '@data/config';
+import ThemeToggle from '@components/ThemeToggle.astro';
 ---
 
-<header class='wrapper'>
+<header>
 	<nav>
-		<a href='/' class='site-title'>
-			<strong>J.M.A. Eatmon</strong>
+		<a href="/">
+			<strong>
+				{site.name}
+			</strong>
 		</a>
-		<ul role='list'>
-			{links.map((link) => (
-				<li>
-					<a href={link.href} rel="prefetch">
-						{link.label}
-					</a>
-				</li>
-			))}
+		<ul role="list">
+			{
+				primaryNavigation.map((link) => (
+					<li>
+						<a href={link.href} rel="prefetch">
+							{link.label}
+						</a>
+					</li>
+				))
+			}
 		</ul>
 	</nav>
+	<div class="toggle">
+		<ThemeToggle />
+	</div>
 </header>
 
 <style>
 	header {
-		padding-block: 2rem;
-		/* border-bottom: 1px solid hsl(var(--color-copy), 0.1); */
-	}
-
-	nav {
+		position: relative;
+		padding-block: var(--size-fl-2\.5);
+		padding-inline: 0.5rem;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		align-items: flex-end;
-		gap: 2rem;
+		align-items: center;
+		gap: var(--size-fl-2);
+
+		& a {
+			color: inherit;
+			text-decoration: none;
+			font-weight: var(--font-weight-4);
+		}
+
+		& nav {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+
+			& ul {
+				display: flex;
+				align-items: center;
+			}
+
+			& a {
+				font-size: clamp(0.75rem, calc(0.65rem + 0.49vw), 1rem);
+				background-color: none;
+				padding-block: var(--size-fl-1\/2);
+				padding-inline: clamp(0.5rem, calc(0.57rem + 0.61vw), 1rem);
+				border-radius: 0.25em;
+				transition-property: text-decoration-color;
+				transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+				transition-duration: 300ms;
+
+				&:hover,
+				&:focus,
+				&:active {
+					background-color: var(--hover-bg);
+				}
+			}
+		}
 	}
 
-	ul {
-		padding: 0;
-		list-style: none;
-		display: flex;
-		gap: clamp(1rem, 2vw + 0.5rem, 2rem);
+	@media (min-width: 62.5rem) {
+		header {
+			padding-inline: 2rem;
+		}
+	}
+
+	@media (max-width: 531px) {
+		nav ul {
+			width: 100%;
+		}
+
+		.toggle {
+			position: absolute;
+			top: var(--size-fl-2\.5);
+			right: 0.5rem;
+		}
 	}
 </style>

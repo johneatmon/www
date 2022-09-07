@@ -1,13 +1,24 @@
-<footer class="wrapper">
+---
+import { site } from '@data/config';
+---
+
+<footer class="container">
 	<small>
-		Copyright &copy; <span id="year"></span> J.M.A. Eatmon &middot; <a href="/about#colophon"
-			>Colophon</a
-		> &middot;
-		<a href="/sitemap-0.xml">Sitemap</a>
+		Copyright &copy; <span id="year"></span>
+		{site.name}.<br />
+		<em class="font-serif">Here be dragons.</em>
 	</small>
 </footer>
 
+<style>
+	footer {
+		padding-block-start: var(--size-fl-4\.5);
+		padding-block-end: var(--size-fl-1\.25);
+		text-align: center;
+		color: hsl(var(--jm-mid));
+	}
+</style>
+
 <script>
-	const year = document.querySelector('#year');
-	year.innerHTML = new Date().getFullYear().toString();
+	const year = (document.querySelector('#year').innerHTML = new Date().getFullYear().toString());
 </script>

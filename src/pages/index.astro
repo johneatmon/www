@@ -1,11 +1,13 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import { socialLinks, secondaryNavigation } from '@data/config';
 import ProjectPreview from '@components/ProjectPreview.astro';
+import PostPreview from '@components/PostPreview.astro';
+import { Icon } from 'astro-icon';
+import { HIKES } from '@data/config';
 
-let featuredProjects = await Astro.glob('./work/*.md')
-	.then((res) =>
-		res.filter((x) => x.frontmatter.type != 'sideproject' && x.frontmatter.draft != true)
-	)
+let featuredCaseStudies = await Astro.glob('./work/*.mdx')
+	.then((res) => res.filter((x) => x.frontmatter.draft != true))
 	.then((res) =>
 		res.sort(
 			(a, b) =>
@@ -14,112 +16,178 @@ let featuredProjects = await Astro.glob('./work/*.md')
 	)
 	.then((res) => res.slice(0, 2));
 
-const title = 'Product Designer';
-const description = 'Product designer, front-end web developer, and writer from Orlando living in the PNW.';
+let featuredPosts = await Astro.glob('./posts/*.mdx')
+	.then((res) => res.filter((x) => x.frontmatter.draft != true))
+	.then((res) =>
+		res.sort(
+			(a, b) =>
+				new Date(b.frontmatter.published).valueOf() - new Date(a.frontmatter.published).valueOf()
+		)
+	)
+	.then((res) => res.slice(0, 3));
+
+const recentHikes = HIKES.sort(
+	(a, b) => new Date(b.dateHiked).valueOf() - new Date(a.dateHiked).valueOf()
+).slice(0, 3);
+
+const socials = socialLinks.sort((a, b) => a.label.localeCompare(b.label));
 ---
 
-<BaseLayout {title} {description}>
-	<div class='wrapper'>
-		<section class='hero--home' aria-labelledby='#title'>
-			<div class='avatar'>
-				<Img
-					src='/src/img/me.png'
-					alt='A photo of me standing in front of Mt. Rainier in Washington state.'
-					height={200}
-					width={200}
-				/>
-			</div>
-			<div class='intro'>
-				<h1 id='#title'>Hello, my name is John.</h1>
-				<p>
-					I’m a product designer with a background in content strategy and front-end-web development. I’m passionate about problem solving and building enjoyable
-					user experiences.
-				</p>
-				<p>
-					<strong>I love:</strong>
-					<ul>
-						<li>
-							Product Design
+<BaseLayout>
+	<section aria-labelledby="#title" class="container">
+		<h1 id="title" class="title--lg">
+			John Eatmon is a <em class="font-serif">designer</em>, <em class="font-serif">developer</em>,
+			and <em class="font-serif">coffee addict</em> based in Tacoma.
+		</h1>
+	</section>
+	<section aria-labelledby="#case-studies" class="container">
+		<h2 id="case-studies" class="title--smol">Featured case studies</h2>
+		<ul role="list">
+			{featuredCaseStudies.map((project) => <ProjectPreview {project} />)}
+		</ul>
+	</section>
+	<section aria-labelledby="#blogroll" class="container">
+		<h2 id="#blogroll" class="title--smol">Recent blog posts</h2>
+		<ul role="list" class="blogroll">
+			{featuredPosts.map((post) => <PostPreview {post} />)}
+		</ul>
+	</section>
+	<div class="container sections">
+		<section aria-labelledby="#other-things">
+			<h3 id="other-things" class="title--smol">Other things</h3>
+			<ul role="list">
+				{
+					secondaryNavigation.map((link) => (
+						<li class="icon-link">
+							<Icon name={link.icon} />
+							<a class="link" href={link.href}>
+								{link.label}
+							</a>
 						</li>
-						<li>
-							Visual Design
-						</li>
-						<li>
-							Front-End Web Development
-						</li>
-					</ul>
-				</p>
-				<p>
-					<strong>I want to learn more about:</strong>
-					<ul>
-						<li>
-							Design Systems
-						</li>
-						<li>
-							User Research
-						</li>
-						<li>
-							Interaction Design
-						</li>
-					</ul>
-				</p>
-				<p>
-					Learn more <a href='/about'>about me</a> or <a href='mailto:hi@jmae.xyz'>get in touch</a>.
-				</p>
-			</div>
+					))
+				}
+			</ul>
 		</section>
-		<section aria-labelledby='#selected-works'>
-			<h2 id='selected-works'>Featured Case Studies</h2>
-			<div class="projects">
-				{featuredProjects.map((project) =>
-					<ProjectPreview {project} />
-				)}
-			</div>
+		<section aria-labelledby="#recent-hikes">
+			<h3 id="recent-hikes" class="title--smol">Recent hikes</h3>
+			<ul role="list">
+				{
+					recentHikes.map((hike) => (
+						<li>
+							<a href={hike.href} class="link">
+								{hike.name}
+							</a>
+							&nbsp;&nearr;
+						</li>
+					))
+				}
+			</ul>
+		</section>
+		<section
+			aria-labelledby="#connect"
+			class="flex flex-wrap gap-x-fl-2 sm:gap-0 sm:justify-between"
+		>
+			<h3 id="connect" class="title--smol">Let’s connect</h3>
+			<ul role="list">
+				{
+					socials.slice(0, 3).map((link) => (
+						<li>
+							<a class="link" href={link.href}>
+								{link.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+			<ul role="list">
+				{
+					socials.slice(3, 6).map((link) => (
+						<li>
+							<a class="link" href={link.href}>
+								{link.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
 		</section>
 	</div>
 </BaseLayout>
 
 <style>
-	.avatar {
-		border-radius: 999px;
-		overflow: hidden;
-		width: 200px;
-		height: 200px;
-		aspect: 1 / 1;
-		margin-block-end: 2rem;
+	section[aria-labelledby='#title'] {
+		padding-block-start: clamp(2.63rem, calc(1.31rem + 6.59vw), 6rem);
 	}
 
-	.hero--home {
-		padding-block: max(2vh, 2rem);
-		margin-block-end: 2rem;
-		border-bottom: 1px solid hsl(var(--color-copy), 0.1);
+	.icon-link {
+		display: flex;
+		column-gap: var(--size-fl-1\/2);
+		align-items: center;
 
-		& h1 {
-			font-size: var(--type-step-4);
-		}
-
-		& .intro > * + * {
-			margin-top: 1em;
+		& [astro-icon] {
+			block-size: var(--size-fl-1\.25);
+			inline-size: var(--size-fl-1\.25);
+			color: hsl(var(--jm-primary));
 		}
 	}
 
-	@media only screen and (min-width: 560px) {
-		.avatar {
-			margin-block-end: 0;
-		}
+	section[aria-labelledby='#case-studies'] {
+		padding-block-start: var(--size-fl-5);
 
-		.hero--home {
+		& ul {
+			padding-block-start: var(--size-fl-1);
+			--min: 30ch;
 			display: grid;
-			gap: 2rem;
-			grid-template-columns: min(200px, 100%) auto;
+			grid-gap: var(--size-fl-2);
+			/* min() with 100% prevents overflow in extra narrow spaces */
+			grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
 		}
 	}
 
-	#selected-works {
-		font-size: var(--type-step-2);
+	section[aria-labelledby='#blogroll'] {
+		padding-block-start: var(--size-fl-3\.5);
 	}
-	
-	.projects {
-		--min: 20ch;
+
+	.blogroll {
+		margin-block-start: var(--size-fl-1);
+		display: flex;
+		flex-direction: column;
+	}
+
+	.sections {
+		padding-block-start: var(--size-fl-3\.5);
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--size-fl-4);
+
+		& section[aria-labelledby='#connect'] {
+			& h3 {
+				width: 100%;
+				margin-block-end: var(--size-fl-1);
+			}
+
+			display: flex;
+			flex-wrap: wrap;
+			column-gap: var(--size-fl-2);
+		}
+
+		& h3 {
+			margin-block-end: var(--size-fl-2);
+		}
+
+		& ul > * + * {
+			margin-block-start: var(--size-fl-1);
+		}
+	}
+
+	@media (min-width: 698px) {
+		.sections {
+			justify-content: space-between;
+		}
+
+		section[aria-labelledby='#connect'] {
+			justify-content: space-between;
+			gap: 0;
+		}
 	}
 </style>

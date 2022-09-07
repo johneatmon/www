@@ -1,82 +1,84 @@
+---
+import { Icon } from 'astro-icon';
+---
+
 <!-- Source: https://github.com/argyleink/gui-challenges/tree/main/theme-switch -->
-<button
-	class='theme-toggle'
-	id='theme-toggle'
-	title='Toggle theme'
-	aria-label='auto'
-	aria-live='polite'
->
-	<div class='circle'></div>
+<button id="theme-toggle" title="Toggle theme" aria-label="auto" aria-live="polite">
+	<Icon name="akar-icons:sun" class="light" />
+	<Icon name="akar-icons:moon" />
 </button>
 
-<style>
-	.theme-toggle {
-		--size: 1.5rem;
-		position: fixed;
-		bottom: 1rem;
-		right: 1rem;
+<style lang="css">
+	button {
 		background: none;
-		border: none;
-		padding: 0;
-		inline-size: var(--size);
-		block-size: var(--size);
-		aspect-ratio: 1;
-		border-radius: 100%;
+		border: 0;
 		cursor: pointer;
 		touch-action: manipulation;
-		-webkit-tap-highlight-color: transparent;
-		outline-offset: 5px;
+		aspect-ratio: 1/1;
+		display: grid;
+		place-items: center;
+		padding: var(--size-fl-1\/2);
+		border-radius: 0.25em;
+		color: hsl(var(--jm-mid));
 
-		& .circle {
-			inline-size: 100%;
-			block-size: 100%;
-			border-radius: 999px;
-			background-color: hsl(var(--color-accent));
+		&:hover {
+			background-color: var(--hover-bg);
+			color: hsl(var(--jm-primary));
+		}
+	}
+
+	[astro-icon] {
+		block-size: var(--size-fl-1\.25);
+		inline-size: var(--size-fl-1\.25);
+		color: inherit;
+	}
+
+	[astro-icon='akar-icons:moon'] {
+		display: none;
+	}
+
+	html[data-theme='dark'] {
+		& [astro-icon='akar-icons:sun'] {
+			display: none;
+		}
+
+		& [astro-icon='akar-icons:moon'] {
+			display: block;
 		}
 	}
 </style>
 
-<script is:inline>
+<script>
 	const storageKey = 'theme-preference';
-
 	const onClick = () => {
 		// flip current value
 		theme.value = theme.value === 'light' ? 'dark' : 'light';
-
 		setPreference();
 	};
-
 	const getColorPreference = () => {
 		if (localStorage.getItem(storageKey)) return localStorage.getItem(storageKey);
 		else return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 	};
-
 	const setPreference = () => {
 		localStorage.setItem(storageKey, theme.value);
 		reflectPreference();
 	};
-
 	const reflectPreference = () => {
 		document.firstElementChild.setAttribute('data-theme', theme.value);
-
+		document.firstElementChild.classList.toggle('dark');
 		document.querySelector('#theme-toggle')?.setAttribute('aria-label', theme.value);
 	};
-
 	const theme = {
 		value: getColorPreference(),
 	};
-
 	// set early so no page flashes / CSS is made aware
 	reflectPreference();
-
 	window.onload = () => {
 		// set on load so screen readers can see latest value on the button
 		reflectPreference();
-
 		// now this script can find and listen for clicks on the control
 		document.querySelector('#theme-toggle').addEventListener('click', onClick);
 	};
-
 	// sync with system changes
 	window
 		.matchMedia('(prefers-color-scheme: dark)')

@@ -1,52 +1,70 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import { parseHTML } from 'linkedom';
-import { machineDate, readableDate } from '@scripts/dates';
-import '@styles/prism-duotone-forest.css';
+import ProjectHeader from '@components/ProjectHeader.astro';
+import { machineDate, readableDate } from '@/scripts/dates';
 
 const { content } = Astro.props;
-
-const { document } = parseHTML(content.astro.html);
-
-const title = content.title;
-const description = content.description ?? document.querySelector('p:first-of-type').innerHTML.slice(0, 152) + '...';
 ---
 
-<BaseLayout {title} {description} type="article" section="Article" datePublished={content.published} dateModified={content.modified}>
+<BaseLayout
+	title={content.title}
+	description={content.description}
+	type="article"
+	section={Astro.url.toString().includes('work') ? 'Case Study' : 'Article'}
+	tags={content.tags}
+	datePublished={machineDate(content.published)}
+	dateModified={machineDate(content.published)}
+>
 	<article>
-		<header class="wrapper">
-			<h1>
-				{content.title}
-			</h1>
+		<header>
+			{
+				content.image &&
+				content.description &&
+				content.role &&
+				content.tools &&
+				content.duration ? (
+					<ProjectHeader {content} />
+				) : (
+					<h1>{content.title}</h1>
+				)
+			}
 		</header>
-		<main class="wrapper">
+		<main>
 			<slot />
 		</main>
-		{(content.published || content.modified || content.tags) && (
-			<footer class="wrapper">
-				<div class="border"></div>
-				<small>
-					<div>
-						{(content.published) && (
-							<span>
-								Posted on <time datetime={machineDate(content.published)}>{readableDate(content.published)}</time>
-							</span>
-						)}
-						{(content.modified) && (
-							<span>
-								&middot; Updated on <time datetime={machineDate(content.modified)}>{readableDate(content.modified)}</time>
-							</span>
-						)}
-					</div>
-					{(content.tags) && (
-						<div class="tags">
-							{content.tags.map((tag) =>
+		<footer>
+			<small>
+				{
+					content.published && (
+						<span>
+							Posted
+							<time datetime={machineDate(content.published)}>
+								{readableDate(content.published)}
+							</time>
+						</span>
+					)
+				}
+				{content.published && content.modified && <span>&nbsp;&middot;&nbsp;</span>}
+				{
+					content.modified && (
+						<span>
+							Modified
+							<time datetime={machineDate(content.modified)}>{readableDate(content.modified)}</time>
+						</span>
+					)
+				}
+			</small>
+			{
+				content.tags && (
+					<small class="tags">
+						{content.tags
+							.sort((a, b) => a.localeCompare(b))
+							.map((tag) => (
 								<span>#{tag}</span>
-							)}
-						</div>
-					)}
-				</small>
-			</footer>
-		)}
+							))}
+					</small>
+				)
+			}
+		</footer>
 	</article>
 </BaseLayout>
