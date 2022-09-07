@@ -2,6 +2,9 @@
 import { site } from '@data/config';
 import '@styles/main.css';
 
+const cloudflareAccountHash = import.meta.env.CLOUDFLARE_ACCOUNT_HASH;
+const cloudflareOpenGraphImg = `https://imagedelivery.net/${cloudflareAccountHash}/1608c0a5-eb1b-496b-cd85-43c9282a7800/opengraph`;
+
 export interface Props {
 	title: string;
 	description: string;
@@ -22,7 +25,7 @@ const {
 	title = site.fallbackTitle,
 	description = site.fallbackDesc,
 	image = {
-		href: new URL('/og_img.png', Astro.site),
+		href: cloudflareOpenGraphImg,
 		alt: `A stylized image of a design system created in Figma by John Eatmon.`
 	},
 	type = "website",
