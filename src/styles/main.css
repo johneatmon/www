@@ -125,6 +125,22 @@ article {
 		font-size: var(--font-size-fl-0);
 	}
 
+	& ul {
+		padding-inline: var(--size-fl-1);
+
+		& li + li {
+			margin-top: 0.5em;
+		}
+
+		& li::marker {
+			color: hsl(var(--jm-primary));
+		}
+	}
+
+	& .gray {
+		color: hsl(var(--jm-mid));
+	}
+
 	& footer {
 		margin-block-start: var(--size-fl-3\.5);
 		color: hsl(var(--jm-mid));
