@@ -102,6 +102,10 @@ article {
 		margin-block-start: 1.5em;
 	}
 
+	& a {
+		white-space: normal;
+	}
+
 	& .full-bleed {
 		max-width: min(100%, 58.125rem);
 		margin-inline: auto;
