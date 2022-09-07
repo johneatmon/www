@@ -39,7 +39,7 @@ const cloudflareDeliveryURL = `https://imagedelivery.net/${cloudflareAccountHash
 
 	.img-top {
 		margin-block-end: var(--size-fl-3\/4);
-		border-radius: 0.25rem;
+		margin-inline: -1rem;
 		overflow: hidden;
 
 		&:hover {
@@ -48,6 +48,13 @@ const cloudflareDeliveryURL = `https://imagedelivery.net/${cloudflareAccountHash
 				transition-duration: 300ms;
 				transform: scale(1.05);
 			}
+		}
+	}
+
+	@media (min-width: 38.125rem) {
+		.img-top {
+			border-radius: 0.25rem;
+			margin-inline: unset;
 		}
 	}
 
