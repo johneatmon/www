@@ -130,7 +130,7 @@ article {
 	}
 
 	& ul {
-		padding-inline: var(--size-fl-1);
+		padding-inline-start: var(--size-fl-1\.5);
 
 		& li + li {
 			margin-top: 0.5em;
