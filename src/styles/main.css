@@ -141,6 +141,10 @@ article {
 		}
 	}
 
+	& ul[role='list'] {
+		padding: 0;
+	}
+
 	& .gray {
 		color: hsl(var(--jm-mid));
 	}
