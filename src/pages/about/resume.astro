@@ -89,6 +89,17 @@ const description =
           )}
         </ul>
       </section>
+      <section class="tools">
+        <h2 class="title--smol">Tools & Languages</h2>
+        <ul role="list">
+          {RESUME.tools.sort((a, b) => a.localeCompare(b)).map((tools) =>
+            <li>
+              {tools}
+            </li>
+            <span class="last">,&nbsp;</span>
+          )}
+        </ul>
+      </section>
 		</main>
 		<footer>
 			<small>Modified <time datetime={new Date().toISOString()}>{new Date().toDateString()}</time></small>
@@ -98,8 +109,6 @@ const description =
 
 <style lang="css">
 	article {
-		padding-block-start: var(--size-fl-3\.5);
-
 		& .title--smol {
 			color: hsl(var(--jm-primary));
 			margin-block-end: var(--size-fl-1);
@@ -150,5 +159,9 @@ const description =
     display: flex;
     flex-direction: column;
     row-gap: var(--size-fl-2);
+  }
+
+  .tools ul li {
+    display: inline-block;
   }
 </style>
