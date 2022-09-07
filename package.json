@@ -16,8 +16,13 @@
   "dependencies": {
     "@astrojs/image": "^0.5.0",
     "@astrojs/mdx": "^0.11.1",
+    "@astrojs/prefetch": "^0.0.7",
     "astro": "^1.1.5",
+    "astro-compress": "^1.0.7",
+    "astro-critters": "^1.0.3",
     "astro-icon": "^0.7.3",
+    "astro-robots-txt": "^0.3.8",
+    "astro-sitemap": "^0.4.0",
     "luxon": "^3.0.3",
     "open-props": "^1.4.14",
     "postcss": "^8.4.16",
