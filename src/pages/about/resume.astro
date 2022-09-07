@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { RESUME } from '@data/config';
-import ThemeToggle from '@components/ThemeToggle.astro';
 
 const title = 'Résumé';
 const description =
@@ -17,9 +16,6 @@ const description =
           {RESUME.header.title}<br />
           {RESUME.header.location}
         </p>
-      </div>
-      <div class="button">
-        <ThemeToggle />
       </div>
 		</header>
 		<main>
@@ -111,15 +107,6 @@ const description =
 	}
 
 	header {
-    position: relative !important;
-
-    & .button {
-      position: absolute !important;
-      top: 0;
-      right: 5vw;
-      /* transform: translateY(-50%); */
-    }
-
 		& h1 {
 			font-size: var(--font-size-fl-1) !important;
 			margin-block-end: unset !important;
