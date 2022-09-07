@@ -14,7 +14,9 @@ import ThemeToggle from '@components/ThemeToggle.astro';
 			{
 				primaryNavigation.map((link) => (
 					<li>
-						<a href={link.href}>{link.label}</a>
+						<a href={link.href} rel="prefetch">
+							{link.label}
+						</a>
 					</li>
 				))
 			}
