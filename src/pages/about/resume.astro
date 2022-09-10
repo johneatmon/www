@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { RESUME } from '@data/config';
+import { machineDate, readableDate } from '@/scripts/dates';
 
 const title = 'Résumé';
 const description =
@@ -102,7 +103,9 @@ const description =
       </section>
 		</main>
 		<footer>
-			<small>Modified <time datetime={new Date().toISOString()}>{new Date().toDateString()}</time></small>
+			<small>
+        Modified <time datetime={machineDate(RESUME.header.date)}>{readableDate(RESUME.header.date)}</time>
+      </small>
 		</footer>
 	</article>
 </BaseLayout>

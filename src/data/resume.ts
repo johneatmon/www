@@ -3,6 +3,7 @@ export const RESUME = {
 		name: 'John Eatmon',
 		title: 'Designer & Developer',
 		location: 'Tacoma, WA',
+		date: '2022-09-10',
 	},
 	about:
 		'I’m a product designer with 2 years experience in design and front-end web development. I’m currently responsible for managing and leading digital product designs from ideation to launch. When I’m not at my desk, I’m likely hiking around the beautiful state of WA.',
