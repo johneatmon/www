@@ -149,6 +149,15 @@ article {
 		color: hsl(var(--jm-mid));
 	}
 
+	& blockquote {
+		font-family: 'Newsreader', var(--font-serif);
+		font-style: italic;
+		border-inline-start: 0.25em solid hsl(var(--jm-primary) / 0.8);
+		background-color: hsl(var(--jm-primary) / 0.3);
+		padding-inline: 1em;
+		padding-block: 1em;
+	}
+
 	& footer {
 		margin-block-start: var(--size-fl-3\.5);
 		color: hsl(var(--jm-mid));
