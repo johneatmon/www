@@ -20,6 +20,9 @@ import { Icon } from 'astro-icon';
 		padding: var(--size-fl-1\/2);
 		border-radius: 0.25em;
 		color: hsl(var(--jm-mid));
+		transition-property: background-color, color;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 300ms;
 
 		&:hover {
 			background-color: var(--hover-bg);
