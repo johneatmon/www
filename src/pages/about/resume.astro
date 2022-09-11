@@ -103,8 +103,10 @@ const description =
       </section>
 		</main>
 		<footer>
-			<small>
-        Modified <time datetime={machineDate(RESUME.header.date)}>{readableDate(RESUME.header.date)}</time>
+			<small class="font-serif">
+        <em>
+          Modified <time datetime={machineDate(RESUME.header.date)}>{readableDate(RESUME.header.date)}</time>
+        </em>
       </small>
 		</footer>
 	</article>
