@@ -19,5 +19,6 @@ This project was made possible by the wonderful [Astro](https://astro.build) tea
 
 - [astro-compress](https://github.com/nhristov/astro-compress) by @nhristov
 - [astro-critters](https://github.com/nhristov/astro-critters) by @nhristov
+- [astro-fonts-next](https://github.com/dc7290/astro-fonts-next) by @dc7290
 - [astro-robots-txt](https://github.com/alextim/astro-lib/tree/main/packages/astro-robots-txt) by @alextim
 - [astro-sitemap](https://github.com/alextim/astro-lib/tree/main/packages/astro-sitemap) by @alextim
