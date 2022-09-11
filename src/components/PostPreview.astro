@@ -23,16 +23,22 @@ const { post } = Astro.props;
 	a {
 		padding: var(--size-fl-1);
 		margin-inline: calc(var(--size-fl-1) * -1);
+		background-color: none;
 		text-decoration: none;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		column-gap: var(--size-fl-2);
+		transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+		& h3 {
+			transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		}
 
 		&:hover,
 		&:active,
 		&:focus {
-			background: var(--hover-bg);
+			background-color: var(--hover-bg);
 
 			& h3 {
 				color: hsl(var(--jm-primary));
