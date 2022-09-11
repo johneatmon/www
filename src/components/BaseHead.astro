@@ -46,8 +46,6 @@ const {
 <meta name="description" content={description} />
 <meta name="generator" content={Astro.generator} />
 {!import.meta.env.DEV && (
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" href="/fonts/soehne/woff2/soehne-400.woff2" as="font" />
   <link rel="preload" href="/fonts/soehne/woff2/soehne-400-kursiv.woff2" as="font" />
   <link rel="preload" href="/fonts/soehne/woff2/soehne-500.woff2" as="font" />
@@ -57,7 +55,7 @@ const {
   <link rel="preload" href="/fonts/soehne/woff2/soehne-800.woff2" as="font" />
   <link rel="preload" href="/fonts/soehne/woff2/soehne-800-kursiv.woff2" as="font" />
 )}
-{import.meta.env.PROD ? (
+{(import.meta.env.NODE_ENV === 'production') ? (
 	<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
 ) : (
 	<meta name="robots" content="follow, noindex" />
@@ -111,5 +109,4 @@ const {
 
 {import.meta.env.PROD && (
 	<script defer data-domain="jmae.xyz" src="/js/script.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400;1,6..72,700&display=swap" rel="stylesheet" /> 
 )}

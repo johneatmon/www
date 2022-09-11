@@ -224,6 +224,28 @@ table td a {
 	}
 }
 
+.link--smol {
+	font-size: var(--font-size-fl-00);
+	font-weight: var(--font-weight-5);
+	color: hsl(var(--jm-primary));
+	text-decoration: none;
+	background-color: none;
+	padding-block: var(--size-fl-1\/2);
+	padding-inline: clamp(0.5rem, calc(0.57rem + 0.61vw), 1rem);
+	margin-block: calc(var(--size-fl-1\/2) * -1);
+	margin-inline: calc(clamp(0.5rem, calc(0.57rem + 0.61vw), 1rem) * -1);
+	border-radius: 0.25em;
+	transition-property: background-color;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 300ms;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: var(--hover-bg);
+	}
+}
+
 .img-top {
 	& img {
 		width: 100%;
@@ -233,4 +255,12 @@ table td a {
 
 html[data-theme='light'] .border > img {
 	border: 1px solid hsl(var(--jm-dark) / 0.1);
+}
+
+.flex-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--size-fl-2);
+	align-items: center;
+	justify-content: space-between;
 }

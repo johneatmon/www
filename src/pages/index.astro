@@ -41,13 +41,19 @@ const socials = socialLinks.sort((a, b) => a.label.localeCompare(b.label));
 		</h1>
 	</section>
 	<section aria-labelledby="#case-studies" class="container">
-		<h2 id="case-studies" class="title--smol">Featured case studies</h2>
+		<div class="flex-row">
+			<h2 id="case-studies" class="title--smol">Featured case studies</h2>
+			<a href="/work" class="link--smol">View more projects &rarr;</a>
+		</div>
 		<ul role="list">
 			{featuredCaseStudies.map((project) => <ProjectPreview {project} />)}
 		</ul>
 	</section>
 	<section aria-labelledby="#blogroll" class="container">
-		<h2 id="#blogroll" class="title--smol">Recent blog posts</h2>
+		<div class="flex-row">
+			<h2 id="#blogroll" class="title--smol">Recent blog posts</h2>
+			<a href="/posts" class="link--smol">View more posts &rarr;</a>
+		</div>
 		<ul role="list" class="blogroll">
 			{featuredPosts.map((post) => <PostPreview {post} />)}
 		</ul>

@@ -17,7 +17,6 @@ const cloudflareDeliveryURL = `https://imagedelivery.net/${cloudflareAccountHash
 			width={1366}
 			height={1026}
 			loading="lazy"
-			format="webp"
 		/>
 	</a>
 	<a href={project.url} class="link">
@@ -42,10 +41,12 @@ const cloudflareDeliveryURL = `https://imagedelivery.net/${cloudflareAccountHash
 		margin-inline: -1rem;
 		overflow: hidden;
 
+		& img {
+			transition: all 0.3s var(--ease-in-out-1);
+		}
+
 		&:hover {
 			& img {
-				transition-timing-function: var(--ease-in-out-1);
-				transition-duration: 300ms;
 				transform: scale(1.05);
 			}
 		}
