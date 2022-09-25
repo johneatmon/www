@@ -77,4 +77,11 @@ export const HIKES: Hike[] = [
 		miles: 8.5,
 		elevation: 4530,
 	},
+	{
+		name: 'Mount Adams South Climb',
+		dateHiked: '2022-09-24',
+		href: 'https://www.wta.org/go-hiking/trip-reports/trip_report.2022-09-25.6638687928',
+		miles: 12.5,
+		elevation: 6637,
+	},
 ];
