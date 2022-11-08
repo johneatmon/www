@@ -57,15 +57,16 @@ export const secondaryNavigation = [
 export const socialLinks = [
 	{
 		label: 'Twitter',
-		href: 'https://twitter.com/jmaeat',
+		href: 'https://twitter.com/jmaeatmon',
 	},
 	{
 		label: 'GitHub',
-		href: 'https://github.com/jmaeat',
+		href: 'https://github.com/johneatmon',
 	},
 	{
-		label: 'Letterboxd',
-		href: 'https://letterboxd.com/jmaeatmon/',
+		label: 'Mastodon',
+		href: 'https://mastodon.design/@jm',
+		rel: 'me',
 	},
 	{
 		label: 'Email',
@@ -73,7 +74,7 @@ export const socialLinks = [
 	},
 	{
 		label: 'LinkedIn',
-		href: 'https://www.linkedin.com/in/jmaeatmon/',
+		href: 'https://www.linkedin.com/in/johneatmon/',
 	},
 	{
 		label: 'Read.cv',
