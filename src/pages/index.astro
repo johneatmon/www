@@ -3,7 +3,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import { socialLinks, secondaryNavigation } from '@data/config';
 import ProjectPreview from '@components/ProjectPreview.astro';
 import PostPreview from '@components/PostPreview.astro';
-import { Icon } from 'astro-icon';
+// import { Icon } from 'astro-icon';
 import { HIKES } from '@data/config';
 
 let featuredCaseStudies = await Astro.glob('./work/*.mdx')
@@ -65,7 +65,7 @@ const socials = socialLinks.sort((a, b) => a.label.localeCompare(b.label));
 				{
 					secondaryNavigation.map((link) => (
 						<li class="icon-link">
-							<Icon name={link.icon} />
+							<!-- <Icon name={link.icon} /> -->
 							<a class="link" href={link.href}>
 								{link.label}
 							</a>
@@ -96,10 +96,10 @@ const socials = socialLinks.sort((a, b) => a.label.localeCompare(b.label));
 			<h3 id="connect" class="title--smol">Let’s connect</h3>
 			<ul role="list">
 				{
-					socials.slice(0, 3).map((link) => (
+					socials.slice(0, 3).map(({ href, label, rel }) => (
 						<li>
-							<a class="link" href={link.href}>
-								{link.label}
+							<a class="link" href={href} rel={rel}>
+								{label}
 							</a>
 						</li>
 					))
@@ -107,10 +107,10 @@ const socials = socialLinks.sort((a, b) => a.label.localeCompare(b.label));
 			</ul>
 			<ul role="list">
 				{
-					socials.slice(3, 6).map((link) => (
+					socials.slice(3, 6).map(({ href, label, rel }) => (
 						<li>
-							<a class="link" href={link.href}>
-								{link.label}
+							<a class="link" href={href} rel={rel}>
+								{label}
 							</a>
 						</li>
 					))

@@ -1,11 +1,11 @@
 ---
-import { Icon } from 'astro-icon';
+// import { Icon } from 'astro-icon';
 ---
 
 <!-- Source: https://github.com/argyleink/gui-challenges/tree/main/theme-switch -->
 <button id="theme-toggle" title="Toggle theme" aria-label="auto" aria-live="polite">
-	<Icon name="akar-icons:sun" class="light" />
-	<Icon name="akar-icons:moon" />
+	<span class="sun">🌝</span>
+	<span class="moon">🌚</span>
 </button>
 
 <style lang="css">
@@ -30,22 +30,23 @@ import { Icon } from 'astro-icon';
 		}
 	}
 
-	[astro-icon] {
+	.sun,
+	.moon {
 		block-size: var(--size-fl-1\.25);
 		inline-size: var(--size-fl-1\.25);
 		color: inherit;
 	}
 
-	[astro-icon='akar-icons:moon'] {
+	.sun {
 		display: none;
 	}
 
 	html[data-theme='dark'] {
-		& [astro-icon='akar-icons:sun'] {
+		& .moon {
 			display: none;
 		}
 
-		& [astro-icon='akar-icons:moon'] {
+		& .sun {
 			display: block;
 		}
 	}
