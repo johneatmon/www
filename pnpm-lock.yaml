@@ -5,7 +5,7 @@ specifiers:
   '@astrojs/mdx': ^0.11.1
   '@astrojs/prefetch': ^0.0.7
   '@tokencss/astro': ^0.0.4
-  astro: ^1.2.1
+  astro: 1.6.4
   astro-compress: ^1.0.7
   astro-critters: ^1.0.3
   astro-fonts-next: ^1.0.5
