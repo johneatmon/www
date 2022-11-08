@@ -3,7 +3,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import { socialLinks, secondaryNavigation } from '@data/config';
 import ProjectPreview from '@components/ProjectPreview.astro';
 import PostPreview from '@components/PostPreview.astro';
-import { Icon } from 'astro-icon';
+// import { Icon } from 'astro-icon';
 import { HIKES } from '@data/config';
 
 let featuredCaseStudies = await Astro.glob('./work/*.mdx')
@@ -65,7 +65,7 @@ const socials = socialLinks.sort((a, b) => a.label.localeCompare(b.label));
 				{
 					secondaryNavigation.map((link) => (
 						<li class="icon-link">
-							<Icon name={link.icon} />
+							<!-- <Icon name={link.icon} /> -->
 							<a class="link" href={link.href}>
 								{link.label}
 							</a>
