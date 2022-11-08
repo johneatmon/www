@@ -27,9 +27,4 @@ export default defineConfig({
 		robotsTxt(),
 		sitemap(),
 	],
-	vite: {
-		ssr: {
-			external: ['svgo'],
-		},
-	},
 });
